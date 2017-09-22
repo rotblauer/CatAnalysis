@@ -1,7 +1,7 @@
 *RDataTmp
 *DS_Store
-.Rproj.user
-*.Rproj
+.Rproj.user*
+*.Rproj*
 # ---> R
 # History files
 .Rhistory
