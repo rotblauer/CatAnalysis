@@ -59,10 +59,10 @@ ggplot(loc_gc, aes(x = lon, y = log10(elevation),colour=log10(elevation))) + geo
 ```r
 # ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()
 
-file.copy("./cats.md","./README.md")
+file.copy("./cats.md","./README.md",overwrite = TRUE)
 ```
 
 ```
-## [1] FALSE
+## [1] TRUE
 ```
 
