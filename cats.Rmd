@@ -1,0 +1,39 @@
+---
+title: "cats"
+author: "JL"
+date: "9/21/2017"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r setup, include=FALSE,eval=FALSE}
+library(jsonlite)
+
+
+system.time(x <- fromJSON("~/Go/src/github.com/rotblauer/tileTester2/out.json"))
+loc=data.frame()
+loc = do.call(rbind.data.frame, x$features$geometry$coordinates)
+loc$elevation =x$features$properties$Elevation
+colnames(loc) =c("lon","lat","elevation")
+save(loc,file = "loc.RData")
+```
+
+```{r p,warning=FALSE}
+
+library(dplyr)
+library(ggplot2)
+theme_set(theme_bw(20))
+load("loc.RData")
+
+loc_gc <- filter(loc, lat < 38.9270 & lat > 38.0270) %>% filter(lon > -90.6994& lon < -90.0)
+
+ggplot(loc_gc, aes(x = lon, y = lat)) + geom_point()
+ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()
+ggplot(loc_gc, aes(x = lon, y = lat,colour=log10(elevation))) + geom_point()
+
+# ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()
+
+file.copy("./cats.md","./README.md")
+```
+
