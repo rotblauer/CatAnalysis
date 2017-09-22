@@ -51,6 +51,12 @@ ggplot(loc_gc, aes(x = lon, y = lat,colour=log10(elevation))) + geom_point()
 ![](cats_files/figure-html/p-3.png)<!-- -->
 
 ```r
+ggplot(loc_gc, aes(x = lon, y = log10(elevation),colour=log10(elevation))) + geom_point()
+```
+
+![](cats_files/figure-html/p-4.png)<!-- -->
+
+```r
 # ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()
 
 file.copy("./cats.md","./README.md")

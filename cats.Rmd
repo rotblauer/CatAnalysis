@@ -32,6 +32,8 @@ ggplot(loc_gc, aes(x = lon, y = lat)) + geom_point()
 ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()
 ggplot(loc_gc, aes(x = lon, y = lat,colour=log10(elevation))) + geom_point()
 
+ggplot(loc_gc, aes(x = lon, y = log10(elevation),colour=log10(elevation))) + geom_point()
+
 # ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()
 
 file.copy("./cats.md","./README.md")
