@@ -89,6 +89,19 @@ ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()
 ![](cats_files/figure-html/p-8.png)<!-- -->
 
 ```r
+loc_gc <- filter(loc,  lon < -50&elevation >0)
+ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()
+```
+
+![](cats_files/figure-html/p-9.png)<!-- -->
+
+```r
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()
+```
+
+![](cats_files/figure-html/p-10.png)<!-- -->
+
+```r
 file.copy("./cats.md","./README.md",overwrite = TRUE)
 ```
 
