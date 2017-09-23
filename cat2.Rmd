@@ -20,7 +20,12 @@ save(loc,file = "loc.RData")
 ```
 
 ```{r p,warning=FALSE}
-
+library(knitr)
+library(rgl)
+library(rglwidget)
+knit_hooks$set(webgl = hook_webgl)
+library(scatterplot3d)
+library(MASS)
 library(dplyr)
 library(ggplot2)
 theme_set(theme_bw(20))
@@ -36,8 +41,7 @@ t2 <- theme(
     panel.background = element_blank(),
     axis.text.x=element_text(angle=90,hjust=1)
 )
-library(scatterplot3d)
-library(MASS)
+
 load("loc.RData")
 
 0.0025
@@ -51,6 +55,12 @@ ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geo
 
  ggplot(loc_gc, aes(x = lon, y = lat))+stat_density2d(aes(fill=..density..), geom="raster", contour=FALSE) +
   scale_fill_gradient2(low="blue", mid="white", high="black") +t2
+ 
+ # scatterplot3d(loc_gc, pch = 16,
+ #              grid=TRUE, box=FALSE)
+ mfrow3d(nr = 1, nc = 1)
+ plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation)
+ rglwidget(height = 500, width = 500)
  
 ```
 
