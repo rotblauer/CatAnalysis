@@ -48,7 +48,7 @@ load("loc.RData")
 0.0025
 loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2775& lon < -90.275)
 loc_gc =loc_gc[complete.cases(loc_gc), ]
-
+loc_gc= loc_gc[!duplicated(loc_gc),]
 z <- kde2d(loc_gc$lat, loc_gc$lon)
 
 ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()+ geom_density_2d()+t2
@@ -72,6 +72,7 @@ spline_interpolated <- interp(loc_gc$lon, loc_gc$lat, loc_gc$elevation,
 x.si <- spline_interpolated$x
 y.si <- spline_interpolated$y
 z.si <- spline_interpolated$z
+
 # zlim <- range(y.si)
 # zlen <- zlim[2] - zlim[1] + 1
 # # 
@@ -79,7 +80,16 @@ z.si <- spline_interpolated$z
 #  col <- colorlut[ z.si - zlim[1] + 1 ] # assign colors to heights for each point
 
 
- 
+library(mgcv)
+library(deldir)
+mod <- gam(elevation ~ te(lon, lat), data = loc_gc)
+
+zfit <- fitted(mod)
+col <- cm.colors(20)[1 + 
+         round(19*(zfit - min(zfit))/diff(range(zfit)))]
+
+persp3d(deldir(loc_gc$lon, loc_gc$lat, z = zfit))
+
 mfrow3d(nr = 2, nc = 2)
 # plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation)
 persp3d(x.si, y.si, z.si, col = "blue")
