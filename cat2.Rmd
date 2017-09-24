@@ -19,6 +19,26 @@ colnames(loc) =c("lon","lat","elevation")
 save(loc,file = "loc.RData")
 ```
 
+```{r setupClust, include=FALSE,eval=FALSE}
+
+load("loc.RData")
+
+loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2775& lon < -90.275)
+loc_gc =loc_gc[complete.cases(loc_gc), ]
+
+
+
+clust =loc_gc 
+clust= scale(clust) 
+d  <- dist(clust) 
+km <- kmeans(d,centers=6,trace = TRUE) 
+loc_gc$clust =km$cluster
+save(loc_gc,file = "loc_gc.RData")
+
+```
+
+
+
 ```{r p,warning=FALSE,echo=FALSE}
 library(knitr)
 library(rgl)
@@ -43,32 +63,39 @@ t2 <- theme(
     axis.text.x=element_text(angle=90,hjust=1)
 )
 
-load("loc.RData")
-
-0.0025
-loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2775& lon < -90.275)
-loc_gc =loc_gc[complete.cases(loc_gc), ]
-# loc_gc= loc_gc[!duplicated(loc_gc),]
-z <- kde2d(loc_gc$lat, loc_gc$lon)
-
+load("./loc_gc.RData")
 ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()+ geom_density_2d()+t2
 ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
 ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
 
+
+
  ggplot(loc_gc, aes(x = lon, y = lat))+stat_density2d(aes(fill=..density..), geom="raster", contour=FALSE) +
   scale_fill_gradient2(low="blue", mid="white", high="black") +t2
 
+ggplot(loc_gc, aes(x = lon, y = lat,colour=clust)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust)) + geom_point()+ geom_density_2d()+t2
 
-clust =loc_gc 
-clust= scale(clust) 
-d  <- dist(clust) 
-km <- kmeans(d,centers=4)   
+ggplot(loc_gc, aes(x = lon, y = lat,colour=as.factor(clust))) + geom_point()+ t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=as.factor(clust))) + geom_point()+ t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=as.factor(clust))) + geom_point()+ t2
 
-mfrow3d(nr = 2, nc = 2)
-plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation)
+ 
+loc_gcP =loc_gc[which(loc_gc$clust!=6),]
+mfrow3d(nr = 2, nc = 1)
+plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust )
+plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust )
+
 rglwidget(height = 1000, width = 1000)
 
 
-
+# dir.create("animation")
+# for (i in 1:90) {
+#   view3d(userMatrix=rotationMatrix(2*pi * i/90, 1, -1, -1))
+#   rgl.snapshot(filename=paste("animation/frame-",
+#     sprintf("%03d", i), ".png", sep=""))
+# }
+# convert -delay 5 -loop 0 frame*.png animated.gif
 ```
 
