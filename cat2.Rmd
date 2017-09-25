@@ -7,6 +7,11 @@ output:
     keep_md: yes
 ---
 
+```{r clusts, eval=TRUE}
+clustNums =10
+cols <- paste0("clust",c(1:clustNums))
+```
+
 ```{r setup, include=FALSE,eval=FALSE}
 library(jsonlite)
 
@@ -20,6 +25,7 @@ save(loc,file = "loc.RData")
 ```
 
 ```{r setupClust, include=FALSE,eval=FALSE}
+library(dplyr)
 
 load("loc.RData")
 
@@ -27,13 +33,25 @@ loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(elevation>100&lo
 loc_gc =loc_gc[complete.cases(loc_gc), ]
 
 
-
-clust =loc_gc 
+clust =loc_gc
 clust= scale(clust) 
 d  <- dist(clust) 
-km <- kmeans(d,centers=6,trace = TRUE) 
-loc_gc$clust =km$cluster
+clusStats = data.frame(K=numeric(),WithinSS=numeric())
+for(i in 1:clustNums){
+  print(i)
+  km <- kmeans(d,centers=i,trace = TRUE,iter.max = 20) 
+  tmp=data.frame(km$cluster)
+  colnames(tmp)=c(cols[i])
+  loc_gc=cbind(loc_gc,tmp)
+  print(colnames(loc_gc))
+  tmp2 = data.frame(K=c(i),WithinSS=c(mean(km$tot.withinss)))
+  clusStats= rbind(clusStats,tmp2)
+}
+
+
+# loc_gc$clust =km$cluster
 save(loc_gc,file = "loc_gc.RData")
+save(clusStats,file = "clusStats.RData")
 
 ```
 
@@ -46,7 +64,6 @@ library(rglwidget)
 knit_hooks$set(webgl = hook_webgl)
 library(scatterplot3d)
 library(MASS)
-library(dplyr)
 library(ggplot2)
 library(akima)
 theme_set(theme_bw(20))
@@ -64,6 +81,7 @@ t2 <- theme(
 )
 
 load("./loc_gc.RData")
+load("./clusStats.RData")
 ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()+ geom_density_2d()+t2
 ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
 ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
@@ -73,19 +91,22 @@ ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geo
  ggplot(loc_gc, aes(x = lon, y = lat))+stat_density2d(aes(fill=..density..), geom="raster", contour=FALSE) +
   scale_fill_gradient2(low="blue", mid="white", high="black") +t2
 
-ggplot(loc_gc, aes(x = lon, y = lat,colour=clust)) + geom_point()+ geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust)) + geom_point()+ geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust)) + geom_point()+ geom_density_2d()+t2
-
-ggplot(loc_gc, aes(x = lon, y = lat,colour=as.factor(clust))) + geom_point()+ t2
-ggplot(loc_gc, aes(x = lon, y = elevation,colour=as.factor(clust))) + geom_point()+ t2
-ggplot(loc_gc, aes(x = lat, y = elevation,colour=as.factor(clust))) + geom_point()+ t2
+ ggplot(clusStats, aes(x = clusStats$K, y = clusStats$WithinSS)) + geom_point()+t2
 
  
-loc_gcP =loc_gc[which(loc_gc$clust!=6),]
+ggplot(loc_gc, aes(x = lon, y = lat,colour=clust6)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust6)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust6)) + geom_point()+ geom_density_2d()+t2
+
+ggplot(loc_gc, aes(x = lon, y = lat,colour=as.factor(clust6))) + geom_point()+ t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=as.factor(clust6))) + geom_point()+ t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=as.factor(clust6))) + geom_point()+ t2
+
+ 
+# loc_gcP =loc_gc[which(loc_gc$clust6!=6),]
 mfrow3d(nr = 2, nc = 1)
-plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust )
-plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust )
+plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust6 )
+# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust6 )
 
 rglwidget(height = 1000, width = 1000)
 
