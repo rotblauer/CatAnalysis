@@ -101,29 +101,71 @@ ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geo
  ggplot(clusStats, aes(x = clusStats$K, y = clusStats$WithinSS)) + geom_point()+t2
 
  
-ggplot(loc_gc, aes(x = lon, y = lat,colour=clust5)) + geom_point()+ geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust5)) + geom_point()+ geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust5)) + geom_point()+ geom_density_2d()+t2
+ 
+ 
+ggplot(loc_gc, aes(x = lon, y = lat,colour=clust6)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust6)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust6)) + geom_point()+ geom_density_2d()+t2
 
-ggplot(loc_gc, aes(x = lon, y = lat,colour=as.factor(clust5))) + geom_point()+ t2
-ggplot(loc_gc, aes(x = lon, y = elevation,colour=as.factor(clust5))) + geom_point()+ t2
-ggplot(loc_gc, aes(x = lat, y = elevation,colour=as.factor(clust5))) + geom_point()+ t2
 
  
-# loc_gcP =loc_gc[which(loc_gc$clust5!=6),]
+ggplot(loc_gc, aes(x = lon, y = lat,colour=clust6)) +  geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust6)) +  geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust6)) + geom_density_2d()+t2
+# loc_gcP =loc_gc[which(loc_gc$clust6!=6),]
 mfrow3d(nr = 1, nc = 1)
-plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust5, size=2 )
-# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust5 )
+plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust6, size=2 )
+# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust6 )
 
 rglwidget(height = 1000, width = 1000)
 
 
-dir.create("animation")
-for (i in 1:90) {
-  view3d(userMatrix=rotationMatrix(2*pi * i/90, 1, -1, -1))
-  rgl.snapshot(filename=paste("animation/frame-",
-    sprintf("%03d", i), ".png", sep=""))
+# dir.create("animation")
+# for (i in 1:90) {
+#   view3d(userMatrix=rotationMatrix(2*pi * i/90, 1, -1, -1))
+#   rgl.snapshot(filename=paste("animation/frame-",
+#     sprintf("%03d", i), ".png", sep=""))
+# }
+
+
+
+
+clusterC = sort(unique(loc_gc$clust6))
+for (c in clusterC) {
+tp = loc_gc[which(loc_gc$clust6 == c),]
+gp = ggplot(tp, aes(x = lon, y = lat, colour = clust6)) + geom_point() + geom_density_2d() +
+t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lon, y = elevation, colour = clust6)) + geom_point() + geom_density_2d() +
+t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lat, y = elevation, colour = clust6)) + geom_point() + geom_density_2d() +
+t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lon, y = lat, colour = clust6)) +  geom_density_2d() +
+t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lon, y = elevation, colour = clust6)) +  geom_density_2d() + t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lat, y = elevation, colour = clust6)) + geom_density_2d() + t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+
+
 }
+
+mfrow3d(nr = 1, nc = 1)
+tp =loc_gc[which(loc_gc$clust6 == 4),]
+t =plot3d(tp$lon,
+tp$lat,
+tp$elevation,
+col = tp$clust6,
+size = 2)
+print(t)
+# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust6 )
+
+rglwidget(height = 1000, width = 1000)
+
+
 # convert -delay 10 -loop 0 frame*.png animated.gif
 ```
 
