@@ -115,7 +115,7 @@ mfrow3d(nr = 1, nc = 1)
 plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust5, size=2 )
 # plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust5 )
 
-rglwidget(height = 3500, width = 3500)
+rglwidget(height = 1000, width = 1000)
 
 
 dir.create("animation")
