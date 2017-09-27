@@ -45,7 +45,7 @@ clusStats = data.frame(K=numeric(),WithinSS=numeric())
 #                               initializer = 'optimal_init', tol_optimal_init = 0.2)
 for(i in 1:clustNums){
   print(i)
-  km_rc = KMeans_rcpp(clust, clusters = i, num_init = i, max_iters = 1000, 
+  km_rc = KMeans_rcpp(clust, clusters = i, num_init = 200, max_iters = 1000, 
                     
                     initializer = 'optimal_init', threads = 3, verbose = T)
   
@@ -103,19 +103,19 @@ ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geo
  
  
  
-ggplot(loc_gc, aes(x = lon, y = lat,colour=clust6)) + geom_point()+ geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust6)) + geom_point()+ geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust6)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = lat,colour=clust7)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust7)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust7)) + geom_point()+ geom_density_2d()+t2
 
 
  
-ggplot(loc_gc, aes(x = lon, y = lat,colour=clust6)) +  geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust6)) +  geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust6)) + geom_density_2d()+t2
-# loc_gcP =loc_gc[which(loc_gc$clust6!=6),]
+ggplot(loc_gc, aes(x = lon, y = lat,colour=clust7)) +  geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust7)) +  geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust7)) + geom_density_2d()+t2
+# loc_gcP =loc_gc[which(loc_gc$clust7!=6),]
 mfrow3d(nr = 1, nc = 1)
-plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust6, size=2 )
-# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust6 )
+plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust7, size=2 )
+# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust7 )
 
 rglwidget(height = 1000, width = 1000)
 
@@ -130,38 +130,38 @@ rglwidget(height = 1000, width = 1000)
 
 
 
-clusterC = sort(unique(loc_gc$clust6))
+clusterC = sort(unique(loc_gc$clust7))
 for (c in clusterC) {
-tp = loc_gc[which(loc_gc$clust6 == c),]
-gp = ggplot(tp, aes(x = lon, y = lat, colour = clust6)) + geom_point() + geom_density_2d() +
+tp = loc_gc[which(loc_gc$clust7 == c),]
+gp = ggplot(tp, aes(x = lon, y = lat, colour = clust7)) + geom_point() + geom_density_2d() +
 t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
 print(gp)
-gp = ggplot(tp, aes(x = lon, y = elevation, colour = clust6)) + geom_point() + geom_density_2d() +
+gp = ggplot(tp, aes(x = lon, y = elevation, colour = clust7)) + geom_point() + geom_density_2d() +
 t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
 print(gp)
-gp = ggplot(tp, aes(x = lat, y = elevation, colour = clust6)) + geom_point() + geom_density_2d() +
+gp = ggplot(tp, aes(x = lat, y = elevation, colour = clust7)) + geom_point() + geom_density_2d() +
 t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
 print(gp)
-gp = ggplot(tp, aes(x = lon, y = lat, colour = clust6)) +  geom_density_2d() +
+gp = ggplot(tp, aes(x = lon, y = lat, colour = clust7)) +  geom_density_2d() +
 t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
 print(gp)
-gp = ggplot(tp, aes(x = lon, y = elevation, colour = clust6)) +  geom_density_2d() + t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+gp = ggplot(tp, aes(x = lon, y = elevation, colour = clust7)) +  geom_density_2d() + t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
 print(gp)
-gp = ggplot(tp, aes(x = lat, y = elevation, colour = clust6)) + geom_density_2d() + t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+gp = ggplot(tp, aes(x = lat, y = elevation, colour = clust7)) + geom_density_2d() + t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
 print(gp)
 
 
 }
 
 mfrow3d(nr = 1, nc = 1)
-tp =loc_gc[which(loc_gc$clust6 == 4),]
+tp =loc_gc[which(loc_gc$clust7 == 4),]
 t =plot3d(tp$lon,
 tp$lat,
 tp$elevation,
-col = tp$clust6,
+col = tp$clust7,
 size = 2)
 print(t)
-# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust6 )
+# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust7 )
 
 rglwidget(height = 1000, width = 1000)
 
