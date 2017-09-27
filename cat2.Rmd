@@ -8,6 +8,14 @@ output:
 ---
 
 ```{r clusts, eval=TRUE}
+library(ClusterR)
+library(knitr)
+library(rgl)
+library(rglwidget)
+knit_hooks$set(webgl = hook_webgl)
+library(scatterplot3d)
+library(ggplot2)
+
 clustNums =10
 cols <- paste0("clust",c(1:clustNums))
 ```
@@ -27,7 +35,6 @@ save(loc,file = "loc.RData")
 
 ```{r setupClust, include=FALSE,eval=FALSE}
 library(dplyr)
-library(ClusterR)
 load("loc.RData")
 
 loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2785& lon < -90.274)
@@ -38,11 +45,7 @@ clust= scale(clust)
 d  <- dist(clust) 
 clusStats = data.frame(K=numeric(),WithinSS=numeric())
 
-# opt =Optimal_Clusters_KMeans(clust, max_clusters = 15, plot_clusters = T,
-#                               
-#                               criterion = 'distortion_fK', fK_threshold = 0.85,
-#                               
-#                               initializer = 'optimal_init', tol_optimal_init = 0.2)
+
 for(i in 1:clustNums){
   print(i)
   km_rc = KMeans_rcpp(clust, clusters = i, num_init = 200, max_iters = 1000, 
@@ -61,18 +64,14 @@ for(i in 1:clustNums){
 # loc_gc$clust =km$cluster
 save(loc_gc,file = "loc_gc.RData")
 save(clusStats,file = "clusStats.RData")
+save(clust,file = "clust.RData")
 
 ```
 
 
 
 ```{r p,warning=FALSE,echo=FALSE}
-library(knitr)
-library(rgl)
-library(rglwidget)
-knit_hooks$set(webgl = hook_webgl)
-library(scatterplot3d)
-library(ggplot2)
+
 theme_set(theme_bw(20))
 t2 <- theme(
     axis.line = element_line(colour = "black"),
@@ -86,9 +85,11 @@ t2 <- theme(
     panel.background = element_blank(),
     axis.text.x=element_text(angle=90,hjust=1)
 )
-
+load("./clust.RData")
 load("./loc_gc.RData")
 load("./clusStats.RData")
+
+
 ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()+ geom_density_2d()+t2
 ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
 ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
@@ -100,7 +101,11 @@ ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geo
 
  ggplot(clusStats, aes(x = clusStats$K, y = clusStats$WithinSS)) + geom_point()+t2
 
- 
+ opt =Optimal_Clusters_KMeans(clust, max_clusters = 15, plot_clusters = T,
+
+                              criterion = 'distortion_fK', fK_threshold = 0.85,
+
+                              initializer = 'optimal_init', tol_optimal_init = 0.2)
  
  
 ggplot(loc_gc, aes(x = lon, y = lat,colour=clust7)) + geom_point()+ geom_density_2d()+t2
