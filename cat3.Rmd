@@ -1,0 +1,208 @@
+---
+title: "cats"
+author: "JL"
+date: "9/23/2017"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r clusts, eval=TRUE}
+library(ClusterR)
+library(knitr)
+library(rgl)
+library(rglwidget)
+knit_hooks$set(webgl = hook_webgl)
+library(scatterplot3d)
+library(ggplot2)
+
+
+clustME <- function(numberOfClusters,clust,loc_gc) {
+  cols <- paste0("clust",c(1:numberOfClusters))
+  clusStats = data.frame(K=numeric(),WithinSS=numeric())
+  i=1
+  for(i in 1:numberOfClusters){
+    print(i)
+    km_rc = KMeans_rcpp(clust, clusters = i, num_init = 100, max_iters = 1000, 
+                      
+                      initializer = 'optimal_init', threads = 4, verbose = T)
+    
+    tmp=data.frame(km_rc$clusters)
+    colnames(tmp)=c(cols[i])
+    loc_gc=cbind(loc_gc,tmp)
+    print(colnames(loc_gc))
+    tmp2 = data.frame(K=c(i),WithinSS=c(mean(km_rc$between.SS_DIV_total.SS)))
+    clusStats= rbind(clusStats,tmp2)
+  }
+  save(clusStats,file = "clusStats.RData")
+
+  return(loc_gc)
+}
+```
+
+```{r setup, include=FALSE,eval=FALSE}
+library(jsonlite)
+
+
+system.time(x <- fromJSON("~/Go/src/github.com/rotblauer/tileTester2/out.json"))
+loc=data.frame()
+loc = do.call(rbind.data.frame, x$features$geometry$coordinates)
+loc$elevation =x$features$properties$Elevation
+colnames(loc) =c("lon","lat","elevation")
+
+save(loc,file = "loc.RData")
+```
+
+```{r setupClust, include=FALSE,eval=FALSE}
+library(dplyr)
+load("loc.RData")
+
+loc_gc =loc_gc[complete.cases(loc_gc), ]
+loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2785& lon < -90.274)
+
+loc_gc =clustME(numberOfClusters = 10,clust =scale(loc_gc),loc_gc = loc_gc )
+
+
+loc_gca <- filter(loc, lat < 38.64801 & lat > 38.64718) %>% filter(elevation>157.1710&lon > -90.27612& lon < -90.2756&elevation<175.171)
+loc_gca =clustME(numberOfClusters = 10,clust =scale(loc_gca) ,loc_gc = loc_gca )
+
+
+# loc_gc$clust =km$cluster
+save(loc_gc,file = "loc_gc.RData")
+save(loc_gca,file = "loc_gca.RData")
+
+
+```
+
+
+
+```{r p,warning=FALSE,echo=FALSE}
+
+theme_set(theme_bw(20))
+t2 <- theme(
+    axis.line = element_line(colour = "black"),
+    axis.text = element_text(colour = "black"),
+    axis.ticks = element_line(colour = "black"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank(),
+    axis.text.x=element_text(angle=90,hjust=1)
+)
+# load("./clust.RData")
+load("./loc_gc.RData")
+load("./loc_gca.RData")
+
+load("./clusStats.RData")
+
+
+ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+
+
+
+ ggplot(loc_gc, aes(x = lon, y = lat))+stat_density2d(aes(fill=..density..), geom="raster", contour=FALSE) +
+  scale_fill_gradient2(low="blue", mid="white", high="black") +t2
+
+
+ opt =Optimal_Clusters_KMeans(loc_gc[,c("lon","lat","elevation")], max_clusters = 15, plot_clusters = T,
+
+                              criterion = 'distortion_fK', fK_threshold = 0.85,
+
+                              initializer = 'optimal_init', tol_optimal_init = 0.2)
+ 
+ 
+ggplot(loc_gc, aes(x = lon, y = lat,colour=clust5)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust5)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust5)) + geom_point()+ geom_density_2d()+t2
+
+
+ 
+ggplot(loc_gc, aes(x = lon, y = lat,colour=clust5)) +  geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust5)) +  geom_density_2d()+t2
+ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust5)) + geom_density_2d()+t2
+# loc_gcP =loc_gc[which(loc_gc$clust5!=6),]
+# mfrow3d(nr = 1, nc = 1)
+# plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust2, size=2 )
+# # plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust5 )
+# 
+# rglwidget(height = 1000, width = 1000)
+
+
+# dir.create("animation")
+# for (i in 1:90) {
+#   view3d(userMatrix=rotationMatrix(2*pi * i/90, 1, -1, -1))
+#   rgl.snapshot(filename=paste("animation/frame-",
+#     sprintf("%03d", i), ".png", sep=""))
+# }
+
+
+
+
+clusterC = sort(unique(loc_gc$clust5))
+for (c in clusterC) {
+tp = loc_gc[which(loc_gc$clust5 == c),]
+gp = ggplot(tp, aes(x = lon, y = lat, colour = clust5)) + geom_point() + geom_density_2d() +
+t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lon, y = elevation, colour = clust5)) + geom_point() + geom_density_2d() +
+t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lat, y = elevation, colour = clust5)) + geom_point() + geom_density_2d() +
+t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lon, y = lat, colour = clust5)) +  geom_density_2d() +
+t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lon, y = elevation, colour = clust5)) +  geom_density_2d() + t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+gp = ggplot(tp, aes(x = lat, y = elevation, colour = clust5)) + geom_density_2d() + t2 + ggtitle(label = paste("cluster=", c,"n=",length(tp$lon)))
+print(gp)
+
+
+}
+
+
+ opt =Optimal_Clusters_KMeans(scale(loc_gca[c("lon","lat","elevation")]), max_clusters = 15, plot_clusters = T,
+
+                              criterion = 'distortion_fK', fK_threshold = 0.85,
+
+                              initializer = 'optimal_init', tol_optimal_init = 0.2)
+
+ggplot(loc_gca, aes(x = lon, y = lat,colour=clust5)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gca, aes(x = lon, y = elevation,colour=clust5)) + geom_point()+ geom_density_2d()+t2
+ggplot(loc_gca, aes(x = lat, y = elevation,colour=clust5)) + geom_point()+ geom_density_2d()+t2
+
+ggplot(loc_gca, aes(x = lon, y = lat,colour=clust5)) + geom_density_2d()+t2
+ggplot(loc_gca, aes(x = lon, y = elevation,colour=clust5)) +  geom_density_2d()+t2
+ggplot(loc_gca, aes(x = lat, y = elevation,colour=clust5)) + geom_density_2d()+t2
+
+
+
+mfrow3d(nr = 1, nc = 1)
+plot3d(loc_gca$lon, loc_gca$lat, loc_gca$elevation,col =loc_gca$clust5, size=2 )
+rglwidget(height = 1000, width = 1000)
+
+
+
+# 
+
+# mfrow3d(nr = 1, nc = 1)
+# tp =loc_gc[which(loc_gc$clust5 == 4),]
+# t =plot3d(tp$lon,
+# tp$lat,
+# tp$elevation,
+# col = tp$clust5,
+# size = 2)
+# print(t)
+# # plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust5 )
+# 
+# rglwidget(height = 1000, width = 1000)
+
+
+# convert -delay 10 -loop 0 frame*.png animated.gif
+```
+

@@ -16,8 +16,28 @@ knit_hooks$set(webgl = hook_webgl)
 library(scatterplot3d)
 library(ggplot2)
 
-clustNums =10
-cols <- paste0("clust",c(1:clustNums))
+
+clustME <- function(numberOfClusters,clust,loc_gc) {
+  cols <- paste0("clust",c(1:numberOfClusters))
+  clusStats = data.frame(K=numeric(),WithinSS=numeric())
+  i=1
+  for(i in 1:numberOfClusters){
+    print(i)
+    km_rc = KMeans_rcpp(clust, clusters = i, num_init = 200, max_iters = 1000, 
+                      
+                      initializer = 'optimal_init', threads = 3, verbose = T)
+    
+    tmp=data.frame(km_rc$clusters)
+    colnames(tmp)=c(cols[i])
+    loc_gc=cbind(loc_gc,tmp)
+    print(colnames(loc_gc))
+    tmp2 = data.frame(K=c(i),WithinSS=c(mean(km_rc$between.SS_DIV_total.SS)))
+    clusStats= rbind(clusStats,tmp2)
+  }
+  save(clusStats,file = "clusStats.RData")
+
+  return(loc_gc)
+}
 ```
 
 ```{r setup, include=FALSE,eval=FALSE}
@@ -42,28 +62,12 @@ loc_gc =loc_gc[complete.cases(loc_gc), ]
 
 clust =loc_gc
 clust= scale(clust) 
-d  <- dist(clust) 
-clusStats = data.frame(K=numeric(),WithinSS=numeric())
+loc_gc =clustME(numberOfClusters = 2,clust =clust,loc_gc = loc_gc )
 
-
-for(i in 1:clustNums){
-  print(i)
-  km_rc = KMeans_rcpp(clust, clusters = i, num_init = 200, max_iters = 1000, 
-                    
-                    initializer = 'optimal_init', threads = 3, verbose = T)
-  
-  tmp=data.frame(km_rc$clusters)
-  colnames(tmp)=c(cols[i])
-  loc_gc=cbind(loc_gc,tmp)
-  print(colnames(loc_gc))
-  tmp2 = data.frame(K=c(i),WithinSS=c(mean(km_rc$between.SS_DIV_total.SS)))
-  clusStats= rbind(clusStats,tmp2)
-}
 
 
 # loc_gc$clust =km$cluster
 save(loc_gc,file = "loc_gc.RData")
-save(clusStats,file = "clusStats.RData")
 save(clust,file = "clust.RData")
 
 ```
@@ -99,7 +103,6 @@ ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geo
  ggplot(loc_gc, aes(x = lon, y = lat))+stat_density2d(aes(fill=..density..), geom="raster", contour=FALSE) +
   scale_fill_gradient2(low="blue", mid="white", high="black") +t2
 
- ggplot(clusStats, aes(x = clusStats$K, y = clusStats$WithinSS)) + geom_point()+t2
 
  opt =Optimal_Clusters_KMeans(clust, max_clusters = 15, plot_clusters = T,
 
@@ -118,11 +121,11 @@ ggplot(loc_gc, aes(x = lon, y = lat,colour=clust7)) +  geom_density_2d()+t2
 ggplot(loc_gc, aes(x = lon, y = elevation,colour=clust7)) +  geom_density_2d()+t2
 ggplot(loc_gc, aes(x = lat, y = elevation,colour=clust7)) + geom_density_2d()+t2
 # loc_gcP =loc_gc[which(loc_gc$clust7!=6),]
-mfrow3d(nr = 1, nc = 1)
-plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust7, size=2 )
-# plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust7 )
-
-rglwidget(height = 1000, width = 1000)
+# mfrow3d(nr = 1, nc = 1)
+# plot3d(loc_gc$lon, loc_gc$lat, loc_gc$elevation,col =loc_gc$clust7, size=2 )
+# # plot3d(loc_gcP$lon, loc_gcP$lat, loc_gcP$elevation,col =loc_gcP$clust7 )
+# 
+# rglwidget(height = 1000, width = 1000)
 
 
 # dir.create("animation")
