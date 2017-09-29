@@ -57,10 +57,10 @@ save(loc,file = "loc.RData")
 library(dplyr)
 load("loc.RData")
 
-loc_gc =loc_gc[complete.cases(loc_gc), ]
 loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2785& lon < -90.274)
+loc_gc =loc_gc[complete.cases(loc_gc), ]
 
-loc_gc =clustME(numberOfClusters = 10,clust =scale(loc_gc),loc_gc = loc_gc )
+loc_gc =clustME(numberOfClusters = 6,clust =scale(loc_gc),loc_gc = loc_gc )
 
 
 loc_gca <- filter(loc, lat < 38.64801 & lat > 38.64718) %>% filter(elevation>157.1710&lon > -90.27612& lon < -90.2756&elevation<175.171)
