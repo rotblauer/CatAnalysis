@@ -172,11 +172,43 @@ ggplot(loc_gca, aes(x = lat, y = elevation,colour=clust5)) + geom_density_2d()+t
 
 
 # 
-
-
-
+# 
+# 
+# library(hexbin)
+# h <- hexbin(loc_gca)
+# plot(loc_gca)
+# 
+# hexbinplot(lat~lon, data=loc_gca, colramp=rf, trans=log, inv=exp)
+# library(gplots)
+# h2 <- hist2d(x = loc_gca$lon,y = loc_gca$lat)
 # scatterplot3d(loc_gca[,c("lon","lat","elevation")], highlight.3d = TRUE, pch = 20)
 
+# p <- ggplot(loc_gca, aes(lon,lat))
+# h3 <- p + stat_bin2d(bins=25) + scale_fill_gradientn(colours=r, trans="log")
+# h3
+
+
+
+
+library(RColorBrewer)
+rf <- colorRampPalette(rev(brewer.pal(11,'Spectral')))
+r <- rf(64)
+library(MASS)
+n =500
+h1 <- hist(loc_gca$lon, breaks=n, plot=F)
+h2 <- hist(loc_gca$lat, breaks=n, plot=F)
+top <- max(h1$counts, h2$counts)
+
+k <- kde2d(loc_gca$lon, loc_gca$lat, n=n)
+
+oldpar <- par()
+par(mar=c(3,3,1,1))
+layout(matrix(c(2,0,1,3),2,2,byrow=T),c(3,1), c(1,3))
+image(k, col=r) #plot the image
+par(mar=c(0,2,1,0))
+barplot(h1$counts, axes=F, ylim=c(0, top), space=0, col='red')
+par(mar=c(2,0,0.5,1))
+barplot(h2$counts, axes=F, xlim=c(0, top), space=0, col='red', horiz=T)
 
 ```
 
@@ -189,11 +221,11 @@ loc_gca$fakeEl = rnorm(n = length(loc_gca$lon))
 # loc_gca$fakeEl =loc_gca$fakeEl+abs(min(loc_gca$fakeEl))+1
 # sm.density(loc_gca[,c("lon","lat","elevation")],alpha=.2)
 # sm.density(loc_gca[,c("lon","lat","fakeEl")],alpha=.001)
-filt = 1
+filt = .5
 
 loc_gca =loc_gca[which(abs(loc_gca$fakeEl)<filt),]
 
-elplot = "elevation"
+elplot = "fakeEl"
 
 animate ="animation4"
 dir.create(animate)
