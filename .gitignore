@@ -1,3 +1,10 @@
+animation/
+animation2/
+cat3_files*
+*.png
+animation4/
+animation3/
+animiati
 *RDataTmp
 *DS_Store
 .Rproj.user*
