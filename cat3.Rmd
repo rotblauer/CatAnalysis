@@ -52,14 +52,14 @@ loc = do.call(rbind.data.frame, x$features$geometry$coordinates)
 loc$elevation =x$features$properties$Elevation
 loc$accuracy =x$features$properties$Accuracy
 
-colnames(loc) =c("lon","lat","elevation","accuracy")
+colnames(loc) =c("lon","lat","elevation")
 
 save(loc,file = "loc.RData")
 ```
 
 ```{r setupClust, include=FALSE,eval=FALSE}
 load("loc.RData")
-loc =loc[which(loc$accuracy>0&loc$accuracy<=10),]
+# loc =loc[which(loc$accuracy>0&loc$accuracy<=10),]
 loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2785& lon < -90.274)
 
 loc_gc =loc_gc[complete.cases(loc_gc), ]
@@ -67,7 +67,7 @@ loc_gc =loc_gc[complete.cases(loc_gc), ]
 loc_gc =clustME(numberOfClusters = 6,clust =scale(loc_gc[,c("lon","lat","elevation")]),loc_gc = loc_gc )
 
 
-loc_gca <- filter(loc,lat < 38.64801 & lat > 38.64718) %>% filter(elevation>157.1710&lon > -90.27612& lon < -90.2756&elevation<175.171)
+loc_gca <- filter(loc,lat < 38.6477 & lat > 38.6473) %>% filter(elevation>160.1710&lon > -90.2759& lon < -90.2757&elevation<175.171)
 
 loc_gca =clustME(numberOfClusters = 10,clust =scale(loc_gca[,c("lon","lat","elevation")]) ,loc_gc = loc_gca)
 
@@ -187,6 +187,11 @@ ggplot(loc_gca, aes(x = lat, y = elevation,colour=clust5)) + geom_density_2d()+t
 # h3 <- p + stat_bin2d(bins=25) + scale_fill_gradientn(colours=r, trans="log")
 # h3
 
+
+
+load("loc.RData")
+
+loc_gca <- filter(loc,lat < 38.6477 & lat > 38.6473) %>% filter(elevation>155.1710&lon > -90.2759& lon < -90.2757&elevation<175.171)
 
 
 
