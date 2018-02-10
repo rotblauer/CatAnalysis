@@ -1,13 +1,13 @@
 ---
 title: "cats"
 author: "JL"
-date: "9/23/2017"
+date: "10/2/2018"
 output: 
   html_document: 
     keep_md: yes
 ---
 
-```{r clusts, eval=TRUE}
+```{r clusts, eval=TRUE,echo=FALSE,message=FALSE}
 library(ClusterR)
 library(knitr)
 library(rgl)
@@ -81,7 +81,7 @@ save(loc_gca,file = "loc_gca.RData")
 
 
 
-```{r p,warning=FALSE,echo=FALSE}
+```{r p,warning=FALSE,echo=FALSE,dpi=300}
 
 theme_set(theme_bw(20))
 t2 <- theme(
@@ -98,9 +98,10 @@ t2 <- theme(
 )
 
 # load("./clust.RData")
-load("./loc_gc.RData")
-
-loc_gc <- filter(loc, lat < 38.6480 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2765& lon < -90.2740)
+# load("./loc_gc.RData")
+load("loc.RData")
+loc_gc =loc
+loc_gc <- filter(loc_gc, lat < 38.6480 & lat > 38.6465) %>% filter(elevation>100&lon > -90.2765& lon < -90.2740)
 
  myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
     myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
@@ -112,15 +113,17 @@ ggplot(loc_gc,
       ylab(paste0("latitude")) + t2 +
       geom_hex(bins = 250,aes(fill=log(..count..))) + myColor_scale_fill
 
+# + geom_density_2d()
 
 
 
 
-
-
-ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()+ geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
-ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+# 
+# 
+# 
+# ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+# ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+# ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
 
 
 
