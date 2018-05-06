@@ -1,0 +1,183 @@
+---
+title: "cats"
+author: "JL"
+date: "04/8/2018"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r clusts, eval=TRUE,echo=FALSE,message=FALSE}
+library(ClusterR)
+library(knitr)
+library(rgl)
+library(rglwidget)
+knit_hooks$set(webgl = hook_webgl)
+library(scatterplot3d)
+library(ggplot2)
+library(sm)
+library(dplyr)
+
+
+clustME <- function(numberOfClusters,clust,loc_gc) {
+  cols <- paste0("clust",c(1:numberOfClusters))
+  clusStats = data.frame(K=numeric(),WithinSS=numeric())
+  i=1
+  for(i in 1:numberOfClusters){
+    print(i)
+    km_rc = KMeans_rcpp(clust, clusters = i, num_init = 100, max_iters = 1000, 
+                      
+                      initializer = 'optimal_init', verbose = T)
+    
+    tmp=data.frame(km_rc$clusters)
+    colnames(tmp)=c(cols[i])
+    loc_gc=cbind(loc_gc,tmp)
+    print(colnames(loc_gc))
+    tmp2 = data.frame(K=c(i),WithinSS=c(mean(km_rc$between.SS_DIV_total.SS)))
+    clusStats= rbind(clusStats,tmp2)
+  }
+  save(clusStats,file = "clusStats.RData")
+
+  return(loc_gc)
+}
+```
+
+```{r setup, include=FALSE,eval=FALSE}
+library(jsonlite)
+
+files=list.files(path = "~/Go/src/github.com/rotblauer/tileTester2/",pattern = "^out.*json.gz$",full.names = TRUE)
+loc=data.frame()
+for(file in files){
+print(file)
+system.time(x <- fromJSON( txt = file))
+
+tmp=data.frame()
+tmp = do.call(rbind.data.frame, x$features$geometry$coordinates)
+tmp$elevation =x$features$properties$Elevation
+tmp$accuracy =x$features$properties$Accuracy
+colnames(tmp) =c("lon","lat","elevation")
+loc=rbind(loc,tmp)
+}
+# colnames(loc) =c("lon","lat","elevation")
+
+save(loc,file = "loc.RData")
+```
+
+```{r setupClust, include=FALSE,eval=FALSE}
+load("loc.RData")
+# loc =loc[which(loc$accuracy>0&loc$accuracy<=10),]
+loc_gc <- filter(loc, lat < 38.6490 & lat > 38.6465) %>% filter(lon > -90.2785& lon < -90.274)
+
+loc_gc =loc_gc[complete.cases(loc_gc), ]
+
+loc_gc =clustME(numberOfClusters = 6,clust =scale(loc_gc[,c("lon","lat","elevation")]),loc_gc = loc_gc )
+
+
+loc_gca <- filter(loc,lat < 38.6477 & lat > 38.6473) %>% filter(elevation>160.1710&lon > -90.2759& lon < -90.2757&elevation<175.171)
+
+loc_gca =clustME(numberOfClusters = 10,clust =scale(loc_gca[,c("lon","lat","elevation")]) ,loc_gc = loc_gca)
+
+
+# loc_gc$clust =km$cluster
+save(loc_gc,file = "loc_gc.RData")
+save(loc_gca,file = "loc_gca.RData")
+
+
+```
+
+
+
+```{r p,warning=FALSE,echo=FALSE,dpi=2400}
+
+theme_set(theme_bw(5))
+t2 <- theme(
+    axis.line = element_line(colour = "black"),
+    axis.text = element_text(colour = "black"),
+    axis.ticks = element_line(colour = "black"),
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.y = element_blank(),
+    panel.border = element_blank(),
+    panel.background = element_blank(),
+    axis.text.x=element_text(angle=90,hjust=1)
+)
+
+# load("./clust.RData")
+# load("./loc_gc.RData")
+load("loc.RData")
+loc_gc =loc
+loc_gc <- filter(loc_gc, lat < 38.6480 & lat > 38.6465) %>% filter(lon > -90.2765& lon < -90.2740)
+
+ myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
+    myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
+    
+ggplot(loc_gc,
+                    aes(x = lon,
+                        y = lat)) +
+      xlab(paste0("longitude")) +
+      ylab(paste0("latitude")) + t2 +
+      geom_hex(bins = 250,aes(fill=log10(..count..))) + myColor_scale_fill
+
+fact=.01
+loc_gc =loc
+loc_gc <- filter(loc_gc, lat < 38.6480+fact & lat > 38.6465-fact) %>% filter(lon > -90.2765-fact& lon < -90.2740+fact)
+
+ myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
+    myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
+    
+ggplot(loc_gc,
+                    aes(x = lon,
+                        y = lat)) +
+      xlab(paste0("longitude")) +
+      ylab(paste0("latitude")) + t2 +
+      geom_hex(bins = 250,aes(fill=log10(..count..))) + myColor_scale_fill
+
+
+fact=.05
+loc_gc =loc
+loc_gc <- filter(loc_gc, lat < 38.6480+fact & lat > 38.6465-fact) %>% filter(lon > -90.2765-fact& lon < -90.2740+fact)
+
+ myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
+    myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
+    
+ggplot(loc_gc,
+                    aes(x = lon,
+                        y = lat)) +
+      xlab(paste0("longitude")) +
+      ylab(paste0("latitude")) + t2 +
+      geom_hex(bins = 250,aes(fill=log10(..count..))) + myColor_scale_fill
+
+
+
+
+fact=.1
+loc_gc =loc
+loc_gc <- filter(loc_gc, lat < 38.6480+fact & lat > 38.6465-fact) %>% filter(lon > -90.2765-fact& lon < -90.2740+fact)
+
+ myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
+    myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
+    
+ggplot(loc_gc,
+                    aes(x = lon,
+                        y = lat)) +
+      xlab(paste0("longitude")) +
+      ylab(paste0("latitude")) + t2 +
+      geom_hex(bins = 250,aes(fill=log10(..count..))) + myColor_scale_fill
+
+# + geom_density_2d()
+
+
+
+
+# 
+# 
+# 
+# ggplot(loc_gc, aes(x = lon, y = lat,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+# ggplot(loc_gc, aes(x = lon, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+# ggplot(loc_gc, aes(x = lat, y = elevation,colour=elevation)) + geom_point()+ geom_density_2d()+t2
+
+
+
+```
+
