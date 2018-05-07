@@ -87,7 +87,7 @@ save(loc_gca,file = "loc_gca.RData")
 
 
 
-```{r p,warning=FALSE,echo=FALSE,dpi=1200}
+```{r p,warning=FALSE,echo=FALSE,dpi=2400}
 
 theme_set(theme_bw(5))
 t2 <- theme(
@@ -117,7 +117,7 @@ ggplot(loc_gc,
                         y = lat)) +
       xlab(paste0("longitude")) +
       ylab(paste0("latitude")) + t2 +
-      geom_hex(bins = 2000,aes(fill=log10(..count..))) + myColor_scale_fill
+      geom_hex(bins = 500,aes(fill=log10(..count..))) + myColor_scale_fill
 
 fact=.01
 loc_gc =loc
@@ -131,7 +131,7 @@ ggplot(loc_gc,
                         y = lat)) +
       xlab(paste0("longitude")) +
       ylab(paste0("latitude")) + t2 +
-      geom_hex(bins = 2000,aes(fill=log10(..count..))) + myColor_scale_fill
+      geom_hex(bins = 1000,aes(fill=log10(..count..))) + myColor_scale_fill
 
 
 fact=.05
@@ -146,7 +146,7 @@ ggplot(loc_gc,
                         y = lat)) +
       xlab(paste0("longitude")) +
       ylab(paste0("latitude")) + t2 +
-      geom_hex(bins = 2000,aes(fill=log10(..count..))) + myColor_scale_fill
+      geom_hex(bins = 1000,aes(fill=log10(..count..))) + myColor_scale_fill
 
 
 
@@ -163,7 +163,7 @@ ggplot(loc_gc,
                         y = lat)) +
       xlab(paste0("longitude")) +
       ylab(paste0("latitude")) + t2 +
-      geom_hex(bins = 2000,aes(fill=log10(..count..))) + myColor_scale_fill
+      geom_hex(bins = 1000,aes(fill=log10(..count..))) + myColor_scale_fill
 
 # + geom_density_2d()
 
