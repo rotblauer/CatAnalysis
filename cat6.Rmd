@@ -184,7 +184,7 @@ ggplot(loc_gc,
                     aes(x = day,
                         y = Pressure)) +
       xlab(paste0("Day")) +
-      ylab(paste0("Pressure by day")) + t2 +geom_boxplot()
+      ylab(paste0("Pressure")) + t2 +geom_boxplot()
 
 
 loc_gc$hour=cut(loc_gc$ISO_TIME,"hour")
@@ -193,7 +193,8 @@ ggplot(loc_gc,
                     aes(x = hour,
                         y = Pressure)) +
       xlab(paste0("Hour")) +
-      ylab(paste0("Pressure by hour")) + t2 +geom_boxplot()
+      ylab(paste0("Pressure")) + t2 +geom_boxplot()+
+  theme(axis.text.x=element_blank())
 
 
 # 
