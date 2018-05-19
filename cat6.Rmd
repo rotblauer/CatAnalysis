@@ -55,7 +55,9 @@ tmp=data.frame()
 tmp = do.call(rbind.data.frame, x$features$geometry$coordinates)
 tmp$elevation =x$features$properties$Elevation
 tmp$accuracy =x$features$properties$Accuracy
-colnames(tmp) =c("lon","lat","elevation")
+tmp$note=x$features$properties$Notes
+tmp$time=x$features$properties$Time
+colnames(tmp) =c("lon","lat","elevation","notes","time")
 loc=rbind(loc,tmp)
 }
 # colnames(loc) =c("lon","lat","elevation")
@@ -87,7 +89,7 @@ save(loc_gca,file = "loc_gca.RData")
 
 
 
-```{r p,warning=FALSE,echo=FALSE,dpi=2400}
+```{r p,warning=FALSE,echo=FALSE,dpi=800}
 
 theme_set(theme_bw(5))
 t2 <- theme(
@@ -165,6 +167,16 @@ ggplot(loc_gc,
       ylab(paste0("latitude")) + t2 +
       geom_hex(bins = 1000,aes(fill=log10(..count..))) + myColor_scale_fill
 
+
+subPressure=grep("pressure",loc_gc$notes)
+loc_gc=loc_gc[subPressure,]
+
+loc_gc$Pressure=gsub(".*pressure\":","",loc_gc$notes)
+loc_gc$Pressure=gsub("}","",loc_gc$Pressure)
+loc_gc$Pressure=as.numeric(loc_gc$Pressure)
+loc_gc=loc_gc[which(loc_gc$Pressure>0),]
+
+hist(loc_gc$Pressure)
 # + geom_density_2d()
 
 
