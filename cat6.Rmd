@@ -10,12 +10,7 @@ output:
 ```{r clusts, eval=TRUE,echo=FALSE,message=FALSE}
 library(ClusterR)
 library(knitr)
-library(rgl)
-library(rglwidget)
-knit_hooks$set(webgl = hook_webgl)
-library(scatterplot3d)
 library(ggplot2)
-library(sm)
 library(dplyr)
 
 
@@ -171,15 +166,34 @@ ggplot(loc_gc,
 subPressure=grep("pressure",loc_gc$notes)
 loc_gc=loc_gc[subPressure,]
 
+
+library(parsedate)
+load("loc.RData")
+loc_gc=loc
+
 loc_gc$Pressure=gsub(".*pressure\":","",loc_gc$notes)
 loc_gc$Pressure=gsub("}","",loc_gc$Pressure)
 loc_gc$Pressure=as.numeric(loc_gc$Pressure)
 loc_gc=loc_gc[which(loc_gc$Pressure>0),]
 
-hist(loc_gc$Pressure)
-# + geom_density_2d()
+loc_gc$ISO_TIME=parse_iso_8601(loc_gc$time)
+
+loc_gc$day=cut(loc_gc$ISO_TIME,"day")
+
+ggplot(loc_gc,
+                    aes(x = day,
+                        y = Pressure)) +
+      xlab(paste0("Day")) +
+      ylab(paste0("Pressure by day")) + t2 +geom_boxplot()
 
 
+loc_gc$hour=cut(loc_gc$ISO_TIME,"hour")
+
+ggplot(loc_gc,
+                    aes(x = hour,
+                        y = Pressure)) +
+      xlab(paste0("Hour")) +
+      ylab(paste0("Pressure by hour")) + t2 +geom_boxplot()
 
 
 # 
