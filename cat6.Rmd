@@ -114,7 +114,7 @@ ggplot(loc_gc,
                         y = lat)) +
       xlab(paste0("longitude")) +
       ylab(paste0("latitude")) + t2 +
-      geom_hex(bins = 500,aes(fill=log10(..count..))) + myColor_scale_fill
+      geom_hex(bins = 1000,aes(fill=log10(..count..))) + myColor_scale_fill
 
 fact=.01
 loc_gc =loc
