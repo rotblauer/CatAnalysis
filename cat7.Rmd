@@ -65,7 +65,7 @@ llon = -90.2765
 rlon = -90.2740
 
 fact = .01
-for (zoomy in seq(0, 4)) {
+for (zoomy in c( seq(0, 10,by = 1), seq(11, 100,by = 4))) {
   zoomy = zoomy ^ 2
   latMax = blat + (fact * zoomy)
   latMin = tlat - (fact * zoomy)
@@ -92,16 +92,27 @@ for (zoomy in seq(0, 4)) {
   print(mp)
 }
 
-# $(ls ./cat7_files/figure-html/ | sort -V)
-system(
-  "ffmpeg -framerate 1 -pattern_type glob -i './catImages/p-%d.png' -c:v libx264 -pix_fmt yuv420p -vf \"scale=300:300,format=yuv420p\" cat7.mp4 "
-)
+
+# 
+# fs=list.files(path = "./catImages/",pattern = ".png$",full.names = TRUE)
+# num=gsub(".*p-","",fs)
+# num=as.numeric(gsub(".png","",num))
+# library(stringr)
+# 
+# d=data.frame(FILES=fs,num=num)
+# d=d[order(d$num),]
+# dir.create("./catImagesConv/")
+# for(file in d$FILES){
+#   newName=paste0("./catImagesConv/",str_pad(d[which(d$FILES==file),]$num, 6, pad = "0"),".png")
+#   file.copy(from = file,to = newName)
+# }
+# file.remove("cat7.mp4")
+# 
+# system(
+#   "ffmpeg -framerate 1 -pattern_type glob -i './catImagesConv/*.png' -c:v libx264 -pix_fmt yuv420p -vf \"scale=300:300,format=yuv420p\" cat7.mp4 "
+# )
 
 
-# $(ls ./cat7_files/figure-html/ | sort -V)
-system(
-  "ffmpeg -framerate 1 -i './test.txt' -c:v libx264 -pix_fmt yuv420p -vf \"scale=300:300,format=yuv420p\" cat7.mp4 "
-)
 
 #
 #
