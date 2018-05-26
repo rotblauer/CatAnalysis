@@ -1,0 +1,144 @@
+---
+title: "cats"
+author: "JL"
+date: "05/26/2018"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r clusts, eval=TRUE,echo=FALSE,message=FALSE}
+library(ClusterR)
+library(knitr)
+library(ggplot2)
+library(dplyr)
+knitr::opts_chunk$set(
+  fig.path = "catImages/"
+)
+```
+
+```{r setup, include=FALSE,eval=FALSE}
+library(jsonlite)
+
+files = list.files(path = "~/Go/src/github.com/rotblauer/tileTester2/",
+                   pattern = "^out.*json.gz$",
+                   full.names = TRUE)
+loc = data.frame()
+for (file in files) {
+  print(file)
+  system.time(x <- fromJSON(txt = file))
+  
+  tmp = data.frame()
+  tmp = do.call(rbind.data.frame, x$features$geometry$coordinates)
+  tmp$elevation = x$features$properties$Elevation
+  tmp$accuracy = x$features$properties$Accuracy
+  tmp$note = x$features$properties$Notes
+  tmp$time = x$features$properties$Time
+  colnames(tmp) = c("lon", "lat", "elevation", "notes", "time")
+  loc = rbind(loc, tmp)
+}
+save(loc, file = "loc.RData")
+```
+
+
+```{r p,warning=FALSE,echo=FALSE,dpi=400}
+
+
+theme_set(theme_bw(5))
+t2 <- theme(
+  axis.line = element_line(colour = "black"),
+  axis.text = element_text(colour = "black"),
+  axis.ticks = element_line(colour = "black"),
+  panel.grid.major.x = element_blank(),
+  panel.grid.minor.x = element_blank(),
+  panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.border = element_blank(),
+  panel.background = element_blank(),
+  axis.text.x = element_text(angle = 90, hjust = 1)
+)
+
+load("loc.RData")
+blat = 38.6480
+tlat = 38.6455
+llon = -90.2765
+rlon = -90.2740
+
+fact = .01
+for (zoomy in seq(0, 4)) {
+  zoomy = zoomy ^ 2
+  latMax = blat + (fact * zoomy)
+  latMin = tlat - (fact * zoomy)
+  lonMax = rlon + (fact * zoomy)
+  lonMin = llon - (fact * zoomy)
+  
+  loc_gc <-
+    filter(loc, lat < latMax &
+             lat > latMin) %>% filter(lon > lonMin & lon < lonMax)
+  
+  myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
+  myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
+  bin = 2000
+  if (zoomy == 0) {
+    bin = 500
+  }
+  mp = ggplot(loc_gc,
+              aes(x = lon,
+                  y = lat)) +
+    xlab(paste0("longitude")) +
+    ylab(paste0("latitude")) + t2 +
+    geom_hex(bins = bin, aes(fill = log10(..count..))) + myColor_scale_fill +
+    xlim(lonMin, lonMax) + ylim(latMin, latMax)
+  print(mp)
+}
+
+# $(ls ./cat7_files/figure-html/ | sort -V)
+system(
+  "ffmpeg -framerate 1 -pattern_type glob -i './catImages/p-%d.png' -c:v libx264 -pix_fmt yuv420p -vf \"scale=300:300,format=yuv420p\" cat7.mp4 "
+)
+
+
+# $(ls ./cat7_files/figure-html/ | sort -V)
+system(
+  "ffmpeg -framerate 1 -i './test.txt' -c:v libx264 -pix_fmt yuv420p -vf \"scale=300:300,format=yuv420p\" cat7.mp4 "
+)
+
+#
+#
+# subPressure=grep("pressure",loc_gc$notes)
+# loc_gc=loc_gc[subPressure,]
+#
+#
+# library(parsedate)
+# load("loc.RData")
+# loc_gc=loc
+#
+# loc_gc$Pressure=gsub(".*pressure\":","",loc_gc$notes)
+# loc_gc$Pressure=gsub("}","",loc_gc$Pressure)
+# loc_gc$Pressure=as.numeric(loc_gc$Pressure)
+# loc_gc=loc_gc[which(loc_gc$Pressure>0),]
+#
+# loc_gc$ISO_TIME=parse_iso_8601(loc_gc$time)
+#
+# loc_gc$day=cut(loc_gc$ISO_TIME,"day")
+#
+# ggplot(loc_gc,
+#                     aes(x = day,
+#                         y = Pressure)) +
+#       xlab(paste0("Day")) +
+#       ylab(paste0("Pressure")) + t2 +geom_boxplot()
+#
+#
+# loc_gc$hour=cut(loc_gc$ISO_TIME,"hour")
+#
+# ggplot(loc_gc,
+#                     aes(x = hour,
+#                         y = Pressure)) +
+#       xlab(paste0("Hour")) +
+#       ylab(paste0("Pressure")) + t2 +geom_boxplot()+
+#   theme(axis.text.x=element_blank())
+#
+
+
+```
+
