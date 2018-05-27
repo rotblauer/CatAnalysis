@@ -41,7 +41,7 @@ save(loc, file = "loc.RData")
 ```
 
 
-```{r p,warning=FALSE,echo=FALSE,dpi=400}
+```{r p,warning=FALSE,echo=FALSE,dpi=500}
 
 
 theme_set(theme_bw(5))
@@ -65,10 +65,20 @@ llon = -90.2765
 rlon = -90.2740
 
 fact = .01
-for (zoomy in c( seq(0, 10,by = 1), seq(11, 100,by = 4))) {
-  zoomy = zoomy ^ 2
-  latMax = blat + (fact * zoomy)
-  latMin = tlat - (fact * zoomy)
+for (zoomy in c( seq(0, 20,by = 1), seq(21, 125,by = 4))) {
+  
+  if (zoomy == 0) {
+    bin = 500
+  }
+  if(zoomy<20){
+    bin = 2000
+  }else{
+    zoomy = zoomy ^ 2
+
+  }
+  
+  latMax = min(65,blat + (fact * zoomy))
+  latMin = max(20,tlat - (fact * zoomy))
   lonMax = rlon + (fact * zoomy)
   lonMin = llon - (fact * zoomy)
   
@@ -78,10 +88,8 @@ for (zoomy in c( seq(0, 10,by = 1), seq(11, 100,by = 4))) {
   
   myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
   myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
-  bin = 2000
-  if (zoomy == 0) {
-    bin = 500
-  }
+  bin = 1000
+
   mp = ggplot(loc_gc,
               aes(x = lon,
                   y = lat)) +
@@ -93,25 +101,33 @@ for (zoomy in c( seq(0, 10,by = 1), seq(11, 100,by = 4))) {
 }
 
 
-# 
-# fs=list.files(path = "./catImages/",pattern = ".png$",full.names = TRUE)
-# num=gsub(".*p-","",fs)
-# num=as.numeric(gsub(".png","",num))
-# library(stringr)
-# 
-# d=data.frame(FILES=fs,num=num)
-# d=d[order(d$num),]
-# dir.create("./catImagesConv/")
-# for(file in d$FILES){
-#   newName=paste0("./catImagesConv/",str_pad(d[which(d$FILES==file),]$num, 6, pad = "0"),".png")
-#   file.copy(from = file,to = newName)
-# }
-# file.remove("cat7.mp4")
-# 
-# system(
-#   "ffmpeg -framerate 1 -pattern_type glob -i './catImagesConv/*.png' -c:v libx264 -pix_fmt yuv420p -vf \"scale=300:300,format=yuv420p\" cat7.mp4 "
-# )
 
+```
+
+```{r setup, include=FALSE,eval=FALSE}
+
+#
+fs=list.files(path = "./catImages/",pattern = ".png$",full.names = TRUE)
+num=gsub(".*p-","",fs)
+num=as.numeric(gsub(".png","",num))
+library(stringr)
+
+d=data.frame(FILES=fs,num=num)
+d=d[order(d$num),]
+dir.create("./catImagesConv/")
+for(file in d$FILES){
+  newName=paste0("./catImagesConv/",str_pad(d[which(d$FILES==file),]$num, 6, pad = "0"),".png")
+  file.copy(from = file,to = newName)
+}
+file.remove("cat7.mp4")
+
+system(
+  "ffmpeg -framerate 2 -pattern_type glob -i './catImagesConv/*.png' -c:v libx264 -pix_fmt yuv420p -vf \"scale=1000:1000,format=yuv1080p\" cat7.mp4 "
+)
+```
+
+
+```{r setup, include=FALSE,eval=FALSE}
 
 
 #
