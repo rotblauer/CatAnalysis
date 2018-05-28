@@ -41,7 +41,7 @@ save(loc, file = "loc.RData")
 ```
 
 
-```{r p,warning=FALSE,echo=FALSE,dpi=500}
+```{r p,warning=FALSE,echo=FALSE,dpi=600}
 
 
 theme_set(theme_bw(5))
@@ -102,10 +102,68 @@ for (zoomy in c( seq(0, 10,by = 1))) {
 
 ```
 
-```{r setup, include=FALSE,eval=FALSE}
+```{r  include=FALSE,eval=TRUE}
+  
+ latMax = min(65,blat + (fact * zoomy))
+  latMin = max(20,tlat - (fact * zoomy))
+  lonMax = rlon + (fact * zoomy)
+  lonMin = llon - (fact * zoomy)
+
+```
+
+
+### Pressure
+- lat max = `r latMax`
+- lat min = `r latMin`
+- lon max = `r lonMax`
+- lon min = `r lonMin`
+
+```{r  pressure, echo=FALSE,eval=TRUE}
+
+library(parsedate)
+
+  loc_gc <-
+    filter(loc, lat < latMax &
+             lat > latMin) %>% filter(lon > lonMin & lon < lonMax)
+
+subPressure=grep("pressure",loc_gc$notes)
+loc_gc=loc_gc[subPressure,]
+
+loc_gc$Pressure=gsub(".*pressure\":","",loc_gc$notes)
+loc_gc$Pressure=gsub("}","",loc_gc$Pressure)
+loc_gc$Pressure=as.numeric(loc_gc$Pressure)
+loc_gc=loc_gc[which(loc_gc$Pressure>0),]
+
+loc_gc$ISO_TIME=parse_iso_8601(loc_gc$time)
+
+loc_gc$day=cut(loc_gc$ISO_TIME,"day")
+
+ggplot(loc_gc,
+                    aes(x = day,
+                        y = Pressure)) +
+      xlab(paste0("Day")) +
+      ylab(paste0("Pressure")) + t2 +geom_boxplot()
+
+
+loc_gc$hour=cut(loc_gc$ISO_TIME,"hour")
+
+ggplot(loc_gc,
+                    aes(x = hour,
+                        y = Pressure)) +
+      xlab(paste0("Hour")) +
+      ylab(paste0("Pressure")) + t2 +geom_boxplot()+
+  theme(axis.text.x=element_blank())
+#
+
+
+```
+
+
+
+```{r include=FALSE,eval=FALSE}
 
 #
-fs=list.files(path = "./catImages/",pattern = ".png$",full.names = TRUE)
+fs=list.files(path = "./catImages/",pattern = "p*.png$",full.names = TRUE)
 num=gsub(".*p-","",fs)
 num=as.numeric(gsub(".png","",num))
 library(stringr)
@@ -113,57 +171,25 @@ library(stringr)
 d=data.frame(FILES=fs,num=num)
 d=d[order(d$num),]
 dir.create("./catImagesConv/")
+num=0
 for(file in d$FILES){
-  newName=paste0("./catImagesConv/",str_pad(d[which(d$FILES==file),]$num, 6, pad = "0"),".png")
+  newName=paste0("./catImagesConv/",str_pad(num, 6, pad = "0"),".png")
   file.copy(from = file,to = newName)
+  num=num+1
 }
+d=d[order(-d$num),]
+for(file in d$FILES){
+  newName=paste0("./catImagesConv/",str_pad(num, 6, pad = "0"),".png")
+  file.copy(from = file,to = newName)
+  num=num+1
+}
+
 file.remove("cat7.mp4")
 
 system(
-  "ffmpeg -framerate 2 -pattern_type glob -i './catImagesConv/*.png' -c:v libx264 -pix_fmt yuv420p -vf \"scale=1000:1000,format=yuv1080p\" cat7.mp4 "
+  "ffmpeg -framerate 1 -pattern_type glob -i './catImagesConv/*.png' -c:v libx264 -pix_fmt yuv420p -vf \"scale=1000:1000,format=yuv420p\" cat7.mp4 "
 )
-```
-
-
-```{r  include=FALSE,eval=FALSE}
-
-
-#
-#
-# subPressure=grep("pressure",loc_gc$notes)
-# loc_gc=loc_gc[subPressure,]
-#
-#
-# library(parsedate)
-# load("loc.RData")
-# loc_gc=loc
-#
-# loc_gc$Pressure=gsub(".*pressure\":","",loc_gc$notes)
-# loc_gc$Pressure=gsub("}","",loc_gc$Pressure)
-# loc_gc$Pressure=as.numeric(loc_gc$Pressure)
-# loc_gc=loc_gc[which(loc_gc$Pressure>0),]
-#
-# loc_gc$ISO_TIME=parse_iso_8601(loc_gc$time)
-#
-# loc_gc$day=cut(loc_gc$ISO_TIME,"day")
-#
-# ggplot(loc_gc,
-#                     aes(x = day,
-#                         y = Pressure)) +
-#       xlab(paste0("Day")) +
-#       ylab(paste0("Pressure")) + t2 +geom_boxplot()
-#
-#
-# loc_gc$hour=cut(loc_gc$ISO_TIME,"hour")
-#
-# ggplot(loc_gc,
-#                     aes(x = hour,
-#                         y = Pressure)) +
-#       xlab(paste0("Hour")) +
-#       ylab(paste0("Pressure")) + t2 +geom_boxplot()+
-#   theme(axis.text.x=element_blank())
-#
-
 
 ```
+
 
