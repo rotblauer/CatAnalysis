@@ -17,7 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-```{r setup, include=FALSE,eval=FALSE}
+```{r  include=FALSE,eval=FALSE}
 library(jsonlite)
 
 files = list.files(path = "~/Go/src/github.com/rotblauer/tileTester2/",
@@ -64,17 +64,16 @@ tlat = 38.6455
 llon = -90.2765
 rlon = -90.2740
 
-fact = .01
-for (zoomy in c( seq(0, 20,by = 1), seq(21, 125,by = 4))) {
+fact = .005
+for (zoomy in c( seq(0, 10,by = 1))) {
+  
+  
+  bin = 2000
+  
+  zoomy = zoomy ^ 2
   
   if (zoomy == 0) {
-    bin = 500
-  }
-  if(zoomy<20){
-    bin = 2000
-  }else{
-    zoomy = zoomy ^ 2
-
+  bin = 500
   }
   
   latMax = min(65,blat + (fact * zoomy))
@@ -88,7 +87,6 @@ for (zoomy in c( seq(0, 20,by = 1), seq(21, 125,by = 4))) {
   
   myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
   myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
-  bin = 1000
 
   mp = ggplot(loc_gc,
               aes(x = lon,
@@ -127,7 +125,7 @@ system(
 ```
 
 
-```{r setup, include=FALSE,eval=FALSE}
+```{r  include=FALSE,eval=FALSE}
 
 
 #
