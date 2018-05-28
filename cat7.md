@@ -23,7 +23,16 @@ output:
 - lon max = -89.774
 - lon min = -90.7765
 
-![](catImages/pressure-1.png)<!-- -->![](catImages/pressure-2.png)<!-- -->
+![](catImages/pressure-1.png)<!-- -->![](catImages/pressure-2.png)<!-- -->![](catImages/pressure-3.png)<!-- -->
+
+Var1            Freq
+-----------  -------
+Automotive     14046
+Bike            6734
+Running          909
+Stationary    841417
+Unknown       103876
+Walking        29637
 
 
 

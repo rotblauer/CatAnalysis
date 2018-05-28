@@ -34,10 +34,12 @@ for (file in files) {
   tmp$accuracy = x$features$properties$Accuracy
   tmp$note = x$features$properties$Notes
   tmp$time = x$features$properties$Time
-  colnames(tmp) = c("lon", "lat", "elevation", "notes", "time")
+  tmp$speed=x$features$properties$Speed
+  colnames(tmp) = c("lon", "lat", "elevation", "notes", "time","speed")
   loc = rbind(loc, tmp)
 }
 save(loc, file = "loc.RData")
+
 ```
 
 
@@ -153,6 +155,28 @@ ggplot(loc_gc,
       xlab(paste0("Hour")) +
       ylab(paste0("Pressure")) + t2 +geom_boxplot()+
   theme(axis.text.x=element_blank())
+
+
+loc_gc$Activity=gsub(".*activity\":\"","",loc_gc$notes)
+loc_gc$Activity=gsub("\".*","",loc_gc$Activity)
+
+
+ggplot(loc_gc,
+                    aes(x = Activity,
+                        y = speed,color=Activity)) +
+      xlab(paste0("Activity")) +
+      ylab(paste0("Speed (m/s)")) + t2 +geom_boxplot()
+# +
+  # theme(axis.text.x=element_blank())
+
+
+kable(as.data.frame(table(loc_gc$Activity)))
+# ggplot(loc_gc,
+#                     aes(x = elevation,
+#                         y = Pressure)) +
+#       xlab(paste0("elevation")) +
+#       ylab(paste0("Pressure")) + t2 +geom_point()+
+#   theme(axis.text.x=element_blank())
 #
 
 
