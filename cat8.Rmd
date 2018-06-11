@@ -1,0 +1,219 @@
+---
+title: "cats"
+author: "JL"
+date: "05/26/2018"
+output: 
+  html_document: 
+    keep_md: yes
+---
+
+```{r clusts, eval=TRUE,echo=FALSE,message=FALSE}
+library(ClusterR)
+library(knitr)
+library(ggplot2)
+library(dplyr)
+knitr::opts_chunk$set(
+  fig.path = "catImages/"
+)
+```
+
+```{r  include=FALSE,eval=FALSE}
+library(jsonlite)
+
+files = list.files(path = "~/Go/src/github.com/rotblauer/tileTester2/",
+                   pattern = "^out.*json.gz$",
+                   full.names = TRUE)
+loc = data.frame()
+for (file in files) {
+  print(file)
+  system.time(x <- fromJSON(txt = file))
+  
+  tmp = data.frame()
+  tmp = do.call(rbind.data.frame, x$features$geometry$coordinates)
+  tmp$elevation = x$features$properties$Elevation
+  tmp$accuracy = x$features$properties$Accuracy
+  tmp$note = x$features$properties$Notes
+  tmp$time = x$features$properties$Time
+  tmp$speed=x$features$properties$Speed
+  colnames(tmp) = c("lon", "lat", "elevation", "notes", "time","speed")
+  loc = rbind(loc, tmp)
+}
+save(loc, file = "loc.RData")
+
+```
+
+
+```{r p,warning=FALSE,echo=FALSE,dpi=600}
+
+
+theme_set(theme_bw(5))
+t2 <- theme(
+  axis.line = element_line(colour = "black"),
+  axis.text = element_text(colour = "black"),
+  axis.ticks = element_line(colour = "black"),
+  panel.grid.major.x = element_blank(),
+  panel.grid.minor.x = element_blank(),
+  panel.grid.major.y = element_blank(),
+  panel.grid.minor.y = element_blank(),
+  panel.border = element_blank(),
+  panel.background = element_blank(),
+  axis.text.x = element_text(angle = 90, hjust = 1)
+)
+
+load("loc.RData")
+blat = 38.6480
+tlat = 38.6455
+llon = -90.2765
+rlon = -90.2740
+
+fact = .005
+for (zoomy in c( seq(0, 10,by = 1))) {
+  
+  
+  bin = 2000
+  
+  zoomy = zoomy ^ 2
+  
+  if (zoomy == 0) {
+  bin = 500
+  }
+  
+  latMax = min(65,blat + (fact * zoomy))
+  latMin = max(20,tlat - (fact * zoomy))
+  lonMax = rlon + (fact * zoomy)
+  lonMin = llon - (fact * zoomy)
+  
+  loc_gc <-
+    filter(loc, lat < latMax &
+             lat > latMin) %>% filter(lon > lonMin & lon < lonMax)
+  
+  myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
+  myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
+
+  mp = ggplot(loc_gc,
+              aes(x = lon,
+                  y = lat)) +
+    xlab(paste0("longitude")) +
+    ylab(paste0("latitude")) + t2 +
+    geom_hex(bins = bin, aes(fill = log10(..count..))) + myColor_scale_fill +
+    xlim(lonMin, lonMax) + ylim(latMin, latMax)
+  print(mp)
+}
+
+
+
+```
+
+```{r  include=FALSE,eval=TRUE}
+  
+ latMax = min(65,blat + (fact * zoomy))
+  latMin = max(20,tlat - (fact * zoomy))
+  lonMax = rlon + (fact * zoomy)
+  lonMin = llon - (fact * zoomy)
+
+```
+
+
+### Pressure
+- lat max = `r latMax`
+- lat min = `r latMin`
+- lon max = `r lonMax`
+- lon min = `r lonMin`
+
+```{r  pressure, echo=FALSE,eval=TRUE}
+
+library(parsedate)
+
+  loc_gc <-
+    filter(loc, lat < latMax &
+             lat > latMin) %>% filter(lon > lonMin & lon < lonMax)
+
+subPressure=grep("pressure",loc_gc$notes)
+loc_gc=loc_gc[subPressure,]
+
+loc_gc$Pressure=gsub(".*pressure\":","",loc_gc$notes)
+loc_gc$Pressure=gsub("}","",loc_gc$Pressure)
+loc_gc$Pressure=as.numeric(loc_gc$Pressure)
+loc_gc=loc_gc[which(loc_gc$Pressure>0),]
+
+loc_gc$ISO_TIME=parse_iso_8601(loc_gc$time)
+
+loc_gc$day=cut(loc_gc$ISO_TIME,"day")
+
+ggplot(loc_gc,
+                    aes(x = day,
+                        y = Pressure)) +
+      xlab(paste0("Day")) +
+      ylab(paste0("Pressure")) + t2 +geom_boxplot()
+
+
+loc_gc$hour=cut(loc_gc$ISO_TIME,"hour")
+
+ggplot(loc_gc,
+                    aes(x = hour,
+                        y = Pressure)) +
+      xlab(paste0("Hour")) +
+      ylab(paste0("Pressure")) + t2 +geom_boxplot()+
+  theme(axis.text.x=element_blank())
+
+
+loc_gc$Activity=gsub(".*activity\":\"","",loc_gc$notes)
+loc_gc$Activity=gsub("\".*","",loc_gc$Activity)
+
+
+ggplot(loc_gc,
+                    aes(x = Activity,
+                        y = speed,color=Activity)) +
+      xlab(paste0("Activity")) +
+      ylab(paste0("Speed (m/s)")) + t2 +geom_boxplot()
+# +
+  # theme(axis.text.x=element_blank())
+
+
+kable(as.data.frame(table(loc_gc$Activity)))
+# ggplot(loc_gc,
+#                     aes(x = elevation,
+#                         y = Pressure)) +
+#       xlab(paste0("elevation")) +
+#       ylab(paste0("Pressure")) + t2 +geom_point()+
+#   theme(axis.text.x=element_blank())
+#
+
+
+```
+
+
+
+```{r include=FALSE,eval=FALSE}
+
+#
+fs=list.files(path = "./catImages/",pattern = "p*.png$",full.names = TRUE)
+num=gsub(".*p-","",fs)
+num=as.numeric(gsub(".png","",num))
+library(stringr)
+
+d=data.frame(FILES=fs,num=num)
+d=d[order(d$num),]
+dir.create("./catImagesConv/")
+num=0
+for(file in d$FILES){
+  newName=paste0("./catImagesConv/",str_pad(num, 6, pad = "0"),".png")
+  file.copy(from = file,to = newName)
+  num=num+1
+}
+d=d[order(-d$num),]
+for(file in d$FILES){
+  newName=paste0("./catImagesConv/",str_pad(num, 6, pad = "0"),".png")
+  file.copy(from = file,to = newName)
+  num=num+1
+}
+
+file.remove("cat8.mp4")
+
+system(
+  "ffmpeg -framerate 1 -pattern_type glob -i './catImagesConv/*.png' -c:v libx264 -pix_fmt yuv420p -vf \"scale=1000:1000,format=yuv420p\" cat7.mp4 "
+)
+
+```
+
+
