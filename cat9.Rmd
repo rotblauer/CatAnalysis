@@ -67,7 +67,7 @@ llon = -90.2765
 rlon = -90.2740
 
 fact = .005
-for (zoomy in c( seq(0, 10,by = 1))) {
+for (zoomy in c( seq(0, 15,by = 1))) {
   
   
   bin = 2000
