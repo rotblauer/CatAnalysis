@@ -18,10 +18,28 @@ knitr::opts_chunk$set(
 ```
 
 ```{r  include=FALSE,eval=FALSE}
+
 library(jsonlite)
+library(dplyr)
+con_in <- file("~/Go/src/github.com/rotblauer/tileTester2/out.json.gz")
+con_out <- file(tmp <- tempfile(), open = "wb")
+stream_in(con_in, handler = function(df){
+  # df <- dplyr::filter(df, distance > 1000)
+  # df <- dplyr::mutate(df, delta = dep_delay - arr_delay)
+  stream_out(df, con_out, pagesize = 1000)
+}, pagesize = 200000)
+close(con_out)
+x <- stream_in(file(tmp),pagesize = 2000000)
+nrow(x)
+unlink(tmp)
+save(x,"x.Rdata"
+```
 
-x = stream_in(file("~/Go/src/github.com/rotblauer/tileTester2/test.json.gz"))
 
+```{r  include=FALSE,eval=FALSE}
+
+# x = stream_in(,pagesize=1000000)
+# save(x,"x.RData")
 loc = data.frame()
 loc = do.call(rbind.data.frame, x$geometry$coordinates)
 colnames(loc)=c("lon","lat")
