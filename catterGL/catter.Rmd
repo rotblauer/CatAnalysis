@@ -31,7 +31,7 @@ library(highcharter)
     lonMin = -91.4015
 
 
-con_in <- file("~/Go/src/github.com/rotblauer/tileTester2/test.small.json.gz")
+con_in <- file("~/Go/src/github.com/rotblauer/tileTester2/test.middle.json.gz")
 con_out <- file(tmp <- "tmp", open = "wb")
 stream_in(con_in, handler = function(df){
   # df <- dplyr::filter(df, distance > 1000)

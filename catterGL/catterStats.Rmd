@@ -4,6 +4,7 @@ author: "Rotblauer"
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
+    vertical_layout: scroll
     social: menu
     source_code: embed
 ---
@@ -20,7 +21,12 @@ library(rworldmap)
 library(rgeos)
 library(maptools)
 library(stringi)
+library(maps)
 
+data("usgeojson")
+data("uscountygeojson")
+data("county.fips")
+data(worldgeojson, package = "highcharter")
 
 
 thm <- 
@@ -72,17 +78,34 @@ coords2country = function(points)
   indices = over(pointsSP, countriesSP)
 
   # return the ADMIN names of each country
-  indices$ADMIN  
-  #indices$ISO3 # returns the ISO3 code 
+  # indices$ADMIN  
+  indices$ISO3 # returns the ISO3 code
   #indices$continent   # returns the continent (6 continent model)
   #indices$REGION   # returns the continent (7 continent model)
 }
 
-simpleCap <- function(x) {
-  s <- strsplit(x, " ")
-  paste(toupper(substring(s, 1,1)), substring(s, 2),
-      sep="", collapse=" ")
+latlong2county <- function(pointsDF) {
+    # Prepare SpatialPolygons object with one SpatialPolygon
+    # per county
+    counties <- map('county', fill=TRUE, col="transparent", plot=FALSE)
+    
+    IDs <- sapply(strsplit(counties$names, ":"), function(x) x[1])
+    counties_sp <- map2SpatialPolygons(counties, IDs=IDs,
+                     proj4string=CRS("+proj=longlat +datum=wgs84"))
+
+    # Convert pointsDF to a SpatialPoints object 
+    pointsSP <- SpatialPoints(pointsDF, 
+                    proj4string=CRS("+proj=longlat +datum=wgs84"))
+
+    # Use 'over' to get _indices_ of the Polygons object containing each point 
+    indices <- over(pointsSP, counties_sp)
+
+    # Return the county names of the Polygons object containing each point
+    countyNames <- sapply(counties_sp@polygons, function(x) x@ID)
+    countyNames[indices]
 }
+
+
 
 ```
 
@@ -99,8 +122,8 @@ lonMin = -91.4015
 
 
 con_in <-
-  file("~/Go/src/github.com/rotblauer/tileTester2/test.small.json.gz")
-con_out <- file(tmp <- "tmp", open = "wb")
+  file("~/Go/src/github.com/rotblauer/tileTester2/out.json.gz")
+con_out <- file(tmp <- "tmp.Rdata", open = "wb")
 stream_in(
   con_in,
   handler = function(df) {
@@ -127,53 +150,54 @@ stream_in(
       "Pressure",
       "Activity"
     )
-    loc <- filter(loc, lat < latMax &
-                    lat > latMin) %>% filter(lon > lonMin &
-                                               lon < lonMax)
-    
-    
+ 
     stream_out(loc, con_out, pagesize = 1000)
   },
   pagesize = 200000
 )
 close(con_out)
 loc <- stream_in(file(tmp), pagesize = 2000000)
+save(loc, file = "loc.tmp.Rdata")
+
 loc$state = latlong2state(loc[, c(1, 2)])
 loc$country = coords2country(loc[, c(1, 2)])
-
-# nrow(x)
-unlink(tmp)
+loc$countyName = latlong2county(loc[, c(1, 2)])
+loc=merge(loc,county.fips,by.x="countyName",by.y="polyname",all.x="true")
 save(loc, file = "loc.Rdata")
 
-# load("x.Rdata")
+   # loc <- filter(loc, lat < latMax &
+   #                  lat > latMin) %>% filter(lon > lonMin &
+   #                                             lon < lonMax)
+
 
 
 ```
 
-Column {data-width=600}
+Column {data-width=800}
 -----------------------------------------------------------------------
-
-### Cats by World
 
 ```{r}
 
-## Not run: 
-# 
-# data(worldgeojson, package = "highcharter")
-# data("GNI2014", package = "treemap")
-# 
-# highchart(type = "map") %>% 
-#   hc_add_series_map(map = worldgeojson, df = GNI2014, value = "GNI", joinBy = "iso3") %>% 
-#   hc_colorAxis(stops = color_stops()) %>% 
-#   hc_tooltip(useHTML = TRUE, headerFormat = "",
-#   pointFormat = "this is {point.name} and have {point.population} people with gni of {point.GNI}")
-#   
-#  ## End(Not run)
-  
-
 load("loc.Rdata")
-data("USArrests", package = "datasets")
-data("usgeojson")
+```
+
+### Cats by World - `r length(loc$lon)` total tracks
+
+```{r}
+
+
+
+perCountry=as.data.frame(table(loc$country))
+colnames(perCountry)=c("country","count")
+perCountry$country=as.character(perCountry$country)
+perCountry$count=log10(perCountry$count)
+
+highchart(type = "map") %>%
+  hc_add_series_map(map = worldgeojson, df = perCountry, value = "count", joinBy = c("iso3","country")) %>%
+  hc_colorAxis(stops = color_stops()) %>%
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_tooltip(useHTML = TRUE, headerFormat = "",
+  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
 
 ```
 
@@ -181,32 +205,43 @@ data("usgeojson")
 
 ```{r}
 
-
-USArrests <- USArrests %>%
-  mutate(state = rownames(.))
-
-
 perState=as.data.frame(table(loc$state))
 colnames(perState)=c("state","count")
 perState$state=as.character(perState$state)
-
-n <- 4
-colstops <- data.frame(
-  q = 0:n/n,
-  c = substring(viridis(n + 1), 0, 7)) %>%
-  list.parse2()
+perState$count=log10(perState$count)
 
 highchart() %>%
   hc_add_series_map(usgeojson, perState, name = "Cats",
-                    value = "count", joinBy = c("woename", "state"),
-                    dataLabels = list(enabled = TRUE,
-                                      format = '{point.properties.postalcode}')) %>%
-  hc_colorAxis(stops = colstops) %>%
-  hc_legend(valueDecimals = 0, valueSuffix = "%") %>%
+                    value = "count", joinBy = c("woename", "state")) %>%
+  hc_colorAxis(stops = color_stops()) %>%
   hc_mapNavigation(enabled = TRUE) %>%
-  hc_add_theme(thm)
+  hc_tooltip(useHTML = TRUE, headerFormat = "",
+  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
 
 ```
+
+
+### Cats by County
+
+```{r}
+
+perCounty=as.data.frame(table(loc$fips))
+colnames(perCounty)=c("county","count")
+perCounty$county=as.character(perCounty$county)
+perCounty$count=log10(perCounty$count)
+
+
+
+highchart() %>%
+  hc_add_series_map(uscountygeojson, perCounty, name = "Cats",
+                    value = "count", joinBy = c("fips", "county"))%>%
+  hc_colorAxis(stops = color_stops()) %>%
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_tooltip(useHTML = TRUE, headerFormat = "",
+  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+
+```
+
 
 Column {.tabset data-width=400}
 -----------------------------------------------------------------------
@@ -214,12 +249,11 @@ Column {.tabset data-width=400}
 ### Cat activities
 
 ```{r, fig.keep='none'}
-loc$Activity="DFHS"
-loc[,c("Activity")][c(1:1000)]="CAT"
-dfitems <- as.data.frame(table(loc[,c("Activity")]))
 
-set.seed(10)
-# 
+# loc$Activity[nchar(loc$Activity)==0] <- "NOTHING"
+# loc[,c("Activity")][c(1:10000)]="CAT"
+# loc[,c("Activity")][c(10000:30000)]="AlsoCAT"
+dfitems <- as.data.frame(table(loc[nchar(loc$Activity)>0,c("Activity")]))
 
 tm=treemap(dfitems, #Your data frame object
         index=c("Var1"),  #A list of your categorical variables
@@ -236,20 +270,24 @@ highchart() %>%
   hc_add_theme(thm)
 ```
 
-<!-- ### Best Sellers -->
 
-<!-- ```{r} -->
-<!-- set.seed(2) -->
+### Cat trips
 
-<!-- nprods <- 10 -->
+```{r, fig.keep='none'}
 
-<!-- dfitems %>%  -->
-<!--   sample_n(nprods) %>%  -->
-<!--   .$labels %>%  -->
-<!--   rep(times = sort(sample( 1e4:2e4, size = nprods), decreasing = TRUE)) %>%  -->
-<!--   factor(levels = unique(.)) %>%  -->
-<!--   hchart(showInLegend = FALSE, name = "Sales", pointWidth = 10) %>%  -->
-<!--   hc_add_theme(thm) %>%  -->
-<!--   hc_chart(type = "bar") -->
+dfitems <- as.data.frame(table(loc[,c("Notes")]))
 
-<!-- ``` -->
+tm=treemap(dfitems, #Your data frame object
+        index=c("Var1"),  #A list of your categorical variables
+        vSize = "Freq",  #This is your quantitative variable
+        type="index", #Type sets the organization and color scheme of your treemap
+        palette =  rev(viridis(6)),  #Select your color palette from the RColorBrewer presets or make your own.
+        title="Receipts in President Obama's 2017 Budget", #Customize your title
+        fontsize.title = 14 #Change the font size of the title
+        )
+
+highchart() %>% 
+  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
+                        layoutAlgorithm = "squarified") %>% 
+  hc_add_theme(thm)
+```
