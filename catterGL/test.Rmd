@@ -1,0 +1,13 @@
+---
+title: "Cat tracks stat cats"
+author: "Rotblauer"
+
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    social: menu
+    source_code: embed
+    includes:
+       in_header: meta.html
+---

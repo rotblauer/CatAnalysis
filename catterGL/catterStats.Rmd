@@ -1,15 +1,14 @@
 ---
 title: "Cat tracks stat cats"
 author: "Rotblauer"
-og:
-  title: "Cat tracks stat cats"
-  image: 
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
     vertical_layout: scroll
     social: menu
     source_code: embed
+    includes:
+       in_header: meta.html
 ---
 
 ```{r setup, include=FALSE}
@@ -223,16 +222,11 @@ load("loc.Rdata")
 <!-- #   hc_mapNavigation(enabled = TRUE) %>% -->
 <!-- #   hc_tooltip(useHTML = TRUE, headerFormat = "", -->
 <!-- #   pointFormat = "This is {point.name} and has 10^{point.count} tracks") -->
-<!-- # world -->
-<!-- # htmlwidgets::saveWidget(widget = world, file = "./map.html") -->
-<!-- #  -->
-<!-- # webshot::webshot(url = "./map.html",  -->
-<!-- #                  file = "./map.png") -->
 
 <!-- ``` -->
 
 
-### Cats by County
+### Cats by County - `r length(loc$lon)` total tracks
 
 ```{r}
 
@@ -243,13 +237,22 @@ perCounty$count=log10(perCounty$count)
 
 
 
-highchart() %>%
+c=highchart() %>%
   hc_add_series_map(uscountygeojson, perCounty, name = "Cats",
                     value = "count", joinBy = c("fips", "county"))%>%
   hc_colorAxis(stops = color_stops()) %>%
+  hc_title(text = "Log10 counts of cats by county") %>% 
   hc_mapNavigation(enabled = TRUE) %>%
   hc_tooltip(useHTML = TRUE, headerFormat = "",
   pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+c
+
+htmlwidgets::saveWidget(widget = c, file = "./map.html")
+
+webshot::webshot(url = "./map.html",
+                 file = "./map.png")
+
+
 
 ```
 
@@ -267,6 +270,7 @@ highchart() %>%
   hc_add_series_map(usgeojson, perState, name = "Cats",
                     value = "count", joinBy = c("woename", "state")) %>%
   hc_colorAxis(stops = color_stops()) %>%
+  hc_title(text = "Log10 counts of cats by State") %>% 
   hc_mapNavigation(enabled = TRUE) %>%
   hc_tooltip(useHTML = TRUE, headerFormat = "",
   pointFormat = "This is {point.name} and has 10^{point.count} tracks")
@@ -298,23 +302,24 @@ highchart() %>%
 ```
 
 
-### Cat trips
 
-```{r, fig.keep='none'}
+<!-- ### Cat trips -->
 
-dfitems <- as.data.frame(table(loc[,c("Notes")]))
+<!-- ```{r, fig.keep='none'} -->
 
-tm=treemap(dfitems,
-        index=c("Var1"), 
-        vSize = "Freq", 
-        type="index",
-        palette =  rev(viridis(6)), 
-        title="Trips cats have taken",
-        fontsize.title = 14 
-        )
+<!-- dfitems <- as.data.frame(table(loc[,c("Notes")])) -->
 
-highchart() %>% 
-  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
-                        layoutAlgorithm = "squarified") %>% 
-  hc_add_theme(thm)
-```
+<!-- tm=treemap(dfitems, -->
+<!--         index=c("Var1"),  -->
+<!--         vSize = "Freq",  -->
+<!--         type="index", -->
+<!--         palette =  rev(viridis(6)),  -->
+<!--         title="Trips cats have taken", -->
+<!--         fontsize.title = 14  -->
+<!--         ) -->
+
+<!-- highchart() %>%  -->
+<!--   hc_add_series_treemap(tm, allowDrillToNode = TRUE, -->
+<!--                         layoutAlgorithm = "squarified") %>%  -->
+<!--   hc_add_theme(thm) -->
+<!-- ``` -->
