@@ -1,6 +1,9 @@
 ---
 title: "Cat tracks stat cats"
 author: "Rotblauer"
+og:
+  title: "Cat tracks stat cats"
+  image: 
 output: 
   flexdashboard::flex_dashboard:
     orientation: columns
@@ -13,7 +16,6 @@ output:
 library(highcharter)
 library(dplyr)
 library(viridisLite)
-# library(forecast)
 library(treemap)
 library(flexdashboard)
 library(sp)
@@ -133,6 +135,7 @@ stream_in(
     colnames(loc) = c("lon", "lat")
     loc$elevation = df$properties$Elevation
     loc$note = df$properties$Notes
+    loc$name = df$properties$Name
     loc$time = df$properties$Time
     loc$unixTime = df$properties$UnixTime
     loc$speed = df$properties$Speed
@@ -144,6 +147,7 @@ stream_in(
       "lat",
       "elevation",
       "Notes",
+      "Name",
       "Time",
       "UnixTime",
       "Speed",
@@ -158,11 +162,32 @@ stream_in(
 close(con_out)
 loc <- stream_in(file(tmp), pagesize = 2000000)
 save(loc, file = "loc.tmp.Rdata")
+locCoords=loc[, c(1, 2)]
+save(locCoords,file="locCoords.tmp.Rdata")
 
-loc$state = latlong2state(loc[, c(1, 2)])
-loc$country = coords2country(loc[, c(1, 2)])
-loc$countyName = latlong2county(loc[, c(1, 2)])
-loc=merge(loc,county.fips,by.x="countyName",by.y="polyname",all.x="true")
+```
+
+```{r asi, eval=FALSE,include=FALSE}
+load("locCoords.tmp.Rdata")
+locCoords$state = latlong2state(locCoords[, c(1, 2)])
+# locCoords$country = coords2country(locCoords[, c(1, 2)])
+locCoords$countyName = latlong2county(locCoords[, c(1, 2)])
+locCoords = merge(
+locCoords,
+county.fips,
+by.x = "countyName",
+by.y = "polyname",
+all.x = "true"
+)
+save(locCoords, file = "locCoords.Rdata")
+
+```
+
+```{r  eval=FALSE,include=FALSE}
+load("locCoords.Rdata")
+load("loc.tmp.Rdata")
+loc = cbind(loc, locCoords)
+
 save(loc, file = "loc.Rdata")
 
    # loc <- filter(loc, lat < latMax &
@@ -181,44 +206,30 @@ Column {data-width=800}
 load("loc.Rdata")
 ```
 
-### Cats by World - `r length(loc$lon)` total tracks
+<!-- ### Cats by World - `r length(loc$lon)` total tracks -->
 
-```{r}
+<!-- ```{r} -->
+<!-- #  -->
+<!-- #  -->
+<!-- #  -->
+<!-- # perCountry=as.data.frame(table(loc$country)) -->
+<!-- # colnames(perCountry)=c("country","count") -->
+<!-- # perCountry$country=as.character(perCountry$country) -->
+<!-- # perCountry$Log10count=log10(perCountry$count) -->
+<!-- #  -->
+<!-- # world=highchart(type = "map") %>% -->
+<!-- #   hc_add_series_map(map = worldgeojson, df = perCountry, value = "count", joinBy = c("iso3","country")) %>% -->
+<!-- #   hc_colorAxis(stops = color_stops()) %>% -->
+<!-- #   hc_mapNavigation(enabled = TRUE) %>% -->
+<!-- #   hc_tooltip(useHTML = TRUE, headerFormat = "", -->
+<!-- #   pointFormat = "This is {point.name} and has 10^{point.count} tracks") -->
+<!-- # world -->
+<!-- # htmlwidgets::saveWidget(widget = world, file = "./map.html") -->
+<!-- #  -->
+<!-- # webshot::webshot(url = "./map.html",  -->
+<!-- #                  file = "./map.png") -->
 
-
-
-perCountry=as.data.frame(table(loc$country))
-colnames(perCountry)=c("country","count")
-perCountry$country=as.character(perCountry$country)
-perCountry$count=log10(perCountry$count)
-
-highchart(type = "map") %>%
-  hc_add_series_map(map = worldgeojson, df = perCountry, value = "count", joinBy = c("iso3","country")) %>%
-  hc_colorAxis(stops = color_stops()) %>%
-  hc_mapNavigation(enabled = TRUE) %>%
-  hc_tooltip(useHTML = TRUE, headerFormat = "",
-  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
-
-```
-
-### Cats by United
-
-```{r}
-
-perState=as.data.frame(table(loc$state))
-colnames(perState)=c("state","count")
-perState$state=as.character(perState$state)
-perState$count=log10(perState$count)
-
-highchart() %>%
-  hc_add_series_map(usgeojson, perState, name = "Cats",
-                    value = "count", joinBy = c("woename", "state")) %>%
-  hc_colorAxis(stops = color_stops()) %>%
-  hc_mapNavigation(enabled = TRUE) %>%
-  hc_tooltip(useHTML = TRUE, headerFormat = "",
-  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
-
-```
+<!-- ``` -->
 
 
 ### Cats by County
@@ -243,16 +254,32 @@ highchart() %>%
 ```
 
 
+### Cats by United
+
+```{r}
+
+perState=as.data.frame(table(loc$state))
+colnames(perState)=c("state","count")
+perState$state=as.character(perState$state)
+perState$count=log10(perState$count)
+
+highchart() %>%
+  hc_add_series_map(usgeojson, perState, name = "Cats",
+                    value = "count", joinBy = c("woename", "state")) %>%
+  hc_colorAxis(stops = color_stops()) %>%
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_tooltip(useHTML = TRUE, headerFormat = "",
+  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+
+```
+
+
 Column {.tabset data-width=400}
 -----------------------------------------------------------------------
 
 ### Cat activities
 
 ```{r, fig.keep='none'}
-
-# loc$Activity[nchar(loc$Activity)==0] <- "NOTHING"
-# loc[,c("Activity")][c(1:10000)]="CAT"
-# loc[,c("Activity")][c(10000:30000)]="AlsoCAT"
 dfitems <- as.data.frame(table(loc[nchar(loc$Activity)>0,c("Activity")]))
 
 tm=treemap(dfitems, #Your data frame object
@@ -260,7 +287,7 @@ tm=treemap(dfitems, #Your data frame object
         vSize = "Freq",  #This is your quantitative variable
         type="index", #Type sets the organization and color scheme of your treemap
         palette =  rev(viridis(6)),  #Select your color palette from the RColorBrewer presets or make your own.
-        title="Receipts in President Obama's 2017 Budget", #Customize your title
+        title="Cat activities", #Customize your title
         fontsize.title = 14 #Change the font size of the title
         )
 
@@ -277,13 +304,13 @@ highchart() %>%
 
 dfitems <- as.data.frame(table(loc[,c("Notes")]))
 
-tm=treemap(dfitems, #Your data frame object
-        index=c("Var1"),  #A list of your categorical variables
-        vSize = "Freq",  #This is your quantitative variable
-        type="index", #Type sets the organization and color scheme of your treemap
-        palette =  rev(viridis(6)),  #Select your color palette from the RColorBrewer presets or make your own.
-        title="Receipts in President Obama's 2017 Budget", #Customize your title
-        fontsize.title = 14 #Change the font size of the title
+tm=treemap(dfitems,
+        index=c("Var1"), 
+        vSize = "Freq", 
+        type="index",
+        palette =  rev(viridis(6)), 
+        title="Trips cats have taken",
+        fontsize.title = 14 
         )
 
 highchart() %>% 
