@@ -113,7 +113,7 @@ latlong2county <- function(pointsDF) {
 
 
 ```{r init, eval=FALSE,include=FALSE}
-
+library(jsonlite)
 
 
 latMax = 39.773
@@ -160,6 +160,7 @@ stream_in(
 )
 close(con_out)
 loc <- stream_in(file(tmp), pagesize = 2000000)
+
 save(loc, file = "loc.tmp.Rdata")
 locCoords=loc[, c(1, 2)]
 save(locCoords,file="locCoords.tmp.Rdata")
