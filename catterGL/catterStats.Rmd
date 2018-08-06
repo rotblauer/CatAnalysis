@@ -161,6 +161,8 @@ stream_in(
 close(con_out)
 loc <- stream_in(file(tmp), pagesize = 2000000)
 
+# test= stream_in(file("~/Go/src/github.com/rotblauer/tileTester2/test.notes.json.gz"), pagesize = 2000000)
+
 save(loc, file = "loc.tmp.Rdata")
 locCoords=loc[, c(1, 2)]
 save(locCoords,file="locCoords.tmp.Rdata")
@@ -304,23 +306,23 @@ highchart() %>%
 
 
 
-<!-- ### Cat trips -->
+### Cat People
 
-<!-- ```{r, fig.keep='none'} -->
+```{r, fig.keep='none'}
 
-<!-- dfitems <- as.data.frame(table(loc[,c("Notes")])) -->
+dfitems <- as.data.frame(table(loc[,c("Name")]))
 
-<!-- tm=treemap(dfitems, -->
-<!--         index=c("Var1"),  -->
-<!--         vSize = "Freq",  -->
-<!--         type="index", -->
-<!--         palette =  rev(viridis(6)),  -->
-<!--         title="Trips cats have taken", -->
-<!--         fontsize.title = 14  -->
-<!--         ) -->
+tm=treemap(dfitems,
+        index=c("Var1"),
+        vSize = "Freq",
+        type="index",
+        palette =  rev(viridis(6)),
+        title="People with cats",
+        fontsize.title = 14
+        )
 
-<!-- highchart() %>%  -->
-<!--   hc_add_series_treemap(tm, allowDrillToNode = TRUE, -->
-<!--                         layoutAlgorithm = "squarified") %>%  -->
-<!--   hc_add_theme(thm) -->
-<!-- ``` -->
+highchart() %>%
+  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
+                        layoutAlgorithm = "squarified") %>%
+  hc_add_theme(thm)
+```
