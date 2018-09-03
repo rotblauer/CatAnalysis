@@ -23,6 +23,7 @@ library(rgeos)
 library(maptools)
 library(stringi)
 library(maps)
+library(plotly)
 
 data("usgeojson")
 data("uscountygeojson")
@@ -124,13 +125,19 @@ lonMin = -91.4015
 
 con_in <-
   file("~/Go/src/github.com/rotblauer/tileTester2/out.json.gz")
+
+# con_in <-
+#   file("~/Go/src/github.com/rotblauer/tileTester2/test.notes.json.gz")
+
 con_out <- file(tmp <- "tmp.Rdata", open = "wb")
+
 stream_in(
   con_in,
   handler = function(df) {
     # df <- dplyr::filter(df, distance > 1000)
     # df <- dplyr::mutate(df, delta = dep_delay - arr_delay)
     loc = do.call(rbind.data.frame, df$geometry$coordinates)
+
     colnames(loc) = c("lon", "lat")
     loc$elevation = df$properties$Elevation
     loc$note = df$properties$Notes
@@ -171,16 +178,11 @@ save(locCoords,file="locCoords.tmp.Rdata")
 
 ```{r asi, eval=FALSE,include=FALSE}
 load("locCoords.tmp.Rdata")
+# pointsDF=locCoords[, c(1, 2)]
 locCoords$state = latlong2state(locCoords[, c(1, 2)])
 # locCoords$country = coords2country(locCoords[, c(1, 2)])
 locCoords$countyName = latlong2county(locCoords[, c(1, 2)])
-locCoords = merge(
-locCoords,
-county.fips,
-by.x = "countyName",
-by.y = "polyname",
-all.x = "true"
-)
+
 save(locCoords, file = "locCoords.Rdata")
 
 ```
@@ -206,7 +208,37 @@ Column {data-width=800}
 ```{r}
 
 load("loc.Rdata")
+
 ```
+
+<!-- county ="missouri,st louis|missouri,st louis city" -->
+
+<!-- stl=grepl(county,loc$countyName) -->
+
+<!-- stlLoc=loc[stl,] -->
+
+<!-- ``` -->
+
+<!-- ### Cats by STL cats - `r length(stlLoc$lon)` total tracks -->
+
+<!-- ```{r} -->
+
+
+<!--     plot_ly( -->
+<!--       x =  stlLoc$lon, -->
+<!--       y =  stlLoc$lat, -->
+<!--       type = "scattergl", -->
+<!--       mode = "markers" -->
+<!--     ) -->
+
+<!--     # , -->
+<!--     #   color = "blue", -->
+<!--     #   marker = list(opacity = .75, size = 2) -->
+
+<!-- ``` -->
+
+
+
 
 <!-- ### Cats by World - `r length(loc$lon)` total tracks -->
 
@@ -228,15 +260,26 @@ load("loc.Rdata")
 
 <!-- ``` -->
 
-
-### Cats by County - `r length(loc$lon)` total tracks
-
 ```{r}
+locC = merge(
+loc,
+county.fips,
+by.x = "countyName",
+by.y = "polyname")
 
-perCounty=as.data.frame(table(loc$fips))
+perCounty=as.data.frame(table(locC$fips))
 colnames(perCounty)=c("county","count")
 perCounty$county=as.character(perCounty$county)
 perCounty$count=log10(perCounty$count)
+
+
+```
+
+
+### Cats by County - `r length(locC$lon)` total tracks
+
+```{r}
+
 
 
 
