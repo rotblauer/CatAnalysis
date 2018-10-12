@@ -160,8 +160,10 @@ stream_in(
       "Pressure",
       "Activity"
     )
+    
+    # TODO func for summary here
  
-    stream_out(loc, con_out, pagesize = 1000)
+    # stream_out(loc, con_out, pagesize = 1000)
   },
   pagesize = 200000
 )
