@@ -71,7 +71,8 @@ perCat =agg(loc, "name")
 ### Cats by County - `r sum(perCat$COUNT)` total tracks total
 
 ```{r}
-
+perCounty=agg(loc, "county")
+# perCounty$VARIABLE[!(perCounty$VARIABLE %in% county.fips$polyname)]
 perCounty = merge(agg(loc, "county"),
                   county.fips,
                   by.x = "VARIABLE",
@@ -85,7 +86,7 @@ c=highchart() %>%
   hc_title(text = "Log10 counts of cats by county") %>% 
   hc_mapNavigation(enabled = TRUE) %>%
   hc_tooltip(useHTML = TRUE, headerFormat = "",
-  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+  pointFormat = "This is {point.name} and has 10^{point.COUNT} tracks")
 c
 
 htmlwidgets::saveWidget(widget = c, file = "./map.html")
