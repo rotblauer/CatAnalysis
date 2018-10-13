@@ -115,7 +115,7 @@ stream_in(
     
     stream_out(countedIds, con_out, pagesize = 100)
   },
-  pagesize = 1000
+  pagesize = 500000
 )
 close(con_out)
 
