@@ -1,0 +1,37 @@
+---
+title: "CatterGl"
+author: "JL"
+date: "12/2/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(plotly)
+files=list.files(path="./parsed/",pattern = ".Rdata$",full.names = TRUE)
+loc=data.frame()
+for(file in files){
+  load(file)
+  loc=rbind(loc,loc_gc)
+}
+
+plot_ly(
+      x =lon ,
+      y =lat,
+      type = "scattergl",
+      mode = "markers",
+      color = "blue",
+      marker = list(opacity = 0.25, size = 1.5)
+)
+
+# ncsd <- SharedData$new(nc)
+#  
+# bscols(
+#   plot_mapbox(ncsd) %>%
+#     highlight(dynamic = TRUE, persistent = TRUE),
+#   plot_ly(ncsd, x = ~AREA) %>% 
+#     add_histogram(xbins = list(start = 0, end = 0.3, size = 0.02)) %>%
+#     layout(barmode = "overlay") %>% 
+#     highlight("plotly_selected", persistent = TRUE)
+# )
+```

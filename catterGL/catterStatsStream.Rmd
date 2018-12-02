@@ -11,6 +11,8 @@ output:
        in_header: meta.html
 ---
 
+
+
 ```{r setup, include=FALSE}
 library(highcharter)
 library(dplyr)
@@ -26,6 +28,7 @@ library(maps)
 library(plotly)
 library(jsonlite)
 
+data("worldgeojson")
 
 data("usgeojson")
 data("uscountygeojson")
@@ -46,7 +49,7 @@ thm <-
   )
 
 
-loc <- stream_in(file("./parsed/collapsed.tmp.txt"), pagesize = 2000000)
+loc <- stream_in(file("./parsed/collapsed.txt"), pagesize = 2000000)
 
 ```
 
@@ -68,17 +71,21 @@ perCat =agg(loc, "name")
 ```
 
 
+
 ### Cats by County - `r sum(perCat$COUNT)` total tracks total
 
 ```{r}
 perCounty=agg(loc, "county")
 # perCounty$VARIABLE[!(perCounty$VARIABLE %in% county.fips$polyname)]
+county.fips$polyname.trim=gsub(":.*","",county.fips$polyname)
 perCounty = merge(agg(loc, "county"),
                   county.fips,
                   by.x = "VARIABLE",
-                  by.y = "polyname")
+                  by.y = "polyname.trim")
 perCounty$COUNT = log10(perCounty$COUNT)
-                  
+fix=lapply(perCounty$fips,nchar)<5
+perCounty$fips[fix]= paste0("0",perCounty$fips)[fix]
+
 c=highchart() %>%
   hc_add_series_map(uscountygeojson, perCounty, name = "Cats",
                     value = "COUNT", joinBy = c("fips", "fips"))%>%
@@ -119,12 +126,35 @@ highchart() %>%
 ```
 
 
+
+### Cats by World
+
+```{r}
+
+perWorld =agg(loc, "world")
+perWorld$country=stri_trans_totitle(as.character(perWorld$VARIABLE))
+perWorld$country=gsub("Usa","United States of America",perWorld$country)
+perWorld$count=log10(perWorld$COUNT)
+
+highchart() %>%
+  hc_add_series_map(worldgeojson, perWorld, name = "Cats",
+                    value = "count", joinBy = c("name", "country")) %>%
+  hc_colorAxis(stops = color_stops()) %>%
+  hc_title(text = "Log10 counts of cats by Country") %>% 
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_tooltip(useHTML = TRUE, headerFormat = "",
+  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+
+```
+
 Column {.tabset data-width=400}
 -----------------------------------------------------------------------
+
 
 ### Cat activities
 
 ```{r, fig.keep='none'}
+loc$activity="TEST"
 perActivity =agg(loc, "activity")
 
 tm=treemap(perActivity, #Your data frame object

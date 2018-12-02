@@ -2,14 +2,14 @@ library(optparse)
 library(jsonlite)
 library(maps)
 library(maptools)
-
+library(dplyr)
 
 # https://spark.apache.org/docs/latest/sparkr.html
 option_list = list(
   make_option(
     c("-i", "--input"),
     type = "character",
-    default = "~/Go/src/github.com/rotblauer/tileTester2/out.json.gz",
+    default = "/Users/Kitty/tdata/master.json.gz",
     help = "new-line delimited json.gz file of catTracks",
     metavar = "character"
   ),
@@ -30,7 +30,7 @@ print(opt)
 
 dir.create(opt$outputDir)
 
-mapsToCount = c("state", "county")
+mapsToCount = c("state", "county", "world")
 
 getOverlappingIDs <- function(pointsSP, map) {
   # Prepare SpatialPolygons object with one SpatialPolygon
@@ -70,11 +70,13 @@ summarizeCount <- function(type, names) {
 
 
 
-
 con_in <-
   file(opt$input)
-tmp <- paste0(opt$outputDir, "collapsed.tmp.txt")
+tmp <- paste0(opt$outputDir, "collapsed.txt")
 con_out <- file(tmp, open = "wb")
+
+# loc <- stream_in(file(opt$input), pagesize = 2000000)
+# df=loc
 
 stream_in(
   con_in,
@@ -114,13 +116,23 @@ stream_in(
     
     
     stream_out(countedIds, con_out, pagesize = 100)
+    
+    loc$elevation = df$properties$Elevation
+    loc$pressure = df$properties$Pressure
+    
+    loc_gc <-
+      filter(loc, lat < 38.793865 &
+               lat > 38.508583) %>% filter(lon > -90.533524 &
+                                             lon < -90.051498)
+    save(loc_gc, file = paste0(tmp, "_", format(Sys.time(), "%Y%m%d_%H%M%S"), ".Rdata"))
+    
   },
   pagesize = 500000
 )
 close(con_out)
 
 
-loc <- stream_in(file(tmp), pagesize = 2000000)
+# loc <- stream_in(file(tmp), pagesize = 2000000)
 
 
 
