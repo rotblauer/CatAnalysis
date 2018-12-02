@@ -3,28 +3,59 @@ title: "CatterGl"
 author: "JL"
 date: "12/2/2018"
 output: html_document
+includes:
+       in_header: metaGL.html
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(plotly)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message  = FALSE)
+
+```
+
+```{r eval=FALSE}
 files=list.files(path="./parsed/",pattern = ".Rdata$",full.names = TRUE)
 loc=data.frame()
 for(file in files){
+  print(file)
   load(file)
   loc=rbind(loc,loc_gc)
 }
 
-plot_ly(
-      x =lon ,
-      y =lat,
+save(loc,file="./parsed/loc.Rdata")
+```
+
+```{r}
+
+load("./parsed/loc.Rdata")
+
+library(plotly)
+sub=runif(length(loc$lon)) 
+def=0.25
+
+```
+
+`r length(loc$lat[sub<def])` catTracks
+
+```{r}
+p=plot_ly(
+      x =loc$lon[sub<def] ,
+      y =loc$lat[sub<def] ,
       type = "scattergl",
       mode = "markers",
       color = "blue",
       marker = list(opacity = 0.25, size = 1.5)
 )
 
-# ncsd <- SharedData$new(nc)
+# htmlwidgets::saveWidget(widget = p, file = "./mapCat.html")
+# 
+webshot::webshot(url = "./catterGL.html",
+                 file = "./mapCat.png")
+
+p
+
+# ncsd <- SharedData$new(nc)  
 #  
 # bscols(
 #   plot_mapbox(ncsd) %>%
