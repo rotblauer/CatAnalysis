@@ -2307,4 +2307,513 @@
 {"VARIABLE":"Unknown","COUNT":35037,"TYPE":"activity"}
 {"VARIABLE":"Walking","COUNT":11066,"TYPE":"activity"}
 {"VARIABLE":"Big Papa","COUNT":176056,"TYPE":"name"}
-{"VARIABLE":"Bigger Papa","COUNT
+{"VARIABLE":"Bigger Papa","COUNT":33944,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":45839,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":141982,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":102179,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":291424,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis city","COUNT":291424,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":106146,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":4128,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":291424,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":1838,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":5175,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":69,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":152340,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":83872,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":3806,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":102781,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":113952,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":126783,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":61860,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":94624,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":316924,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis","COUNT":9749,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":307175,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":80351,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":2764,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":316924,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":4072,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":270,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":206694,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":18579,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":4077,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":157918,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":24958,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":131957,"TYPE":"name"}
+{"VARIABLE":"jl","COUNT":3,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":134048,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":51116,"TYPE":"name"}
+{"VARIABLE":"illinois","COUNT":82,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":207905,"TYPE":"state"}
+{"VARIABLE":"new jersey","COUNT":270,"TYPE":"state"}
+{"VARIABLE":"new york","COUNT":852,"TYPE":"state"}
+{"VARIABLE":"ohio","COUNT":30,"TYPE":"state"}
+{"VARIABLE":"pennsylvania","COUNT":185,"TYPE":"state"}
+{"VARIABLE":"illinois,bond","COUNT":34,"TYPE":"county"}
+{"VARIABLE":"illinois,fayette","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"illinois,madison","COUNT":44,"TYPE":"county"}
+{"VARIABLE":"illinois,shelby","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"missouri,st charles","COUNT":49,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":20776,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":187080,"TYPE":"county"}
+{"VARIABLE":"new jersey,bergen","COUNT":102,"TYPE":"county"}
+{"VARIABLE":"new jersey,essex","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"new jersey,hudson","COUNT":82,"TYPE":"county"}
+{"VARIABLE":"new jersey,hunterdon","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"new jersey,mercer","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"new jersey,middlesex","COUNT":28,"TYPE":"county"}
+{"VARIABLE":"new jersey,somerset","COUNT":45,"TYPE":"county"}
+{"VARIABLE":"new york,bronx","COUNT":200,"TYPE":"county"}
+{"VARIABLE":"new york,erie","COUNT":71,"TYPE":"county"}
+{"VARIABLE":"new york,kings","COUNT":34,"TYPE":"county"}
+{"VARIABLE":"new york,livingston","COUNT":54,"TYPE":"county"}
+{"VARIABLE":"new york,niagara","COUNT":131,"TYPE":"county"}
+{"VARIABLE":"new york,queens","COUNT":58,"TYPE":"county"}
+{"VARIABLE":"new york,richmond","COUNT":24,"TYPE":"county"}
+{"VARIABLE":"new york,rockland","COUNT":82,"TYPE":"county"}
+{"VARIABLE":"new york,schuyler","COUNT":37,"TYPE":"county"}
+{"VARIABLE":"new york,steuben","COUNT":18,"TYPE":"county"}
+{"VARIABLE":"new york,tioga","COUNT":27,"TYPE":"county"}
+{"VARIABLE":"new york,westchester","COUNT":199,"TYPE":"county"}
+{"VARIABLE":"ohio,champaign","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"ohio,darke","COUNT":26,"TYPE":"county"}
+{"VARIABLE":"ohio,tuscarawas","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,beaver","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,berks","COUNT":52,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,blair","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,bucks","COUNT":4,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,chester","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,lancaster","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,lebanon","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,montgomery","COUNT":35,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,northumberland","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,schuylkill","COUNT":48,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,snyder","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,york","COUNT":24,"TYPE":"county"}
+{"VARIABLE":"Canada","COUNT":38168,"TYPE":"world"}
+{"VARIABLE":"Japan","COUNT":140986,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":1312,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":283444,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":8315,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":139,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":236,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":202046,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":50521,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":25114,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":79193,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":51479,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":147953,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":191130,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":30245,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":248169,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis city","COUNT":248169,"TYPE":"county"}
+{"VARIABLE":"Canada","COUNT":114983,"TYPE":"world"}
+{"VARIABLE":"Japan","COUNT":109935,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":18,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":248169,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":8372,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":1520,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":72,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":308123,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":32562,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":8549,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":3954,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":114983,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":136770,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":243925,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":290,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":78,"TYPE":"name"}
+{"VARIABLE":"illinois","COUNT":1883,"TYPE":"state"}
+{"VARIABLE":"indiana","COUNT":2202,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":282413,"TYPE":"state"}
+{"VARIABLE":"ohio","COUNT":1634,"TYPE":"state"}
+{"VARIABLE":"illinois,bond","COUNT":169,"TYPE":"county"}
+{"VARIABLE":"illinois,clark","COUNT":113,"TYPE":"county"}
+{"VARIABLE":"illinois,coles","COUNT":75,"TYPE":"county"}
+{"VARIABLE":"illinois,cumberland","COUNT":198,"TYPE":"county"}
+{"VARIABLE":"illinois,edgar","COUNT":96,"TYPE":"county"}
+{"VARIABLE":"illinois,effingham","COUNT":38,"TYPE":"county"}
+{"VARIABLE":"illinois,fayette","COUNT":273,"TYPE":"county"}
+{"VARIABLE":"illinois,madison","COUNT":700,"TYPE":"county"}
+{"VARIABLE":"illinois,montgomery","COUNT":143,"TYPE":"county"}
+{"VARIABLE":"illinois,shelby","COUNT":78,"TYPE":"county"}
+{"VARIABLE":"indiana,adams","COUNT":235,"TYPE":"county"}
+{"VARIABLE":"indiana,blackford","COUNT":180,"TYPE":"county"}
+{"VARIABLE":"indiana,delaware","COUNT":98,"TYPE":"county"}
+{"VARIABLE":"indiana,hamilton","COUNT":252,"TYPE":"county"}
+{"VARIABLE":"indiana,hendricks","COUNT":252,"TYPE":"county"}
+{"VARIABLE":"indiana,howard","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"indiana,jay","COUNT":45,"TYPE":"county"}
+{"VARIABLE":"indiana,madison","COUNT":220,"TYPE":"county"}
+{"VARIABLE":"indiana,marion","COUNT":75,"TYPE":"county"}
+{"VARIABLE":"indiana,parke","COUNT":199,"TYPE":"county"}
+{"VARIABLE":"indiana,putnam","COUNT":314,"TYPE":"county"}
+{"VARIABLE":"indiana,vigo","COUNT":284,"TYPE":"county"}
+{"VARIABLE":"indiana,wells","COUNT":47,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":7546,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":274867,"TYPE":"county"}
+{"VARIABLE":"ohio,henry","COUNT":151,"TYPE":"county"}
+{"VARIABLE":"ohio,lucas","COUNT":63,"TYPE":"county"}
+{"VARIABLE":"ohio,ottawa","COUNT":153,"TYPE":"county"}
+{"VARIABLE":"ohio,paulding","COUNT":59,"TYPE":"county"}
+{"VARIABLE":"ohio,putnam","COUNT":274,"TYPE":"county"}
+{"VARIABLE":"ohio,van wert","COUNT":476,"TYPE":"county"}
+{"VARIABLE":"ohio,wood","COUNT":458,"TYPE":"county"}
+{"VARIABLE":"Canada","COUNT":56586,"TYPE":"world"}
+{"VARIABLE":"Japan","COUNT":116912,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":288421,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":16369,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":5,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":124,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":207973,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":48218,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":15652,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":4563,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":116715,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":47214,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":129894,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":163245,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":13270,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":25099,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":293066,"TYPE":"state"}
+{"VARIABLE":"missouri,st charles","COUNT":48725,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":6673,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":237668,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":115418,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":3614,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":49077,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":293066,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":7483,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":3786,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":15,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":179969,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":49739,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":18360,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":6415,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":48933,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":61241,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":131862,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":159332,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":17145,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":75072,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":338146,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis","COUNT":6871,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":331275,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":73943,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":72324,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":338146,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":4503,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":2968,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":5,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":238859,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":22612,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":7810,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":9007,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":130386,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":52597,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":89530,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":146156,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":72324,"TYPE":"name"}
+{"VARIABLE":"illinois","COUNT":13118,"TYPE":"state"}
+{"VARIABLE":"indiana","COUNT":15849,"TYPE":"state"}
+{"VARIABLE":"kentucky","COUNT":24255,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":193622,"TYPE":"state"}
+{"VARIABLE":"north carolina","COUNT":131648,"TYPE":"state"}
+{"VARIABLE":"tennessee","COUNT":12624,"TYPE":"state"}
+{"VARIABLE":"illinois,clinton","COUNT":770,"TYPE":"county"}
+{"VARIABLE":"illinois,jefferson","COUNT":2791,"TYPE":"county"}
+{"VARIABLE":"illinois,st clair","COUNT":3142,"TYPE":"county"}
+{"VARIABLE":"illinois,washington","COUNT":2597,"TYPE":"county"}
+{"VARIABLE":"illinois,wayne","COUNT":2556,"TYPE":"county"}
+{"VARIABLE":"illinois,white","COUNT":1262,"TYPE":"county"}
+{"VARIABLE":"indiana,crawford","COUNT":1750,"TYPE":"county"}
+{"VARIABLE":"indiana,dubois","COUNT":790,"TYPE":"county"}
+{"VARIABLE":"indiana,floyd","COUNT":1150,"TYPE":"county"}
+{"VARIABLE":"indiana,gibson","COUNT":1080,"TYPE":"county"}
+{"VARIABLE":"indiana,harrison","COUNT":3954,"TYPE":"county"}
+{"VARIABLE":"indiana,perry","COUNT":1970,"TYPE":"county"}
+{"VARIABLE":"indiana,posey","COUNT":1757,"TYPE":"county"}
+{"VARIABLE":"indiana,spencer","COUNT":924,"TYPE":"county"}
+{"VARIABLE":"indiana,vanderburgh","COUNT":78,"TYPE":"county"}
+{"VARIABLE":"indiana,warrick","COUNT":2396,"TYPE":"county"}
+{"VARIABLE":"kentucky,fayette","COUNT":2084,"TYPE":"county"}
+{"VARIABLE":"kentucky,franklin","COUNT":1364,"TYPE":"county"}
+{"VARIABLE":"kentucky,jefferson","COUNT":2746,"TYPE":"county"}
+{"VARIABLE":"kentucky,knox","COUNT":54,"TYPE":"county"}
+{"VARIABLE":"kentucky,laurel","COUNT":5873,"TYPE":"county"}
+{"VARIABLE":"kentucky,madison","COUNT":2550,"TYPE":"county"}
+{"VARIABLE":"kentucky,rockcastle","COUNT":3452,"TYPE":"county"}
+{"VARIABLE":"kentucky,scott","COUNT":684,"TYPE":"county"}
+{"VARIABLE":"kentucky,shelby","COUNT":2258,"TYPE":"county"}
+{"VARIABLE":"kentucky,whitley","COUNT":2776,"TYPE":"county"}
+{"VARIABLE":"kentucky,woodford","COUNT":414,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":193622,"TYPE":"county"}
+{"VARIABLE":"north carolina,buncombe","COUNT":9004,"TYPE":"county"}
+{"VARIABLE":"north carolina,burke","COUNT":4961,"TYPE":"county"}
+{"VARIABLE":"north carolina,catawba","COUNT":3700,"TYPE":"county"}
+{"VARIABLE":"north carolina,gaston","COUNT":4511,"TYPE":"county"}
+{"VARIABLE":"north carolina,haywood","COUNT":8319,"TYPE":"county"}
+{"VARIABLE":"north carolina,lincoln","COUNT":2797,"TYPE":"county"}
+{"VARIABLE":"north carolina,mcdowell","COUNT":6286,"TYPE":"county"}
+{"VARIABLE":"north carolina,mecklenburg","COUNT":92070,"TYPE":"county"}
+{"VARIABLE":"tennessee,anderson","COUNT":1398,"TYPE":"county"}
+{"VARIABLE":"tennessee,campbell","COUNT":3176,"TYPE":"county"}
+{"VARIABLE":"tennessee,cocke","COUNT":2288,"TYPE":"county"}
+{"VARIABLE":"tennessee,jefferson","COUNT":2132,"TYPE":"county"}
+{"VARIABLE":"tennessee,knox","COUNT":2912,"TYPE":"county"}
+{"VARIABLE":"tennessee,sevier","COUNT":718,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":67914,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":35970,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":391116,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":40539,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":3304,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":843,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":171949,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":15421,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":8797,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":27143,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":236978,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":30350,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":72914,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":96645,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":35970,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":176849,"TYPE":"state"}
+{"VARIABLE":"north carolina","COUNT":243009,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis city","COUNT":176849,"TYPE":"county"}
+{"VARIABLE":"north carolina,cabarrus","COUNT":1515,"TYPE":"county"}
+{"VARIABLE":"north carolina,davidson","COUNT":2282,"TYPE":"county"}
+{"VARIABLE":"north carolina,davie","COUNT":1977,"TYPE":"county"}
+{"VARIABLE":"north carolina,forsyth","COUNT":95092,"TYPE":"county"}
+{"VARIABLE":"north carolina,iredell","COUNT":4366,"TYPE":"county"}
+{"VARIABLE":"north carolina,mecklenburg","COUNT":135692,"TYPE":"county"}
+{"VARIABLE":"north carolina,rowan","COUNT":2085,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":48211,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":14264,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":419858,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":17658,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":69,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":102,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":249225,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":31900,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":14184,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":242739,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":270,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":65878,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":176849,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":14264,"TYPE":"name"}
+{"VARIABLE":"illinois","COUNT":10626,"TYPE":"state"}
+{"VARIABLE":"indiana","COUNT":12734,"TYPE":"state"}
+{"VARIABLE":"kentucky","COUNT":37939,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":159737,"TYPE":"state"}
+{"VARIABLE":"north carolina","COUNT":97793,"TYPE":"state"}
+{"VARIABLE":"tennessee","COUNT":75442,"TYPE":"state"}
+{"VARIABLE":"illinois,clinton","COUNT":366,"TYPE":"county"}
+{"VARIABLE":"illinois,jefferson","COUNT":2929,"TYPE":"county"}
+{"VARIABLE":"illinois,st clair","COUNT":2603,"TYPE":"county"}
+{"VARIABLE":"illinois,washington","COUNT":1802,"TYPE":"county"}
+{"VARIABLE":"illinois,wayne","COUNT":2270,"TYPE":"county"}
+{"VARIABLE":"illinois,white","COUNT":656,"TYPE":"county"}
+{"VARIABLE":"indiana,crawford","COUNT":2482,"TYPE":"county"}
+{"VARIABLE":"indiana,dubois","COUNT":855,"TYPE":"county"}
+{"VARIABLE":"indiana,floyd","COUNT":1237,"TYPE":"county"}
+{"VARIABLE":"indiana,gibson","COUNT":1120,"TYPE":"county"}
+{"VARIABLE":"indiana,harrison","COUNT":1688,"TYPE":"county"}
+{"VARIABLE":"indiana,perry","COUNT":1360,"TYPE":"county"}
+{"VARIABLE":"indiana,posey","COUNT":1070,"TYPE":"county"}
+{"VARIABLE":"indiana,spencer","COUNT":482,"TYPE":"county"}
+{"VARIABLE":"indiana,vanderburgh","COUNT":72,"TYPE":"county"}
+{"VARIABLE":"indiana,warrick","COUNT":2368,"TYPE":"county"}
+{"VARIABLE":"kentucky,fayette","COUNT":3738,"TYPE":"county"}
+{"VARIABLE":"kentucky,franklin","COUNT":2373,"TYPE":"county"}
+{"VARIABLE":"kentucky,jefferson","COUNT":6856,"TYPE":"county"}
+{"VARIABLE":"kentucky,knox","COUNT":105,"TYPE":"county"}
+{"VARIABLE":"kentucky,laurel","COUNT":4138,"TYPE":"county"}
+{"VARIABLE":"kentucky,madison","COUNT":4718,"TYPE":"county"}
+{"VARIABLE":"kentucky,rockcastle","COUNT":4572,"TYPE":"county"}
+{"VARIABLE":"kentucky,scott","COUNT":1225,"TYPE":"county"}
+{"VARIABLE":"kentucky,shelby","COUNT":4061,"TYPE":"county"}
+{"VARIABLE":"kentucky,whitley","COUNT":5428,"TYPE":"county"}
+{"VARIABLE":"kentucky,woodford","COUNT":725,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":7211,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":152526,"TYPE":"county"}
+{"VARIABLE":"north carolina,buncombe","COUNT":8849,"TYPE":"county"}
+{"VARIABLE":"north carolina,cleveland","COUNT":3639,"TYPE":"county"}
+{"VARIABLE":"north carolina,gaston","COUNT":2105,"TYPE":"county"}
+{"VARIABLE":"north carolina,haywood","COUNT":6760,"TYPE":"county"}
+{"VARIABLE":"north carolina,henderson","COUNT":3306,"TYPE":"county"}
+{"VARIABLE":"north carolina,mecklenburg","COUNT":68212,"TYPE":"county"}
+{"VARIABLE":"north carolina,polk","COUNT":3237,"TYPE":"county"}
+{"VARIABLE":"north carolina,rutherford","COUNT":1685,"TYPE":"county"}
+{"VARIABLE":"tennessee,anderson","COUNT":57096,"TYPE":"county"}
+{"VARIABLE":"tennessee,campbell","COUNT":5999,"TYPE":"county"}
+{"VARIABLE":"tennessee,cocke","COUNT":2715,"TYPE":"county"}
+{"VARIABLE":"tennessee,jefferson","COUNT":2386,"TYPE":"county"}
+{"VARIABLE":"tennessee,knox","COUNT":4714,"TYPE":"county"}
+{"VARIABLE":"tennessee,sevier","COUNT":2532,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":57613,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":40997,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":394271,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":46347,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":27,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":40,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":156083,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":22414,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":16263,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":32353,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":244506,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":192,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":64732,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":117220,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":40997,"TYPE":"name"}
+{"VARIABLE":"illinois","COUNT":47258,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":294950,"TYPE":"state"}
+{"VARIABLE":"illinois,cook","COUNT":14263,"TYPE":"county"}
+{"VARIABLE":"illinois,du page","COUNT":390,"TYPE":"county"}
+{"VARIABLE":"illinois,grundy","COUNT":1132,"TYPE":"county"}
+{"VARIABLE":"illinois,jersey","COUNT":188,"TYPE":"county"}
+{"VARIABLE":"illinois,livingston","COUNT":3178,"TYPE":"county"}
+{"VARIABLE":"illinois,logan","COUNT":2793,"TYPE":"county"}
+{"VARIABLE":"illinois,macoupin","COUNT":4346,"TYPE":"county"}
+{"VARIABLE":"illinois,madison","COUNT":4822,"TYPE":"county"}
+{"VARIABLE":"illinois,mclean","COUNT":5779,"TYPE":"county"}
+{"VARIABLE":"illinois,sangamon","COUNT":4871,"TYPE":"county"}
+{"VARIABLE":"illinois,st clair","COUNT":1018,"TYPE":"county"}
+{"VARIABLE":"illinois,will","COUNT":4478,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":294950,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":99812,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":57980,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":342208,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":15907,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":2401,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":224850,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":14288,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":6564,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":186399,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":88771,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":99812,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":67038,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":57980,"TYPE":"name"}
+{"VARIABLE":"illinois","COUNT":106578,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":154861,"TYPE":"state"}
+{"VARIABLE":"illinois,cook","COUNT":106578,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":154861,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":143350,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":70495,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":264503,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":2301,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":4232,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":3230,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":168619,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":19896,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":14294,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":109642,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":165002,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":154055,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":806,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":70495,"TYPE":"name"}
+{"VARIABLE":"illinois","COUNT":157339,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":233429,"TYPE":"state"}
+{"VARIABLE":"illinois,cook","COUNT":126257,"TYPE":"county"}
+{"VARIABLE":"illinois,du page","COUNT":364,"TYPE":"county"}
+{"VARIABLE":"illinois,grundy","COUNT":1582,"TYPE":"county"}
+{"VARIABLE":"illinois,jersey","COUNT":186,"TYPE":"county"}
+{"VARIABLE":"illinois,livingston","COUNT":3567,"TYPE":"county"}
+{"VARIABLE":"illinois,logan","COUNT":2997,"TYPE":"county"}
+{"VARIABLE":"illinois,macoupin","COUNT":4080,"TYPE":"county"}
+{"VARIABLE":"illinois,madison","COUNT":3632,"TYPE":"county"}
+{"VARIABLE":"illinois,mclean","COUNT":4914,"TYPE":"county"}
+{"VARIABLE":"illinois,sangamon","COUNT":4584,"TYPE":"county"}
+{"VARIABLE":"illinois,st clair","COUNT":904,"TYPE":"county"}
+{"VARIABLE":"illinois,will","COUNT":4272,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":8263,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":225166,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":72958,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":17341,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":390768,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":20464,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":2909,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":5,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":157309,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":81315,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":19715,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":199655,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":91891,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":130968,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":60145,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":17341,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":330501,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis","COUNT":1604,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":328897,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":114783,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":36767,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":330501,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":5896,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":3438,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":203037,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":35930,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":8368,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":184734,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":132532,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":136491,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":9276,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":36966,"TYPE":"name"}
+{"VARIABLE":"ubp52","COUNT":1,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":430805,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis city","COUNT":430805,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":49694,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":632,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":430805,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":2006,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":5985,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":28,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":275693,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":28792,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":12369,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":214765,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":71585,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":68554,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":144455,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":641,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":391209,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis","COUNT":13789,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":377420,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":64035,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":27820,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":391209,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":9946,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":5571,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":12,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":212145,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":74416,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":28438,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":164576,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":36624,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":80971,"TYPE":"name"}
+{"VARIABLE":"Kayleigh's iPhone","COUNT":9624,"TYPE":"name"}
+{"VARIABLE":"P2","COUNT":4355,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":134939,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":41091,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":27820,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":367684,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis","COUNT":2313,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":365371,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":102517,"TYPE":"world"}
+{"VARIABLE":"UK","COUNT":27390,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":367684,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":3901,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":1810,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":10,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":210590,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":63863,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":11718,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":29641,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":164199,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":11956,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":104926,"TYPE":"name"}
+{"VARIABLE":"P2","COUNT":12547,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":107951,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":41390,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":27390,"TYPE":"name"}
+{"VARIABLE":"california","COUNT":13387,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":327856,"TYPE":"state

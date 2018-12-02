@@ -119,7 +119,7 @@ stream_in(
     
     loc$elevation = df$properties$Elevation
     loc$pressure = df$properties$Pressure
-    
+    loc$time = df$properties$Time
     loc_gc <-
       filter(loc, lat < 38.793865 &
                lat > 38.508583) %>% filter(lon > -90.533524 &
