@@ -123,7 +123,6 @@ highchart() %>%
 
 ```{r}
 perCounty=agg(loc, "county")
-# perCounty$VARIABLE[!(perCounty$VARIABLE %in% county.fips$polyname)]
 county.fips$polyname.trim=gsub(":.*","",county.fips$polyname)
 perCounty = merge(agg(loc, "county"),
                   county.fips,
@@ -137,7 +136,7 @@ c=highchart() %>%
   hc_add_series_map(uscountygeojson, perCounty, name = "Cats",
                     value = "COUNT", joinBy = c("fips", "fips"))%>%
   hc_colorAxis(stops = color_stops()) %>%
-  hc_title(text = "Log10 counts of cats by county") %>% 
+  hc_title(text = "Log10 counts of cats by County") %>% 
   hc_mapNavigation(enabled = TRUE) %>%
   hc_tooltip(useHTML = TRUE, headerFormat = "",
   pointFormat = "This is {point.name} and has 10^{point.COUNT} tracks")

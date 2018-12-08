@@ -1,0 +1,117 @@
+---
+title: "slamD"
+author: "JL"
+date: "12/8/2018"
+output: html_document
+includes:
+       in_header: metaS.html
+---
+
+
+### CatHouse to forest park
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(warning = FALSE)
+knitr::opts_chunk$set(message  = FALSE)
+knitr::opts_chunk$set(fig.width=12, fig.height=12) 
+
+def=0.25
+minacc=15
+minEl=125
+maxEl=200
+
+
+
+```
+
+```{r eval=FALSE}
+files=list.files(path="./parsed/",pattern = "col.Rdata$",full.names = TRUE)
+loc=data.frame()
+for(file in files){
+  print(file)
+  load(file)
+  loc=rbind(loc,loc_gc)
+}
+
+save(loc,file="./parsed/loc.Rdata")
+```
+
+
+```{r eval=FALSE}
+load("./parsed/loc.Rdata")
+
+loc <-
+  filter(loc, accuracy < minacc & elevation > minEl & elevation < maxEl)
+  
+maxLat=38.6500 
+minlat=38.6415
+maxLat-minlat
+maxlon=-90.2735
+minLon=-90.2765
+
+maxlon-minLon
+loc <- filter(loc, lat < maxLat& lat > minlat) %>% filter(lon > minLon& lon < maxlon)
+
+# loc <- filter(loc, lat < 38.6480 & lat > 38.6365) %>% filter(lon > -90.3065& lon < -90.2640)
+loc$lon=abs(loc$lon)
+sub=runif(length(loc$lon))
+
+loc=loc[sub<def,]
+
+save(loc,file="./parsed/loc.trim.Rdata")
+
+
+```
+
+```{r}
+load("./parsed/loc.trim.Rdata")
+
+
+library(plotly)
+library(MASS)
+library(scales)
+
+
+
+```
+
+Summmarizing density of `r length(loc$lon)` cattracks
+
+- min accuracy =`r minacc`m
+- min elevation =`r minEl`m
+- max elevation =`r maxEl`m
+
+```{r}
+# , n=200
+kd <- kde2d(loc$lon, loc$lat,n=200)
+
+kd$z=log10(.5+kd$z)
+p <- plot_ly(x = kd$x, y = kd$y, z = kd$z) %>% add_surface(
+  contours = list(
+    z = list(
+      show=TRUE,
+      usecolormap=TRUE,
+      highlightcolor="#ff0000",
+      project=list(z=TRUE)
+      )
+    )
+  ) %>%
+  layout(
+    scene = list(
+      camera=list(
+        eye = list(x=1.87, y=0.88, z=-0.64)
+        )
+      )
+  )
+
+p
+
+
+# htmlwidgets::saveWidget(widget = p, file = "./pcat.html")
+# 
+# webshot::webshot(url = "./pcat.html",
+#                  file = "./slamD.png")
+
+
+```

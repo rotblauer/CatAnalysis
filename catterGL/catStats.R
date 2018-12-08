@@ -117,6 +117,7 @@ stream_in(
     
     stream_out(countedIds, con_out, pagesize = 100)
     
+    loc$accuracy = df$properties$Accuracy
     loc$elevation = df$properties$Elevation
     loc$pressure = df$properties$Pressure
     loc$time = df$properties$Time
@@ -124,7 +125,7 @@ stream_in(
       filter(loc, lat < 38.793865 &
                lat > 38.508583) %>% filter(lon > -90.533524 &
                                              lon < -90.051498)
-    save(loc_gc, file = paste0(tmp, "_", format(Sys.time(), "%Y%m%d_%H%M%S"), ".Rdata"))
+    save(loc_gc, file = paste0(tmp, "_", format(Sys.time(), "%Y%m%d_%H%M%S"), "col.Rdata"))
     
   },
   pagesize = 500000
