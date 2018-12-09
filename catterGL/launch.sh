@@ -8,5 +8,9 @@ rsync -avz ./catterGL.html arew:/home/freyabison/catStats.rotblauer.com/catterGL
 rsync -avz ./mapCat.png arew:/home/freyabison/catStats.rotblauer.com/mapCat.png
 
 
-rsync -avz ./slamD.html arew:/home/freyabison/catStats.rotblauer.com/slamD.html
+cat metaS.html >base.html
+cat slamD.html >>base.html
+rsync -avz ./base.html arew:/home/freyabison/catStats.rotblauer.com/slamD.html
 rsync -avz ./slamD.png arew:/home/freyabison/catStats.rotblauer.com/slamD.png
+
+

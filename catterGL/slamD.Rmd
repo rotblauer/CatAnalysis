@@ -2,9 +2,11 @@
 title: "slamD"
 author: "JL"
 date: "12/8/2018"
-output: html_document
-includes:
-       in_header: metaS.html
+output: 
+  html_document: 
+    includes:
+      in_header: metaS.html
+
 ---
 
 
