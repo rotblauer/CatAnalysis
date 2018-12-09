@@ -16,9 +16,9 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message  = FALSE)
-knitr::opts_chunk$set(fig.width=10, fig.height=10) 
+knitr::opts_chunk$set(fig.width=14, fig.height=10) 
 
-def=0.25
+def=0.15
 minacc=15
 minEl=125
 maxEl=200
@@ -52,11 +52,17 @@ maxLat-minlat
 maxlon=-90.2735
 minLon=-90.2765
 
+maxLat=38.649589580700756
+minlat=38.62937656150435
+maxLat-minlat
+maxlon=-90.24893045425416
+minLon=-90.3068232536316
+
 maxlon-minLon
-# loc <- filter(loc, lat < maxLat& lat > minlat) %>% filter(lon > minLon& lon < maxlon)
+loc <- filter(loc, lat < maxLat& lat > minlat) %>% filter(lon > minLon& lon < maxlon)
 
 # loc <- filter(loc, lat < 38.6480 & lat > 38.6365) %>% filter(lon > -90.3065& lon < -90.2640)
-loc$lon=abs(loc$lon)
+# loc$lon=abs(loc$lon)
 sub=runif(length(loc$lon))
 
 loc=loc[sub<def,]
@@ -75,7 +81,6 @@ library(MASS)
 library(scales)
 
 
-
 ```
 
 Summmarizing density of `r length(loc$lon)` cattracks
@@ -86,10 +91,10 @@ Summmarizing density of `r length(loc$lon)` cattracks
 
 ```{r}
 # , n=200
-kd <- kde2d(loc$lon, loc$lat,n=250)
+kd <- kde2d( loc$lat,loc$lon,n=200)
 
-kd$z=log10(.5+kd$z)
-p <- plot_ly(x = kd$x, y = kd$y, z = kd$z) %>% add_surface(
+kd$z=log10(1+kd$z)
+p <- plot_ly(x = kd$y, y = kd$x, z = kd$z) %>% add_surface(
   contours = list(
     z = list(
       show=TRUE,
@@ -109,7 +114,45 @@ p <- plot_ly(x = kd$x, y = kd$y, z = kd$z) %>% add_surface(
 
 p
 
+# ggmap(tartu_map_g_str, extent = "device") + geom_density2d(data = tartu_housing, aes(x = lon, y = lat), size = 0.3) + 
+#   stat_density2d(data = tartu_housing, 
+#                  aes(x = lon, y = lat, fill = ..level.., alpha = ..level..), size = 0.01, 
+#                  bins = 16, geom = "polygon") + scale_fill_gradient(low = "green", high = "red") + 
+#   scale_alpha(range = c(0, 0.3), guide = FALSE)
 
+# s <- subplot(
+#   plot_ly(x = x, type = "histogram"),
+#   plotly_empty(),
+#   plot_ly(x = x, y = y, type = "histogram2dcontour"),
+#   plot_ly(y = y, type = "histogram"),
+#   nrows = 2, heights = c(0.2, 0.8), widths = c(0.8, 0.2), margin = 0,
+#   shareX = TRUE, shareY = TRUE, titleX = FALSE, titleY = FALSE
+# )
+# p <- layout(s, showlegend = FALSE)
+
+
+# Sys.setenv('MAPBOX_TOKEN' = 'pk.eyJ1Ijoicm90YmxhdWVyIiwiYSI6ImNqcGhkMTdkczBobnkzd3RlaXFsYm8zNTUifQ.cAAqq5A7_ysm6boeHga4yw')
+# 
+# styles <- schema()$layout$layoutAttributes$mapbox$style$values
+# style_buttons <- lapply(styles, function(s) {
+#   list(label = s, method = "relayout", args = list("mapbox.style", s))
+# })
+
+# kdd=data.frame(lat=kd$x,lon=kd.y,z)
+# p <- loc %>%
+#   plot_mapbox(lat = ~lat, lon = ~lon, size=2,
+#               mode = 'scattermapbox', hoverinfo='name') %>% layout(
+#     plot_bgcolor = '#191A1A', paper_bgcolor = '#191A1A',
+#     mapbox = list(style = 'dark',
+#                   zoom = 13,
+#                   center = list(lat = median(loc$lat),
+#                                 lon = median(loc$lon))),
+#     margin = list(l = 0, r = 0,
+#                   b = 0, t = 0,
+#                   pad = 0),
+#     showlegend=FALSE)
+# 
+# p
 # htmlwidgets::saveWidget(widget = p, file = "./pcat.html")
 # 
 # webshot::webshot(url = "./pcat.html",
