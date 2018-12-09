@@ -1,0 +1,199 @@
+---
+title: "Cat QA"
+author: "Rotblauer"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    social: menu
+    source_code: embed
+    includes:
+       in_header: meta.html
+---
+
+
+
+```{r setup, include=FALSE}
+library(highcharter)
+library(dplyr)
+library(viridisLite)
+library(treemap)
+library(flexdashboard)
+library(sp)
+library(rworldmap)
+library(rgeos)
+library(maptools)
+library(stringi)
+library(maps)
+library(plotly)
+library(jsonlite)
+
+data("worldgeojson")
+
+data("usgeojson")
+data("uscountygeojson")
+data("county.fips")
+data(worldgeojson, package = "highcharter")
+
+
+thm <- 
+  hc_theme(
+    colors = c("#1a6ecc", "#434348", "#90ed7d"),
+    chart = list(
+      backgroundColor = "transparent",
+      style = list(fontFamily = "Source Sans Pro")
+    ),
+    xAxis = list(
+      gridLineWidth = 1
+    )
+  )
+
+
+loc <- stream_in(file("./parsed/collapsed.txt"), pagesize = 2000000)
+
+```
+
+
+Column {data-width=800}
+-----------------------------------------------------------------------
+
+
+```{r}
+agg <- function(loc, type) {
+  locC = loc[which(loc$TYPE == type), ]
+  locC = aggregate(COUNT ~ VARIABLE, locC, sum)
+  return(locC)
+}
+
+perCat =agg(loc, "name")
+
+
+```
+
+
+### Cats by World - `r sum(perCat$COUNT)` total tracks total
+
+```{r}
+
+perWorld =agg(loc, "world")
+perWorld$country=stri_trans_totitle(as.character(perWorld$VARIABLE))
+perWorld$country=gsub("Usa","United States of America",perWorld$country)
+perWorld$count=log10(perWorld$COUNT)
+
+c=highchart() %>%
+  hc_add_series_map(worldgeojson, perWorld, name = "Cats",
+                    value = "count", joinBy = c("name", "country")) %>%
+  hc_colorAxis(stops = color_stops()) %>%
+  hc_title(text = "Log10 counts of cats by Country") %>% 
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_tooltip(useHTML = TRUE, headerFormat = "",
+  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+
+c
+
+htmlwidgets::saveWidget(widget = c, file = "./map.html")
+
+webshot::webshot(url = "./map.html",
+                 file = "./map.png")
+```
+
+### Cats by United
+
+```{r}
+
+perState =agg(loc, "state")
+perState$state=stri_trans_totitle(as.character(perState$VARIABLE))
+perState$count=log10(perState$COUNT)
+
+highchart() %>%
+  hc_add_series_map(usgeojson, perState, name = "Cats",
+                    value = "count", joinBy = c("woename", "state")) %>%
+  hc_colorAxis(stops = color_stops()) %>%
+  hc_title(text = "Log10 counts of cats by State") %>% 
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_tooltip(useHTML = TRUE, headerFormat = "",
+  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+
+```
+
+
+
+
+### Cats by County
+
+```{r}
+perCounty=agg(loc, "county")
+county.fips$polyname.trim=gsub(":.*","",county.fips$polyname)
+perCounty = merge(agg(loc, "county"),
+                  county.fips,
+                  by.x = "VARIABLE",
+                  by.y = "polyname.trim")
+perCounty$COUNT = log10(perCounty$COUNT)
+fix=lapply(perCounty$fips,nchar)<5
+perCounty$fips[fix]= paste0("0",perCounty$fips)[fix]
+
+c=highchart() %>%
+  hc_add_series_map(uscountygeojson, perCounty, name = "Cats",
+                    value = "COUNT", joinBy = c("fips", "fips"))%>%
+  hc_colorAxis(stops = color_stops()) %>%
+  hc_title(text = "Log10 counts of cats by County") %>% 
+  hc_mapNavigation(enabled = TRUE) %>%
+  hc_tooltip(useHTML = TRUE, headerFormat = "",
+  pointFormat = "This is {point.name} and has 10^{point.COUNT} tracks")
+c
+
+
+
+
+
+```
+
+
+
+Column {.tabset data-width=400}
+-----------------------------------------------------------------------
+
+
+### Cat activities
+
+```{r, fig.keep='none'}
+loc$activity="TEST"
+perActivity =agg(loc, "activity")
+
+tm=treemap(perActivity, #Your data frame object
+        index=c("VARIABLE"),  #A list of your categorical variables
+        vSize = "COUNT",  #This is your quantitative variable
+        type="index", #Type sets the organization and color scheme of your treemap
+        palette =  rev(viridis(6)),  #Select your color palette from the RColorBrewer presets or make your own.
+        title="Cat activities", #Customize your title
+        fontsize.title = 14 #Change the font size of the title
+        )
+
+highchart() %>% 
+  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
+                        layoutAlgorithm = "squarified") %>% 
+  hc_add_theme(thm)
+```
+
+
+
+### Cat People
+
+```{r, fig.keep='none'}
+
+perCat =agg(loc, "name")
+
+tm=treemap(perCat,
+        index=c("VARIABLE"),
+        vSize = "COUNT",
+        type="index",
+        palette =  rev(viridis(6)),
+        title="People with cats",
+        fontsize.title = 14
+        )
+
+highchart() %>%
+  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
+                        layoutAlgorithm = "squarified") %>%
+  hc_add_theme(thm)
+```

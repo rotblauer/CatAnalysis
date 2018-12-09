@@ -18,12 +18,12 @@ knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message  = FALSE)
 knitr::opts_chunk$set(fig.width=10, fig.height=10) 
 
-def=0.5
+def=0.75
 minacc=15
 minEl=125
 maxEl=200
 
-
+library(dplyr)
 
 ```
 
@@ -86,7 +86,7 @@ Summmarizing density of `r length(loc$lon)` cattracks
 
 ```{r}
 # , n=200
-kd <- kde2d(loc$lon, loc$lat,n=200)
+kd <- kde2d(loc$lon, loc$lat,n=250)
 
 kd$z=log10(.5+kd$z)
 p <- plot_ly(x = kd$x, y = kd$y, z = kd$z) %>% add_surface(
