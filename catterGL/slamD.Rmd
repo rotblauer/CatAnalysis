@@ -14,9 +14,9 @@ includes:
 knitr::opts_chunk$set(echo = FALSE)
 knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message  = FALSE)
-knitr::opts_chunk$set(fig.width=12, fig.height=12) 
+knitr::opts_chunk$set(fig.width=10, fig.height=10) 
 
-def=0.25
+def=0.35
 minacc=15
 minEl=125
 maxEl=200
