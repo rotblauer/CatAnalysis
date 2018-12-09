@@ -1423,4 +1423,80 @@
 {"VARIABLE":"Automotive","COUNT":9286,"TYPE":"activity"}
 {"VARIABLE":"Bike","COUNT":104,"TYPE":"activity"}
 {"VARIABLE":"Stationary","COUNT":212384,"TYPE":"activity"}
-{"VARIABLE":"Unknown","COUNT":38663,"TYPE":
+{"VARIABLE":"Unknown","COUNT":38663,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":11200,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":163419,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":52745,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":118524,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":132325,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":32987,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":266350,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis city","COUNT":266350,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":118963,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":4128,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":266350,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":1957,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":1965,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":159627,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":33218,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":3583,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":122358,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":608,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":144464,"TYPE":"name"}
+{"VARIABLE":"jl","COUNT":3,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":131938,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":11446,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":89183,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":324660,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis city","COUNT":324660,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":52498,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":324660,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":1552,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":3498,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":69,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":196948,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":73471,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":3219,"TYPE":"activity"}
+{"VARIABLE":"Big Papa","COUNT":105912,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":62905,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":168334,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":50414,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":112435,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":347663,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis city","COUNT":347663,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":77847,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":47349,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":347663,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":4468,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":11152,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":176,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":175918,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":41797,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":21050,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":6,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":183509,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":74073,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":78924,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":90075,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":73413,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":295481,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis","COUNT":2564,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":292917,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":106178,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":84206,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":295481,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":2799,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":883,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":40,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":203808,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":18340,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":8599,"TYPE":"activity"}
+{"VARIABLE":"Big Mamma","COUNT":3573,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":107495,"TYPE":"name"}
+{"VARIABLE":"Bigger Papa","COUNT":29239,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":120313,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":155174,"TYPE":"name"}
+{"VARIABLE":"Twenty7","COUNT":84206,"TYPE":"name"}
+{"VARIABLE":"missouri","COUNT":286440,"TYPE":"state"}
+{"VARIABLE":"missouri,st louis city","COUNT":286440,"TYPE":"county"}
+{"VARIABLE":"Japan","COUNT":87244,"TYPE":"world
