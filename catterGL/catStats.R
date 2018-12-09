@@ -117,6 +117,7 @@ stream_in(
     
     stream_out(countedIds, con_out, pagesize = 100)
     
+    loc$speed = df$properties$Speed
     loc$accuracy = df$properties$Accuracy
     loc$elevation = df$properties$Elevation
     loc$pressure = df$properties$Pressure

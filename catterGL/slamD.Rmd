@@ -18,7 +18,7 @@ knitr::opts_chunk$set(warning = FALSE)
 knitr::opts_chunk$set(message  = FALSE)
 knitr::opts_chunk$set(fig.width=10, fig.height=10) 
 
-def=0.75
+def=0.25
 minacc=15
 minEl=125
 maxEl=200
@@ -53,7 +53,7 @@ maxlon=-90.2735
 minLon=-90.2765
 
 maxlon-minLon
-loc <- filter(loc, lat < maxLat& lat > minlat) %>% filter(lon > minLon& lon < maxlon)
+# loc <- filter(loc, lat < maxLat& lat > minlat) %>% filter(lon > minLon& lon < maxlon)
 
 # loc <- filter(loc, lat < 38.6480 & lat > 38.6365) %>% filter(lon > -90.3065& lon < -90.2640)
 loc$lon=abs(loc$lon)
