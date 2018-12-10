@@ -75,26 +75,61 @@ perCat =agg(loc, "name")
 
 ```{r}
 
+
+library(plotly)
+# df <- read.csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv')
+# df[,2] <- as.numeric(df[,2])
+# df[,2] <- log(df[,2])
+
+
+library(countrycode)
 perWorld =agg(loc, "world")
 perWorld$country=stri_trans_totitle(as.character(perWorld$VARIABLE))
+perWorld$code=countrycode(perWorld$country, 'country.name', 'iso3c') 
+
 perWorld$country=gsub("Usa","United States of America",perWorld$country)
 perWorld$count=log10(perWorld$COUNT)
 
-c=highchart() %>%
-  hc_add_series_map(worldgeojson, perWorld, name = "Cats",
-                    value = "count", joinBy = c("name", "country")) %>%
-  hc_colorAxis(stops = color_stops()) %>%
-  hc_title(text = "Log10 counts of cats by Country") %>% 
-  hc_mapNavigation(enabled = TRUE) %>%
-  hc_tooltip(useHTML = TRUE, headerFormat = "",
-  pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+l <- list(color = toRGB("#d1d1d1"), width = 0.5)
+#Specify map projection and options
+g <- list(
+     showframe = FALSE,
+     showcoastlines = FALSE,
+     projection = list(type = 'orthographic'),
+     resolution = '200',
+     showcountries = TRUE,
+     countrycolor = '#d1d1d1',
+     showocean = TRUE,
+     oceancolor = '#c9d2e0',
+     showlakes = TRUE,
+     lakecolor = '#99c0db',
+     showrivers = TRUE,
+     rivercolor = '#99c0db')
 
-c
+p <- plot_geo(perWorld) %>%
+     add_trace(z = ~count, color = ~count, colors = 'Reds',
+     text = ~country, locations = ~code, marker = list(line = l)) %>%
+     colorbar(title = 'Log10 counts of cats by Country') %>%
+     layout(title = '', geo = g)
+p
 
-htmlwidgets::saveWidget(widget = c, file = "./map.html")
+# c=highchart() %>%
+#   hc_add_series_map(worldgeojson, perWorld, name = "Cats",
+#                     value = "count", joinBy = c("name", "country")) %>%
+#   hc_colorAxis(stops = color_stops()) %>%
+#   hc_title(text = "Log10 counts of cats by Country") %>% 
+#   hc_mapNavigation(enabled = TRUE) %>%
+#   hc_tooltip(useHTML = TRUE, headerFormat = "",
+#   pointFormat = "This is {point.name} and has 10^{point.count} tracks")
+# 
+# c
 
-webshot::webshot(url = "./map.html",
-                 file = "./map.png")
+# rD <- RSelenium::rsDriver(browser = "chrome")
+# export(p, "map.png",rd)
+# htmlwidgets::saveWidget(widget = p, file = "./map.html")
+# 
+# webshot::webshot(url = "./map.html",
+#                  file = "./map.png")
 ```
 
 ### Cats by United
