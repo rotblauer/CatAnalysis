@@ -27,8 +27,8 @@ library(stringi)
 library(maps)
 library(plotly)
 library(jsonlite)
-
-data("worldgeojson")
+library(plotly)
+library(countrycode)
 
 data("usgeojson")
 data("uscountygeojson")
@@ -75,14 +75,6 @@ perCat =agg(loc, "name")
 
 ```{r}
 
-
-library(plotly)
-# df <- read.csv('https://raw.githubusercontent.com/plotly/datasets/master/2014_world_gdp_with_codes.csv')
-# df[,2] <- as.numeric(df[,2])
-# df[,2] <- log(df[,2])
-
-
-library(countrycode)
 perWorld =agg(loc, "world")
 perWorld$country=stri_trans_totitle(as.character(perWorld$VARIABLE))
 perWorld$code=countrycode(perWorld$country, 'country.name', 'iso3c') 
@@ -112,18 +104,6 @@ p <- plot_geo(perWorld) %>%
      colorbar(title = 'Log10 counts of cats by Country') %>%
      layout(title = '', geo = g)
 p
-
-# c=highchart() %>%
-#   hc_add_series_map(worldgeojson, perWorld, name = "Cats",
-#                     value = "count", joinBy = c("name", "country")) %>%
-#   hc_colorAxis(stops = color_stops()) %>%
-#   hc_title(text = "Log10 counts of cats by Country") %>% 
-#   hc_mapNavigation(enabled = TRUE) %>%
-#   hc_tooltip(useHTML = TRUE, headerFormat = "",
-#   pointFormat = "This is {point.name} and has 10^{point.count} tracks")
-# 
-# c
-
 # rD <- RSelenium::rsDriver(browser = "chrome")
 # export(p, "map.png",rd)
 # htmlwidgets::saveWidget(widget = p, file = "./map.html")
@@ -199,7 +179,7 @@ tm=treemap(perActivity, #Your data frame object
         index=c("VARIABLE"),  #A list of your categorical variables
         vSize = "COUNT",  #This is your quantitative variable
         type="index", #Type sets the organization and color scheme of your treemap
-        palette =  rev(viridis(6)),  #Select your color palette from the RColorBrewer presets or make your own.
+        palette =  rev(viridis(length(unique(perActivity$VARIABLE)))),  #Select your color palette from the RColorBrewer presets or make your own.
         title="Cat activities", #Customize your title
         fontsize.title = 14 #Change the font size of the title
         )
@@ -222,7 +202,7 @@ tm=treemap(perCat,
         index=c("VARIABLE"),
         vSize = "COUNT",
         type="index",
-        palette =  rev(viridis(6)),
+        palette =  rev(viridis(length(unique(perCat$VARIABLE)))),
         title="People with cats",
         fontsize.title = 14
         )
