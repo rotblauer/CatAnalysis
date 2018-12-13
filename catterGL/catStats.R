@@ -65,6 +65,7 @@ summarizeCount <- function(type, names) {
   perType$VARIABLE = as.character(perType$VARIABLE)
   return(perType)
 }
+
 # perState$count=log10(perState$count)
 
 
@@ -106,6 +107,10 @@ stream_in(
       # print(activitiesToCount)
       countedActivities = summarizeCount("activity", activitiesToCount)
       countedIds = rbind(countedIds, countedActivities)
+      
+      countedActivitiesCat = summarizeCount("name-activity", apply(loc[, c("name", "activity")] , 1 , paste , collapse = "-"))
+      countedIds = rbind(countedIds, countedActivitiesCat)
+      print(countedIds)
     }
     
     namesToCount = loc[which(nchar(loc$name) > 0), "name"]
@@ -117,16 +122,16 @@ stream_in(
     
     stream_out(countedIds, con_out, pagesize = 100)
     
-    loc$speed = df$properties$Speed
-    loc$accuracy = df$properties$Accuracy
-    loc$elevation = df$properties$Elevation
-    loc$pressure = df$properties$Pressure
-    loc$time = df$properties$Time
-    loc_gc <-
-      filter(loc, lat < 38.793865 &
-               lat > 38.508583) %>% filter(lon > -90.533524 &
-                                             lon < -90.051498)
-    save(loc_gc, file = paste0(tmp, "_", format(Sys.time(), "%Y%m%d_%H%M%S"), "col.Rdata"))
+    # loc$speed = df$properties$Speed
+    # loc$accuracy = df$properties$Accuracy
+    # loc$elevation = df$properties$Elevation
+    # loc$pressure = df$properties$Pressure
+    # loc$time = df$properties$Time
+    # loc_gc <-
+    #   filter(loc, lat < 38.793865 &
+    #            lat > 38.508583) %>% filter(lon > -90.533524 &
+    #                                          lon < -90.051498)
+    # save(loc_gc, file = paste0(tmp, "_", format(Sys.time(), "%Y%m%d_%H%M%S"), "col.Rdata"))
     
   },
   pagesize = 500000

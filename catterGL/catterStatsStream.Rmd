@@ -104,10 +104,9 @@ p <- plot_geo(perWorld) %>%
      colorbar(title = 'Log10 counts of cats by Country') %>%
      layout(title = '', geo = g)
 p
-# rD <- RSelenium::rsDriver(browser = "chrome")
-# export(p, "map.png",rd)
-# htmlwidgets::saveWidget(widget = p, file = "./map.html")
-# 
+
+# tmpFile <- tempfile(fileext = ".png")
+# export(p, file = tmpFile)
 # webshot::webshot(url = "./map.html",
 #                  file = "./map.png")
 ```
@@ -204,6 +203,27 @@ tm=treemap(perCat,
         type="index",
         palette =  rev(viridis(length(unique(perCat$VARIABLE)))),
         title="People with cats",
+        fontsize.title = 14
+        )
+
+highchart() %>%
+  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
+                        layoutAlgorithm = "squarified") %>%
+  hc_add_theme(thm)
+```
+
+### Cat People Activities
+
+```{r, fig.keep='none'}
+
+perCat =agg(loc, "name-activity")
+
+tm=treemap(perCat,
+        index=c("VARIABLE"),
+        vSize = "COUNT",
+        type="index",
+        palette =  rev(viridis(length(unique(perCat$VARIABLE)))),
+        title="People with cats with activities",
         fontsize.title = 14
         )
 
