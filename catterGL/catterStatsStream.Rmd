@@ -173,7 +173,7 @@ Column {.tabset data-width=400}
 ```{r, fig.keep='none'}
 loc$activity="TEST"
 perActivity =agg(loc, "activity")
-
+perActivity=perActivity[which(perActivity$VARIABLE!="Unknown"),]
 tm=treemap(perActivity, #Your data frame object
         index=c("VARIABLE"),  #A list of your categorical variables
         vSize = "COUNT",  #This is your quantitative variable
@@ -217,7 +217,11 @@ highchart() %>%
 ```{r, fig.keep='none'}
 
 perCat =agg(loc, "name-activity")
+perCat$NAME=gsub("-.*","",perCat$VARIABLE)
+perCat$ACTIVITY=gsub(".*-","",perCat$VARIABLE)
+perCat=perCat[which(perCat$ACTIVITY!="Unknown"&perCat$ACTIVITY!="NA"),]
 
+# strsplit(perCat$VARIABLE,split = "-")[[1]]
 tm=treemap(perCat,
         index=c("VARIABLE"),
         vSize = "COUNT",
@@ -226,6 +230,10 @@ tm=treemap(perCat,
         title="People with cats with activities",
         fontsize.title = 14
         )
+# 
+# tm <- treemap(perCat, index = c("ACTIVITY", "NAME"),
+#               vSize = "COUNT", vColor = "NAME",
+#               type = "value", palette = viridis(6))
 
 highchart() %>%
   hc_add_series_treemap(tm, allowDrillToNode = TRUE,

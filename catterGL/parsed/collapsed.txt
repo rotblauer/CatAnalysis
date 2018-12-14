@@ -5747,19 +5747,23 @@
 {"VARIABLE":"KK's Work Phone","COUNT":57452,"TYPE":"name"}
 {"VARIABLE":"Rathbone","COUNT":109794,"TYPE":"name"}
 {"VARIABLE":"Rye8","COUNT":126011,"TYPE":"name"}
-{"VARIABLE":"california","COUNT":4728,"TYPE":"state"}
+{"VARIABLE":"california","COUNT":71247,"TYPE":"state"}
 {"VARIABLE":"idaho","COUNT":121,"TYPE":"state"}
 {"VARIABLE":"iowa","COUNT":676,"TYPE":"state"}
-{"VARIABLE":"minnesota","COUNT":36642,"TYPE":"state"}
-{"VARIABLE":"missouri","COUNT":40946,"TYPE":"state"}
+{"VARIABLE":"maryland","COUNT":29,"TYPE":"state"}
+{"VARIABLE":"minnesota","COUNT":91814,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":189924,"TYPE":"state"}
 {"VARIABLE":"nevada","COUNT":1414,"TYPE":"state"}
-{"VARIABLE":"new york","COUNT":22588,"TYPE":"state"}
+{"VARIABLE":"new york","COUNT":35674,"TYPE":"state"}
+{"VARIABLE":"north carolina","COUNT":1034,"TYPE":"state"}
+{"VARIABLE":"south carolina","COUNT":26129,"TYPE":"state"}
 {"VARIABLE":"south dakota","COUNT":1187,"TYPE":"state"}
 {"VARIABLE":"utah","COUNT":286,"TYPE":"state"}
+{"VARIABLE":"virginia","COUNT":352,"TYPE":"state"}
 {"VARIABLE":"wyoming","COUNT":2000,"TYPE":"state"}
 {"VARIABLE":"california,colusa","COUNT":133,"TYPE":"county"}
 {"VARIABLE":"california,nevada","COUNT":125,"TYPE":"county"}
-{"VARIABLE":"california,san francisco","COUNT":2976,"TYPE":"county"}
+{"VARIABLE":"california,san francisco","COUNT":69495,"TYPE":"county"}
 {"VARIABLE":"california,san mateo","COUNT":1220,"TYPE":"county"}
 {"VARIABLE":"california,sierra","COUNT":101,"TYPE":"county"}
 {"VARIABLE":"california,sutter","COUNT":40,"TYPE":"county"}
@@ -5771,13 +5775,17 @@
 {"VARIABLE":"iowa,henry","COUNT":100,"TYPE":"county"}
 {"VARIABLE":"iowa,keokuk","COUNT":70,"TYPE":"county"}
 {"VARIABLE":"iowa,tama","COUNT":432,"TYPE":"county"}
+{"VARIABLE":"maryland,worcester","COUNT":29,"TYPE":"county"}
 {"VARIABLE":"minnesota,carver","COUNT":79,"TYPE":"county"}
 {"VARIABLE":"minnesota,hennepin","COUNT":3922,"TYPE":"county"}
 {"VARIABLE":"minnesota,lac qui parle","COUNT":68,"TYPE":"county"}
 {"VARIABLE":"minnesota,mcleod","COUNT":177,"TYPE":"county"}
-{"VARIABLE":"minnesota,st louis","COUNT":32396,"TYPE":"county"}
-{"VARIABLE":"missouri,st louis","COUNT":5251,"TYPE":"county"}
-{"VARIABLE":"missouri,st louis city","COUNT":35695,"TYPE":"county"}
+{"VARIABLE":"minnesota,st louis","COUNT":87568,"TYPE":"county"}
+{"VARIABLE":"missouri,franklin","COUNT":4035,"TYPE":"county"}
+{"VARIABLE":"missouri,jefferson","COUNT":7050,"TYPE":"county"}
+{"VARIABLE":"missouri,st charles","COUNT":3273,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":18496,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":157070,"TYPE":"county"}
 {"VARIABLE":"nevada,churchill","COUNT":31,"TYPE":"county"}
 {"VARIABLE":"nevada,elko","COUNT":502,"TYPE":"county"}
 {"VARIABLE":"nevada,eureka","COUNT":129,"TYPE":"county"}
@@ -5785,7 +5793,24 @@
 {"VARIABLE":"nevada,lander","COUNT":161,"TYPE":"county"}
 {"VARIABLE":"nevada,pershing","COUNT":434,"TYPE":"county"}
 {"VARIABLE":"nevada,washoe","COUNT":131,"TYPE":"county"}
-{"VARIABLE":"new york,new york","COUNT":22588,"TYPE":"county"}
+{"VARIABLE":"new york,new york","COUNT":30037,"TYPE":"county"}
+{"VARIABLE":"new york,queens","COUNT":5637,"TYPE":"county"}
+{"VARIABLE":"north carolina,bertie","COUNT":172,"TYPE":"county"}
+{"VARIABLE":"north carolina,bladen","COUNT":127,"TYPE":"county"}
+{"VARIABLE":"north carolina,columbus","COUNT":221,"TYPE":"county"}
+{"VARIABLE":"north carolina,duplin","COUNT":16,"TYPE":"county"}
+{"VARIABLE":"north carolina,gates","COUNT":77,"TYPE":"county"}
+{"VARIABLE":"north carolina,greene","COUNT":31,"TYPE":"county"}
+{"VARIABLE":"north carolina,hertford","COUNT":47,"TYPE":"county"}
+{"VARIABLE":"north carolina,lenoir","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"north carolina,martin","COUNT":109,"TYPE":"county"}
+{"VARIABLE":"north carolina,pitt","COUNT":200,"TYPE":"county"}
+{"VARIABLE":"north carolina,sampson","COUNT":24,"TYPE":"county"}
+{"VARIABLE":"south carolina,berkeley","COUNT":302,"TYPE":"county"}
+{"VARIABLE":"south carolina,charleston","COUNT":25210,"TYPE":"county"}
+{"VARIABLE":"south carolina,georgetown","COUNT":291,"TYPE":"county"}
+{"VARIABLE":"south carolina,horry","COUNT":285,"TYPE":"county"}
+{"VARIABLE":"south carolina,marion","COUNT":41,"TYPE":"county"}
 {"VARIABLE":"south dakota,codington","COUNT":73,"TYPE":"county"}
 {"VARIABLE":"south dakota,grant","COUNT":131,"TYPE":"county"}
 {"VARIABLE":"south dakota,haakon","COUNT":207,"TYPE":"county"}
@@ -5793,6 +5818,10 @@
 {"VARIABLE":"south dakota,spink","COUNT":33,"TYPE":"county"}
 {"VARIABLE":"south dakota,stanley","COUNT":16,"TYPE":"county"}
 {"VARIABLE":"utah,box elder","COUNT":286,"TYPE":"county"}
+{"VARIABLE":"virginia,accomack","COUNT":143,"TYPE":"county"}
+{"VARIABLE":"virginia,norfolk","COUNT":26,"TYPE":"county"}
+{"VARIABLE":"virginia,northampton","COUNT":114,"TYPE":"county"}
+{"VARIABLE":"virginia,suffolk","COUNT":69,"TYPE":"county"}
 {"VARIABLE":"wyoming,campbell","COUNT":251,"TYPE":"county"}
 {"VARIABLE":"wyoming,fremont","COUNT":517,"TYPE":"county"}
 {"VARIABLE":"wyoming,hot springs","COUNT":137,"TYPE":"county"}
@@ -5800,36 +5829,43 @@
 {"VARIABLE":"wyoming,sublette","COUNT":366,"TYPE":"county"}
 {"VARIABLE":"wyoming,washakie","COUNT":187,"TYPE":"county"}
 {"VARIABLE":"wyoming,weston","COUNT":257,"TYPE":"county"}
-{"VARIABLE":"Japan","COUNT":27425,"TYPE":"world"}
-{"VARIABLE":"USA","COUNT":98361,"TYPE":"world"}
-{"VARIABLE":"Automotive","COUNT":11310,"TYPE":"activity"}
-{"VARIABLE":"Bike","COUNT":48,"TYPE":"activity"}
-{"VARIABLE":"Running","COUNT":327,"TYPE":"activity"}
-{"VARIABLE":"Stationary","COUNT":45898,"TYPE":"activity"}
-{"VARIABLE":"Unknown","COUNT":35834,"TYPE":"activity"}
-{"VARIABLE":"Walking","COUNT":17332,"TYPE":"activity"}
+{"VARIABLE":"Japan","COUNT":53563,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":402124,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":22448,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":50,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":3281,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":216574,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":140020,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":40719,"TYPE":"activity"}
 {"VARIABLE":"Big Papa-Automotive","COUNT":6456,"TYPE":"name-activity"}
 {"VARIABLE":"Big Papa-Bike","COUNT":48,"TYPE":"name-activity"}
-{"VARIABLE":"Big Papa-Stationary","COUNT":7991,"TYPE":"name-activity"}
-{"VARIABLE":"Big Papa-Unknown","COUNT":4028,"TYPE":"name-activity"}
-{"VARIABLE":"Big Papa-Walking","COUNT":2829,"TYPE":"name-activity"}
-{"VARIABLE":"Chishiki-NA","COUNT":27425,"TYPE":"name-activity"}
-{"VARIABLE":"Jonathan Carlomagno’s iPhone-Unknown","COUNT":25896,"TYPE":"name-activity"}
-{"VARIABLE":"KK's Work Phone-Running","COUNT":105,"TYPE":"name-activity"}
-{"VARIABLE":"KK's Work Phone-Stationary","COUNT":11136,"TYPE":"name-activity"}
-{"VARIABLE":"KK's Work Phone-Unknown","COUNT":2539,"TYPE":"name-activity"}
-{"VARIABLE":"KK's Work Phone-Walking","COUNT":8808,"TYPE":"name-activity"}
-{"VARIABLE":"Rathbone-Automotive","COUNT":4854,"TYPE":"name-activity"}
-{"VARIABLE":"Rathbone-Stationary","COUNT":19074,"TYPE":"name-activity"}
-{"VARIABLE":"Rathbone-Unknown","COUNT":2943,"TYPE":"name-activity"}
-{"VARIABLE":"Rathbone-Walking","COUNT":5525,"TYPE":"name-activity"}
-{"VARIABLE":"Rye8-Running","COUNT":222,"TYPE":"name-activity"}
-{"VARIABLE":"Rye8-Stationary","COUNT":7697,"TYPE":"name-activity"}
-{"VARIABLE":"Rye8-Unknown","COUNT":428,"TYPE":"name-activity"}
-{"VARIABLE":"Rye8-Walking","COUNT":170,"TYPE":"name-activity"}
-{"VARIABLE":"Big Papa","COUNT":21352,"TYPE":"name"}
-{"VARIABLE":"Chishiki","COUNT":27425,"TYPE":"name"}
-{"VARIABLE":"Jonathan Carlomagno’s iPhone","COUNT":25896,"TYPE":"name"}
-{"VARIABLE":"KK's Work Phone","COUNT":22588,"TYPE":"name"}
-{"VARIABLE":"Rathbone","COUNT":32396,"TYPE":"name"}
-{"VARIABLE":"Rye8","COUNT":8517,"TYPE":"name"}
+{"VARIABLE":"Big Papa-Running","COUNT":2,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Stationary","COUNT":52823,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Unknown","COUNT":13181,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Walking","COUNT":15361,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Stationary","COUNT":5692,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Unknown","COUNT":1734,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Walking","COUNT":647,"TYPE":"name-activity"}
+{"VARIABLE":"Chishiki-NA","COUNT":59523,"TYPE":"name-activity"}
+{"VARIABLE":"Jonathan Carlomagno’s iPhone-Unknown","COUNT":96988,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Automotive","COUNT":7201,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Running","COUNT":113,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Stationary","COUNT":31597,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Unknown","COUNT":11739,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Walking","COUNT":13612,"TYPE":"name-activity"}
+{"VARIABLE":"Rathbone-Automotive","COUNT":8791,"TYPE":"name-activity"}
+{"VARIABLE":"Rathbone-Stationary","COUNT":52889,"TYPE":"name-activity"}
+{"VARIABLE":"Rathbone-Unknown","COUNT":8609,"TYPE":"name-activity"}
+{"VARIABLE":"Rathbone-Walking","COUNT":9206,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Bike","COUNT":2,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Running","COUNT":3166,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Stationary","COUNT":73573,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Unknown","COUNT":7769,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Walking","COUNT":1893,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa","COUNT":87871,"TYPE":"name"}
+{"VARIABLE":"Bob's iPhone 6","COUNT":8073,"TYPE":"name"}
+{"VARIABLE":"Chishiki","COUNT":59523,"TYPE":"name"}
+{"VARIABLE":"Jonathan Carlomagno’s iPhone","COUNT":96988,"TYPE":"name"}
+{"VARIABLE":"KK's Work Phone","COUNT":64262,"TYPE":"name"}
+{"VARIABLE":"Rathbone","COUNT":79495,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":86403,"TYPE":"name"}
