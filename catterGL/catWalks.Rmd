@@ -24,13 +24,26 @@ library(plotly)
 library(htmltools)
 
 loc <- stream_in(file("./parsed/collapsed.txt"), pagesize = 2000000)
-loc=loc[which(loc$TYPE=="name-activity--day"),]
+loc=loc[which(loc$TYPE=="name-activity--day"&loc$VARIABLE!="jl-NA-1901-01-01"),]
 loc$NAME=gsub("-.*","",loc$VARIABLE)
-loc$DATE=as.Date(gsub(".*-2","2",loc$VARIABLE))
+loc$DATE=as.Date(gsub(".*-2018","2018",loc$VARIABLE))
 loc$ACTIVITY=gsub("-2.*","",loc$VARIABLE)
 loc$ACTIVITY=gsub(".*-","",loc$ACTIVITY)
 
 loc= aggregate(COUNT~ACTIVITY+NAME+DATE,loc,sum)
+f1 <- list(
+  family = "Arial, sans-serif",
+  size = 8,
+  color = "black"
+)
+x <- list(
+  # title = "Cats",
+  showticklabels = TRUE,
+  tickangle = 25,
+  tickfont = f1
+
+)
+
 getP <- function(loc, type) {
   tmp = loc[which(loc$ACTIVITY == type), ]
   tmp$NAME = as.factor(tmp$NAME)
@@ -41,13 +54,14 @@ getP <- function(loc, type) {
   y = ~ COUNT,
   color = ~ NAME,
   type = "box") %>%
-  layout(yaxis = y)
+  layout(yaxis = y,xaxis=x)
 }
 
 type="Walking"
 ```
 
-### Cat `r type`s per day (`r min(loc$DATE)` -`r max(loc$DATE)` )
+### Cat `r type`s per day (`r min(loc$DATE)` to `r max(loc$DATE)` )
+
 ```{r echo=FALSE,message=FALSE}
 p=getP(loc=loc,type=type)
 tagList( p)
@@ -62,7 +76,7 @@ type="Running"
 p=getP(loc=loc,type=type)
 tagList( p)
 
-type="Biking"
+type="Bike"
 
 ```
 
