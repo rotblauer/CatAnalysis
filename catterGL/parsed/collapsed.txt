@@ -209,4 +209,417 @@
 {"VARIABLE":"ohio,knox","COUNT":205,"TYPE":"county"}
 {"VARIABLE":"ohio,logan","COUNT":60,"TYPE":"county"}
 {"VARIABLE":"ohio,miami","COUNT":172,"TYPE":"county"}
-{"VARIABLE":"ohio,morrow","COUNT":137,"TYP
+{"VARIABLE":"ohio,morrow","COUNT":137,"TYPE":"county"}
+{"VARIABLE":"ohio,portage","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"ohio,shelby","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"ohio,tuscarawas","COUNT":158,"TYPE":"county"}
+{"VARIABLE":"ohio,union","COUNT":139,"TYPE":"county"}
+{"VARIABLE":"oklahoma,murray","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"oregon,baker","COUNT":8,"TYPE":"county"}
+{"VARIABLE":"oregon,deschutes","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"oregon,grant","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"oregon,lane","COUNT":3,"TYPE":"county"}
+{"VARIABLE":"oregon,wallowa","COUNT":5,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,allegheny","COUNT":6,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,armstrong","COUNT":227,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,beaver","COUNT":167,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,butler","COUNT":211,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,centre","COUNT":198,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,clearfield","COUNT":333,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,clinton","COUNT":181,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,columbia","COUNT":98,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,delaware","COUNT":5,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,fulton","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,jefferson","COUNT":195,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,lackawanna","COUNT":115,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,luzerne","COUNT":261,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,lycoming","COUNT":307,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,montgomery","COUNT":11,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,pike","COUNT":87,"TYPE":"county"}
+{"VARIABLE":"pennsylvania,wayne","COUNT":112,"TYPE":"county"}
+{"VARIABLE":"south dakota,brule","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"south dakota,jackson","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"south dakota,jones","COUNT":4,"TYPE":"county"}
+{"VARIABLE":"south dakota,lyman","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"south dakota,mccook","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"south dakota,minnehaha","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"south dakota,pennington","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"texas,bexar","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"texas,cooke","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"texas,travis","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"vermont,windham","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"virginia,albemarle","COUNT":3,"TYPE":"county"}
+{"VARIABLE":"virginia,arlington","COUNT":6,"TYPE":"county"}
+{"VARIABLE":"washington,clallam","COUNT":19,"TYPE":"county"}
+{"VARIABLE":"washington,jefferson","COUNT":7,"TYPE":"county"}
+{"VARIABLE":"washington,pacific","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"washington,pierce","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"washington,san juan","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"washington,spokane","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"washington,stevens","COUNT":5,"TYPE":"county"}
+{"VARIABLE":"west virginia,summers","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"wisconsin,bayfield","COUNT":45,"TYPE":"county"}
+{"VARIABLE":"wisconsin,dane","COUNT":3,"TYPE":"county"}
+{"VARIABLE":"wisconsin,douglas","COUNT":66,"TYPE":"county"}
+{"VARIABLE":"wyoming,campbell","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"wyoming,crook","COUNT":3,"TYPE":"county"}
+{"VARIABLE":"wyoming,johnson","COUNT":7,"TYPE":"county"}
+{"VARIABLE":"wyoming,teton","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"Germany","COUNT":134068,"TYPE":"world"}
+{"VARIABLE":"Japan","COUNT":1,"TYPE":"world"}
+{"VARIABLE":"Norway","COUNT":1362,"TYPE":"world"}
+{"VARIABLE":"Sweden","COUNT":898,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":362746,"TYPE":"world"}
+{"VARIABLE":"Big Mamma","COUNT":2716,"TYPE":"name"}
+{"VARIABLE":"Big Papa","COUNT":283135,"TYPE":"name"}
+{"VARIABLE":"jl","COUNT":2957,"TYPE":"name"}
+{"VARIABLE":"Kayleigh's iPhone","COUNT":25257,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":185935,"TYPE":"name"}
+{"VARIABLE":"georgia","COUNT":25255,"TYPE":"state"}
+{"VARIABLE":"idaho","COUNT":2811,"TYPE":"state"}
+{"VARIABLE":"illinois","COUNT":21817,"TYPE":"state"}
+{"VARIABLE":"kentucky","COUNT":15182,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":320514,"TYPE":"state"}
+{"VARIABLE":"north carolina","COUNT":1292,"TYPE":"state"}
+{"VARIABLE":"south carolina","COUNT":22508,"TYPE":"state"}
+{"VARIABLE":"tennessee","COUNT":30149,"TYPE":"state"}
+{"VARIABLE":"utah","COUNT":9049,"TYPE":"state"}
+{"VARIABLE":"washington","COUNT":51422,"TYPE":"state"}
+{"VARIABLE":"georgia,burke","COUNT":2495,"TYPE":"county"}
+{"VARIABLE":"georgia,clarke","COUNT":1666,"TYPE":"county"}
+{"VARIABLE":"georgia,effingham","COUNT":1332,"TYPE":"county"}
+{"VARIABLE":"georgia,fannin","COUNT":2468,"TYPE":"county"}
+{"VARIABLE":"georgia,glascock","COUNT":237,"TYPE":"county"}
+{"VARIABLE":"georgia,greene","COUNT":2133,"TYPE":"county"}
+{"VARIABLE":"georgia,hall","COUNT":2019,"TYPE":"county"}
+{"VARIABLE":"georgia,jackson","COUNT":1586,"TYPE":"county"}
+{"VARIABLE":"georgia,jefferson","COUNT":1330,"TYPE":"county"}
+{"VARIABLE":"georgia,lumpkin","COUNT":1937,"TYPE":"county"}
+{"VARIABLE":"georgia,oconee","COUNT":1068,"TYPE":"county"}
+{"VARIABLE":"georgia,screven","COUNT":3167,"TYPE":"county"}
+{"VARIABLE":"georgia,taliaferro","COUNT":892,"TYPE":"county"}
+{"VARIABLE":"georgia,union","COUNT":1118,"TYPE":"county"}
+{"VARIABLE":"georgia,warren","COUNT":1807,"TYPE":"county"}
+{"VARIABLE":"idaho,boise","COUNT":181,"TYPE":"county"}
+{"VARIABLE":"idaho,camas","COUNT":152,"TYPE":"county"}
+{"VARIABLE":"idaho,cassia","COUNT":334,"TYPE":"county"}
+{"VARIABLE":"idaho,elmore","COUNT":279,"TYPE":"county"}
+{"VARIABLE":"idaho,gooding","COUNT":87,"TYPE":"county"}
+{"VARIABLE":"idaho,idaho","COUNT":473,"TYPE":"county"}
+{"VARIABLE":"idaho,jerome","COUNT":165,"TYPE":"county"}
+{"VARIABLE":"idaho,latah","COUNT":184,"TYPE":"county"}
+{"VARIABLE":"idaho,lewis","COUNT":79,"TYPE":"county"}
+{"VARIABLE":"idaho,lincoln","COUNT":196,"TYPE":"county"}
+{"VARIABLE":"idaho,nez perce","COUNT":203,"TYPE":"county"}
+{"VARIABLE":"idaho,valley","COUNT":478,"TYPE":"county"}
+{"VARIABLE":"illinois,alexander","COUNT":2968,"TYPE":"county"}
+{"VARIABLE":"illinois,franklin","COUNT":2608,"TYPE":"county"}
+{"VARIABLE":"illinois,gallatin","COUNT":2498,"TYPE":"county"}
+{"VARIABLE":"illinois,hardin","COUNT":1231,"TYPE":"county"}
+{"VARIABLE":"illinois,massac","COUNT":1770,"TYPE":"county"}
+{"VARIABLE":"illinois,monroe","COUNT":183,"TYPE":"county"}
+{"VARIABLE":"illinois,perry","COUNT":2153,"TYPE":"county"}
+{"VARIABLE":"illinois,pulaski","COUNT":1665,"TYPE":"county"}
+{"VARIABLE":"illinois,randolph","COUNT":579,"TYPE":"county"}
+{"VARIABLE":"illinois,saline","COUNT":2165,"TYPE":"county"}
+{"VARIABLE":"illinois,st clair","COUNT":3997,"TYPE":"county"}
+{"VARIABLE":"kentucky,adair","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"kentucky,ballard","COUNT":417,"TYPE":"county"}
+{"VARIABLE":"kentucky,barren","COUNT":6,"TYPE":"county"}
+{"VARIABLE":"kentucky,bell","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"kentucky,butler","COUNT":1513,"TYPE":"county"}
+{"VARIABLE":"kentucky,casey","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"kentucky,edmonson","COUNT":588,"TYPE":"county"}
+{"VARIABLE":"kentucky,henderson","COUNT":86,"TYPE":"county"}
+{"VARIABLE":"kentucky,laurel","COUNT":15,"TYPE":"county"}
+{"VARIABLE":"kentucky,marshall","COUNT":2591,"TYPE":"county"}
+{"VARIABLE":"kentucky,mccracken","COUNT":1623,"TYPE":"county"}
+{"VARIABLE":"kentucky,mclean","COUNT":2056,"TYPE":"county"}
+{"VARIABLE":"kentucky,metcalfe","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"kentucky,ohio","COUNT":1985,"TYPE":"county"}
+{"VARIABLE":"kentucky,pulaski","COUNT":52,"TYPE":"county"}
+{"VARIABLE":"kentucky,russell","COUNT":5,"TYPE":"county"}
+{"VARIABLE":"kentucky,trigg","COUNT":1011,"TYPE":"county"}
+{"VARIABLE":"kentucky,union","COUNT":1865,"TYPE":"county"}
+{"VARIABLE":"kentucky,webster","COUNT":1346,"TYPE":"county"}
+{"VARIABLE":"missouri,bollinger","COUNT":595,"TYPE":"county"}
+{"VARIABLE":"missouri,cape girardeau","COUNT":3827,"TYPE":"county"}
+{"VARIABLE":"missouri,jefferson","COUNT":2515,"TYPE":"county"}
+{"VARIABLE":"missouri,madison","COUNT":630,"TYPE":"county"}
+{"VARIABLE":"missouri,scott","COUNT":26,"TYPE":"county"}
+{"VARIABLE":"missouri,st charles","COUNT":201,"TYPE":"county"}
+{"VARIABLE":"missouri,st francois","COUNT":1948,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":16615,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":294157,"TYPE":"county"}
+{"VARIABLE":"north carolina,avery","COUNT":17,"TYPE":"county"}
+{"VARIABLE":"north carolina,burke","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"north carolina,mcdowell","COUNT":17,"TYPE":"county"}
+{"VARIABLE":"north carolina,mecklenburg","COUNT":1167,"TYPE":"county"}
+{"VARIABLE":"north carolina,rutherford","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"north carolina,union","COUNT":88,"TYPE":"county"}
+{"VARIABLE":"south carolina,beaufort","COUNT":2932,"TYPE":"county"}
+{"VARIABLE":"south carolina,berkeley","COUNT":1104,"TYPE":"county"}
+{"VARIABLE":"south carolina,charleston","COUNT":2437,"TYPE":"county"}
+{"VARIABLE":"south carolina,clarendon","COUNT":1375,"TYPE":"county"}
+{"VARIABLE":"south carolina,darlington","COUNT":301,"TYPE":"county"}
+{"VARIABLE":"south carolina,jasper","COUNT":3043,"TYPE":"county"}
+{"VARIABLE":"south carolina,kershaw","COUNT":1691,"TYPE":"county"}
+{"VARIABLE":"south carolina,lancaster","COUNT":3360,"TYPE":"county"}
+{"VARIABLE":"south carolina,lee","COUNT":2926,"TYPE":"county"}
+{"VARIABLE":"south carolina,sumter","COUNT":2625,"TYPE":"county"}
+{"VARIABLE":"south carolina,williamsburg","COUNT":714,"TYPE":"county"}
+{"VARIABLE":"tennessee,bedford","COUNT":83,"TYPE":"county"}
+{"VARIABLE":"tennessee,bradley","COUNT":1528,"TYPE":"county"}
+{"VARIABLE":"tennessee,carter","COUNT":26,"TYPE":"county"}
+{"VARIABLE":"tennessee,cheatham","COUNT":2474,"TYPE":"county"}
+{"VARIABLE":"tennessee,claiborne","COUNT":12,"TYPE":"county"}
+{"VARIABLE":"tennessee,coffee","COUNT":2502,"TYPE":"county"}
+{"VARIABLE":"tennessee,davidson","COUNT":1693,"TYPE":"county"}
+{"VARIABLE":"tennessee,grainger","COUNT":22,"TYPE":"county"}
+{"VARIABLE":"tennessee,grundy","COUNT":1366,"TYPE":"county"}
+{"VARIABLE":"tennessee,hamilton","COUNT":4776,"TYPE":"county"}
+{"VARIABLE":"tennessee,hawkins","COUNT":14,"TYPE":"county"}
+{"VARIABLE":"tennessee,marion","COUNT":2356,"TYPE":"county"}
+{"VARIABLE":"tennessee,montgomery","COUNT":3276,"TYPE":"county"}
+{"VARIABLE":"tennessee,polk","COUNT":2434,"TYPE":"county"}
+{"VARIABLE":"tennessee,rutherford","COUNT":2364,"TYPE":"county"}
+{"VARIABLE":"tennessee,stewart","COUNT":2525,"TYPE":"county"}
+{"VARIABLE":"tennessee,sullivan","COUNT":32,"TYPE":"county"}
+{"VARIABLE":"tennessee,williamson","COUNT":2666,"TYPE":"county"}
+{"VARIABLE":"utah,box elder","COUNT":524,"TYPE":"county"}
+{"VARIABLE":"utah,davis","COUNT":442,"TYPE":"county"}
+{"VARIABLE":"utah,morgan","COUNT":266,"TYPE":"county"}
+{"VARIABLE":"utah,salt lake","COUNT":7768,"TYPE":"county"}
+{"VARIABLE":"utah,weber","COUNT":49,"TYPE":"county"}
+{"VARIABLE":"washington,ferry","COUNT":21311,"TYPE":"county"}
+{"VARIABLE":"washington,lincoln","COUNT":2388,"TYPE":"county"}
+{"VARIABLE":"washington,spokane","COUNT":6891,"TYPE":"county"}
+{"VARIABLE":"washington,stevens","COUNT":20830,"TYPE":"county"}
+{"VARIABLE":"washington,whitman","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"USA","COUNT":500000,"TYPE":"world"}
+{"VARIABLE":"Big Papa","COUNT":234124,"TYPE":"name"}
+{"VARIABLE":"Kayleigh's iPhone","COUNT":160,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":265716,"TYPE":"name"}
+{"VARIABLE":"california","COUNT":5175,"TYPE":"state"}
+{"VARIABLE":"colorado","COUNT":7,"TYPE":"state"}
+{"VARIABLE":"idaho","COUNT":3779,"TYPE":"state"}
+{"VARIABLE":"illinois","COUNT":621,"TYPE":"state"}
+{"VARIABLE":"iowa","COUNT":15791,"TYPE":"state"}
+{"VARIABLE":"minnesota","COUNT":67692,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":299785,"TYPE":"state"}
+{"VARIABLE":"montana","COUNT":29600,"TYPE":"state"}
+{"VARIABLE":"south dakota","COUNT":2534,"TYPE":"state"}
+{"VARIABLE":"washington","COUNT":47357,"TYPE":"state"}
+{"VARIABLE":"wisconsin","COUNT":14151,"TYPE":"state"}
+{"VARIABLE":"california,los angeles","COUNT":5080,"TYPE":"county"}
+{"VARIABLE":"california,orange","COUNT":77,"TYPE":"county"}
+{"VARIABLE":"california,san bernardino","COUNT":18,"TYPE":"county"}
+{"VARIABLE":"colorado,rio grande","COUNT":7,"TYPE":"county"}
+{"VARIABLE":"idaho,kootenai","COUNT":2203,"TYPE":"county"}
+{"VARIABLE":"idaho,shoshone","COUNT":1576,"TYPE":"county"}
+{"VARIABLE":"illinois,adams","COUNT":197,"TYPE":"county"}
+{"VARIABLE":"illinois,calhoun","COUNT":274,"TYPE":"county"}
+{"VARIABLE":"illinois,pike","COUNT":150,"TYPE":"county"}
+{"VARIABLE":"iowa,benton","COUNT":513,"TYPE":"county"}
+{"VARIABLE":"iowa,black hawk","COUNT":1891,"TYPE":"county"}
+{"VARIABLE":"iowa,bremer","COUNT":1170,"TYPE":"county"}
+{"VARIABLE":"iowa,buchanan","COUNT":315,"TYPE":"county"}
+{"VARIABLE":"iowa,cerro gordo","COUNT":1456,"TYPE":"county"}
+{"VARIABLE":"iowa,chickasaw","COUNT":167,"TYPE":"county"}
+{"VARIABLE":"iowa,floyd","COUNT":1713,"TYPE":"county"}
+{"VARIABLE":"iowa,henry","COUNT":1392,"TYPE":"county"}
+{"VARIABLE":"iowa,iowa","COUNT":42,"TYPE":"county"}
+{"VARIABLE":"iowa,jefferson","COUNT":144,"TYPE":"county"}
+{"VARIABLE":"iowa,johnson","COUNT":1388,"TYPE":"county"}
+{"VARIABLE":"iowa,keokuk","COUNT":185,"TYPE":"county"}
+{"VARIABLE":"iowa,lee","COUNT":1222,"TYPE":"county"}
+{"VARIABLE":"iowa,linn","COUNT":1866,"TYPE":"county"}
+{"VARIABLE":"iowa,van buren","COUNT":141,"TYPE":"county"}
+{"VARIABLE":"iowa,washington","COUNT":1323,"TYPE":"county"}
+{"VARIABLE":"iowa,worth","COUNT":863,"TYPE":"county"}
+{"VARIABLE":"minnesota,carlton","COUNT":1902,"TYPE":"county"}
+{"VARIABLE":"minnesota,carver","COUNT":159,"TYPE":"county"}
+{"VARIABLE":"minnesota,dakota","COUNT":843,"TYPE":"county"}
+{"VARIABLE":"minnesota,freeborn","COUNT":2082,"TYPE":"county"}
+{"VARIABLE":"minnesota,hennepin","COUNT":29508,"TYPE":"county"}
+{"VARIABLE":"minnesota,lincoln","COUNT":143,"TYPE":"county"}
+{"VARIABLE":"minnesota,lyon","COUNT":164,"TYPE":"county"}
+{"VARIABLE":"minnesota,mcleod","COUNT":63,"TYPE":"county"}
+{"VARIABLE":"minnesota,mower","COUNT":163,"TYPE":"county"}
+{"VARIABLE":"minnesota,pine","COUNT":2439,"TYPE":"county"}
+{"VARIABLE":"minnesota,redwood","COUNT":132,"TYPE":"county"}
+{"VARIABLE":"minnesota,renville","COUNT":17,"TYPE":"county"}
+{"VARIABLE":"minnesota,rice","COUNT":1300,"TYPE":"county"}
+{"VARIABLE":"minnesota,scott","COUNT":303,"TYPE":"county"}
+{"VARIABLE":"minnesota,sibley","COUNT":219,"TYPE":"county"}
+{"VARIABLE":"minnesota,st louis","COUNT":27028,"TYPE":"county"}
+{"VARIABLE":"minnesota,steele","COUNT":1227,"TYPE":"county"}
+{"VARIABLE":"missouri,carroll","COUNT":3,"TYPE":"county"}
+{"VARIABLE":"missouri,clark","COUNT":2376,"TYPE":"county"}
+{"VARIABLE":"missouri,cooper","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"missouri,lewis","COUNT":1185,"TYPE":"county"}
+{"VARIABLE":"missouri,lincoln","COUNT":2278,"TYPE":"county"}
+{"VARIABLE":"missouri,maries","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"missouri,marion","COUNT":1509,"TYPE":"county"}
+{"VARIABLE":"missouri,pike","COUNT":1533,"TYPE":"county"}
+{"VARIABLE":"missouri,ralls","COUNT":810,"TYPE":"county"}
+{"VARIABLE":"missouri,ripley","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"missouri,saline","COUNT":1,"TYPE":"county"}
+{"VARIABLE":"missouri,st charles","COUNT":1338,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":13062,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":275685,"TYPE":"county"}
+{"VARIABLE":"missouri,wayne","COUNT":2,"TYPE":"county"}
+{"VARIABLE":"montana,big horn","COUNT":369,"TYPE":"county"}
+{"VARIABLE":"montana,broadwater","COUNT":3195,"TYPE":"county"}
+{"VARIABLE":"montana,carter","COUNT":303,"TYPE":"county"}
+{"VARIABLE":"montana,cascade","COUNT":9742,"TYPE":"county"}
+{"VARIABLE":"montana,gallatin","COUNT":4964,"TYPE":"county"}
+{"VARIABLE":"montana,jefferson","COUNT":35,"TYPE":"county"}
+{"VARIABLE":"montana,lewis and clark","COUNT":3834,"TYPE":"county"}
+{"VARIABLE":"montana,mineral","COUNT":3547,"TYPE":"county"}
+{"VARIABLE":"montana,missoula","COUNT":2373,"TYPE":"county"}
+{"VARIABLE":"montana,park","COUNT":90,"TYPE":"county"}
+{"VARIABLE":"montana,powder river","COUNT":411,"TYPE":"county"}
+{"VARIABLE":"montana,rosebud","COUNT":179,"TYPE":"county"}
+{"VARIABLE":"montana,stillwater","COUNT":136,"TYPE":"county"}
+{"VARIABLE":"montana,sweet grass","COUNT":190,"TYPE":"county"}
+{"VARIABLE":"montana,yellowstone","COUNT":232,"TYPE":"county"}
+{"VARIABLE":"south dakota,brookings","COUNT":22,"TYPE":"county"}
+{"VARIABLE":"south dakota,clark","COUNT":109,"TYPE":"county"}
+{"VARIABLE":"south dakota,deuel","COUNT":151,"TYPE":"county"}
+{"VARIABLE":"south dakota,dewey","COUNT":349,"TYPE":"county"}
+{"VARIABLE":"south dakota,hamlin","COUNT":231,"TYPE":"county"}
+{"VARIABLE":"south dakota,hand","COUNT":193,"TYPE":"county"}
+{"VARIABLE":"south dakota,harding","COUNT":360,"TYPE":"county"}
+{"VARIABLE":"south dakota,hyde","COUNT":102,"TYPE":"county"}
+{"VARIABLE":"south dakota,perkins","COUNT":318,"TYPE":"county"}
+{"VARIABLE":"south dakota,potter","COUNT":271,"TYPE":"county"}
+{"VARIABLE":"south dakota,spink","COUNT":247,"TYPE":"county"}
+{"VARIABLE":"south dakota,ziebach","COUNT":181,"TYPE":"county"}
+{"VARIABLE":"washington,ferry","COUNT":17869,"TYPE":"county"}
+{"VARIABLE":"washington,lincoln","COUNT":2433,"TYPE":"county"}
+{"VARIABLE":"washington,spokane","COUNT":3917,"TYPE":"county"}
+{"VARIABLE":"washington,stevens","COUNT":23138,"TYPE":"county"}
+{"VARIABLE":"wisconsin,barron","COUNT":2170,"TYPE":"county"}
+{"VARIABLE":"wisconsin,chippewa","COUNT":1435,"TYPE":"county"}
+{"VARIABLE":"wisconsin,douglas","COUNT":3235,"TYPE":"county"}
+{"VARIABLE":"wisconsin,eau claire","COUNT":1236,"TYPE":"county"}
+{"VARIABLE":"wisconsin,jackson","COUNT":2042,"TYPE":"county"}
+{"VARIABLE":"wisconsin,juneau","COUNT":666,"TYPE":"county"}
+{"VARIABLE":"wisconsin,monroe","COUNT":1147,"TYPE":"county"}
+{"VARIABLE":"wisconsin,trempealeau","COUNT":207,"TYPE":"county"}
+{"VARIABLE":"wisconsin,washburn","COUNT":2013,"TYPE":"county"}
+{"VARIABLE":"China","COUNT":2557,"TYPE":"world"}
+{"VARIABLE":"Thailand","COUNT":3133,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":487256,"TYPE":"world"}
+{"VARIABLE":"Big Papa","COUNT":184949,"TYPE":"name"}
+{"VARIABLE":"RyePhone","COUNT":315051,"TYPE":"name"}
+{"VARIABLE":"arizona","COUNT":894,"TYPE":"state"}
+{"VARIABLE":"california","COUNT":7609,"TYPE":"state"}
+{"VARIABLE":"colorado","COUNT":201,"TYPE":"state"}
+{"VARIABLE":"illinois","COUNT":18377,"TYPE":"state"}
+{"VARIABLE":"iowa","COUNT":31194,"TYPE":"state"}
+{"VARIABLE":"kansas","COUNT":860,"TYPE":"state"}
+{"VARIABLE":"minnesota","COUNT":96973,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":220539,"TYPE":"state"}
+{"VARIABLE":"nevada","COUNT":289,"TYPE":"state"}
+{"VARIABLE":"south dakota","COUNT":3102,"TYPE":"state"}
+{"VARIABLE":"utah","COUNT":2414,"TYPE":"state"}
+{"VARIABLE":"wisconsin","COUNT":7548,"TYPE":"state"}
+{"VARIABLE":"wyoming","COUNT":2325,"TYPE":"state"}
+{"VARIABLE":"arizona,mohave","COUNT":894,"TYPE":"county"}
+{"VARIABLE":"california,humboldt","COUNT":329,"TYPE":"county"}
+{"VARIABLE":"california,los angeles","COUNT":3669,"TYPE":"county"}
+{"VARIABLE":"california,marin","COUNT":24,"TYPE":"county"}
+{"VARIABLE":"california,mendocino","COUNT":700,"TYPE":"county"}
+{"VARIABLE":"california,monterey","COUNT":701,"TYPE":"county"}
+{"VARIABLE":"california,san bernardino","COUNT":191,"TYPE":"county"}
+{"VARIABLE":"california,san luis obispo","COUNT":459,"TYPE":"county"}
+{"VARIABLE":"california,san mateo","COUNT":32,"TYPE":"county"}
+{"VARIABLE":"california,santa barbara","COUNT":416,"TYPE":"county"}
+{"VARIABLE":"california,santa clara","COUNT":213,"TYPE":"county"}
+{"VARIABLE":"california,santa cruz","COUNT":114,"TYPE":"county"}
+{"VARIABLE":"california,sonoma","COUNT":456,"TYPE":"county"}
+{"VARIABLE":"california,ventura","COUNT":305,"TYPE":"county"}
+{"VARIABLE":"colorado,moffat","COUNT":201,"TYPE":"county"}
+{"VARIABLE":"illinois,calhoun","COUNT":50,"TYPE":"county"}
+{"VARIABLE":"illinois,la salle","COUNT":1864,"TYPE":"county"}
+{"VARIABLE":"illinois,lee","COUNT":956,"TYPE":"county"}
+{"VARIABLE":"illinois,logan","COUNT":1508,"TYPE":"county"}
+{"VARIABLE":"illinois,macoupin","COUNT":536,"TYPE":"county"}
+{"VARIABLE":"illinois,madison","COUNT":2594,"TYPE":"county"}
+{"VARIABLE":"illinois,marshall","COUNT":627,"TYPE":"county"}
+{"VARIABLE":"illinois,mclean","COUNT":1601,"TYPE":"county"}
+{"VARIABLE":"illinois,montgomery","COUNT":1956,"TYPE":"county"}
+{"VARIABLE":"illinois,ogle","COUNT":931,"TYPE":"county"}
+{"VARIABLE":"illinois,sangamon","COUNT":2199,"TYPE":"county"}
+{"VARIABLE":"illinois,st clair","COUNT":294,"TYPE":"county"}
+{"VARIABLE":"illinois,winnebago","COUNT":2287,"TYPE":"county"}
+{"VARIABLE":"illinois,woodford","COUNT":974,"TYPE":"county"}
+{"VARIABLE":"iowa,benton","COUNT":1011,"TYPE":"county"}
+{"VARIABLE":"iowa,black hawk","COUNT":3755,"TYPE":"county"}
+{"VARIABLE":"iowa,bremer","COUNT":3057,"TYPE":"county"}
+{"VARIABLE":"iowa,buchanan","COUNT":611,"TYPE":"county"}
+{"VARIABLE":"iowa,cerro gordo","COUNT":3134,"TYPE":"county"}
+{"VARIABLE":"iowa,chickasaw","COUNT":333,"TYPE":"county"}
+{"VARIABLE":"iowa,floyd","COUNT":4836,"TYPE":"county"}
+{"VARIABLE":"iowa,henry","COUNT":2555,"TYPE":"county"}
+{"VARIABLE":"iowa,johnson","COUNT":2612,"TYPE":"county"}
+{"VARIABLE":"iowa,lee","COUNT":2282,"TYPE":"county"}
+{"VARIABLE":"iowa,linn","COUNT":2746,"TYPE":"county"}
+{"VARIABLE":"iowa,washington","COUNT":2552,"TYPE":"county"}
+{"VARIABLE":"iowa,worth","COUNT":1710,"TYPE":"county"}
+{"VARIABLE":"kansas,anderson","COUNT":150,"TYPE":"county"}
+{"VARIABLE":"kansas,butler","COUNT":218,"TYPE":"county"}
+{"VARIABLE":"kansas,coffey","COUNT":144,"TYPE":"county"}
+{"VARIABLE":"kansas,greenwood","COUNT":191,"TYPE":"county"}
+{"VARIABLE":"kansas,linn","COUNT":157,"TYPE":"county"}
+{"VARIABLE":"minnesota,anoka","COUNT":669,"TYPE":"county"}
+{"VARIABLE":"minnesota,carver","COUNT":1967,"TYPE":"county"}
+{"VARIABLE":"minnesota,chippewa","COUNT":227,"TYPE":"county"}
+{"VARIABLE":"minnesota,chisago","COUNT":4,"TYPE":"county"}
+{"VARIABLE":"minnesota,dakota","COUNT":1428,"TYPE":"county"}
+{"VARIABLE":"minnesota,freeborn","COUNT":2499,"TYPE":"county"}
+{"VARIABLE":"minnesota,hennepin","COUNT":75226,"TYPE":"county"}
+{"VARIABLE":"minnesota,kandiyohi","COUNT":182,"TYPE":"county"}
+{"VARIABLE":"minnesota,lac qui parle","COUNT":235,"TYPE":"county"}
+{"VARIABLE":"minnesota,mcleod","COUNT":176,"TYPE":"county"}
+{"VARIABLE":"minnesota,meeker","COUNT":88,"TYPE":"county"}
+{"VARIABLE":"minnesota,ramsey","COUNT":1968,"TYPE":"county"}
+{"VARIABLE":"minnesota,rice","COUNT":2540,"TYPE":"county"}
+{"VARIABLE":"minnesota,scott","COUNT":598,"TYPE":"county"}
+{"VARIABLE":"minnesota,st louis","COUNT":5322,"TYPE":"county"}
+{"VARIABLE":"minnesota,steele","COUNT":2963,"TYPE":"county"}
+{"VARIABLE":"minnesota,washington","COUNT":881,"TYPE":"county"}
+{"VARIABLE":"missouri,bates","COUNT":183,"TYPE":"county"}
+{"VARIABLE":"missouri,benton","COUNT":154,"TYPE":"county"}
+{"VARIABLE":"missouri,callaway","COUNT":148,"TYPE":"county"}
+{"VARIABLE":"missouri,clark","COUNT":3135,"TYPE":"county"}
+{"VARIABLE":"missouri,cole","COUNT":80,"TYPE":"county"}
+{"VARIABLE":"missouri,franklin","COUNT":10,"TYPE":"county"}
+{"VARIABLE":"missouri,gasconade","COUNT":64,"TYPE":"county"}
+{"VARIABLE":"missouri,henry","COUNT":184,"TYPE":"county"}
+{"VARIABLE":"missouri,jefferson","COUNT":4410,"TYPE":"county"}
+{"VARIABLE":"missouri,lewis","COUNT":2326,"TYPE":"county"}
+{"VARIABLE":"missouri,lincoln","COUNT":3486,"TYPE":"county"}
+{"VARIABLE":"missouri,marion","COUNT":3012,"TYPE":"county"}
+{"VARIABLE":"missouri,moniteau","COUNT":117,"TYPE":"county"}
+{"VARIABLE":"missouri,montgomery","COUNT":41,"TYPE":"county"}
+{"VARIABLE":"missouri,morgan","COUNT":102,"TYPE":"county"}
+{"VARIABLE":"missouri,osage","COUNT":53,"TYPE":"county"}
+{"VARIABLE":"missouri,pike","COUNT":2974,"TYPE":"county"}
+{"VARIABLE":"missouri,ralls","COUNT":1541,"TYPE":"county"}
+{"VARIABLE":"missouri,st charles","COUNT":4122,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":19084,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":175146,"TYPE":"county"}
+{"VARIABLE":"missouri,warren","COUNT":167,"TYPE":"county"}
+{"VARIABLE":"nevada,clark","COUNT":289,"TYPE":"county"}
+{"VARIABLE":"south dakota,clark","COUNT":186,"TYPE":"county"}
+{"VARIABLE":"south dakota,codington","COUNT":246,"TYPE":"county"}
+{"VARIABLE":"south dakota,custer","COUNT":360,"TYPE":"county"}
+{"VARIABLE":"south dakota,fall river","COUNT":11,"TYPE":"county"}
+{"VARIABLE":"south dakota,grant","COUNT":171,"TYPE":"county"}
+{"VARIABLE":"south dakota,haakon","COUNT":345,"TYPE":"county"}
+{"VARIABLE":"south dakota,hand","COUNT":238,"TYPE":"county"}
+{"VARIABLE":"south dakota,hughes","COUNT":94,"TYPE":"county"}
+{"VARIABLE":"south dakota,hyde","COUNT":144,"TYPE":"co
