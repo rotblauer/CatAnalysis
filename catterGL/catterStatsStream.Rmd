@@ -170,6 +170,28 @@ Column {.tabset data-width=400}
 -----------------------------------------------------------------------
 
 
+### Cat People
+
+```{r, fig.keep='none'}
+
+perCat =agg(loc, "name")
+
+tm=treemap(perCat,
+        index=c("VARIABLE"),
+        vSize = "COUNT",
+        type="index",
+        palette =  rev(viridis(length(unique(perCat$VARIABLE)))),
+        title="People with cats",
+        fontsize.title = 14
+        )
+
+highchart() %>%
+  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
+                        layoutAlgorithm = "squarified") %>%
+  hc_add_theme(thm)
+```
+
+
 ### Cat activities
 
 ```{r, fig.keep='none'}
@@ -193,52 +215,21 @@ highchart() %>%
 
 
 
-### Cat People
-
-```{r, fig.keep='none'}
-
-perCat =agg(loc, "name")
-
-tm=treemap(perCat,
-        index=c("VARIABLE"),
-        vSize = "COUNT",
-        type="index",
-        palette =  rev(viridis(length(unique(perCat$VARIABLE)))),
-        title="People with cats",
-        fontsize.title = 14
-        )
-
-highchart() %>%
-  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
-                        layoutAlgorithm = "squarified") %>%
-  hc_add_theme(thm)
-```
-
 ### Cat People Activities
 
 ```{r, fig.keep='none'}
 
 perCat =agg(loc, "name-activity")
-perCat$NAME=gsub("-.*","",perCat$VARIABLE)
+perCat$NAME=as.factor(gsub("-.*","",perCat$VARIABLE))
 perCat$ACTIVITY=gsub(".*-","",perCat$VARIABLE)
 perCat=perCat[which(perCat$ACTIVITY!="Unknown"&perCat$ACTIVITY!="NA"),]
 
-# strsplit(perCat$VARIABLE,split = "-")[[1]]
-tm=treemap(perCat,
-        index=c("VARIABLE"),
-        vSize = "COUNT",
-        type="index",
-        palette =  rev(viridis(length(unique(perCat$VARIABLE)))),
-        title="People with cats with activities",
-        fontsize.title = 14
-        )
-# 
-# tm <- treemap(perCat, index = c("ACTIVITY", "NAME"),
-#               vSize = "COUNT", vColor = "NAME",
-#               type = "value", palette = viridis(6))
-
-highchart() %>%
-  hc_add_series_treemap(tm, allowDrillToNode = TRUE,
-                        layoutAlgorithm = "squarified") %>%
-  hc_add_theme(thm)
+perCat$ACTIVITY=as.factor(perCat$ACTIVITY)
+tm <- treemap(perCat, index = c("NAME","VARIABLE"),
+              vSize = "COUNT", 
+              type = "index", palette = rev(viridis(length(unique(perCat$VARIABLE)))),
+              draw = FALSE)
+hctreemap(tm, allowDrillToNode = TRUE, layoutAlgorithm = "squarified") %>% 
+   hc_tooltip(pointFormat = "<b>{point.name}</b>:<br>
+                             COUNT: {point.value:,.0f}<br>")
 ```
