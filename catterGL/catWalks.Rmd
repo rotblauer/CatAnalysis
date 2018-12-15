@@ -19,50 +19,55 @@ Column {data-width=800}
 
 ```{r setup, echo=FALSE,message=FALSE,include=FALSE}
 
+
 library(jsonlite)
 library(plotly)
 library(htmltools)
 
 loc <- stream_in(file("./parsed/collapsed.txt"), pagesize = 2000000)
-loc=loc[which(loc$TYPE=="name-activity--day"&loc$VARIABLE!="jl-NA-1901-01-01"),]
-loc$NAME=gsub("-.*","",loc$VARIABLE)
-loc$DATE=as.Date(gsub(".*-2018","2018",loc$VARIABLE))
-loc$ACTIVITY=gsub("-2.*","",loc$VARIABLE)
-loc$ACTIVITY=gsub(".*-","",loc$ACTIVITY)
-loc=loc[which(loc$ACTIVITY!="NA"),]
-loc= aggregate(COUNT~ACTIVITY+NAME+DATE,loc,sum)
+loc = loc[which(loc$TYPE == "name-activity--day" &
+                  loc$VARIABLE != "jl-NA-1901-01-01"), ]
+loc$NAME = gsub("-.*", "", loc$VARIABLE)
+loc$DATE = as.Date(gsub(".*-2018", "2018", loc$VARIABLE))
+loc$ACTIVITY = gsub("-2.*", "", loc$VARIABLE)
+loc$ACTIVITY = gsub(".*-", "", loc$ACTIVITY)
+loc = loc[which(loc$ACTIVITY != "NA" & loc$ACTIVITY != ""&loc$ACTIVITY!="Unknown"), ]
+loc = aggregate(COUNT ~ ACTIVITY + NAME + DATE, loc, sum)
 
-indicator=as.data.frame(table(loc$ACTIVITY,loc$NAME,loc$DATE))
+indicator = as.data.frame(table(loc$ACTIVITY, loc$NAME, loc$DATE))
+colnames(indicator) = c("ACTIVITY", "NAME", "DATE", "COUNT")
+indicator$KEY = paste0(as.character(indicator$NAME), as.character(indicator$DATE))
+datesWithSomeActivityForCat = unique(indicator[which(indicator$COUNT > 0), c("NAME", "DATE")])
+datesWithSomeActivityForCat$KEY = paste0(datesWithSomeActivityForCat$NAME,
+                                         datesWithSomeActivityForCat$DATE)
+loc[which(loc$DATE == as.Date("2018-06-13")), ]
+extra = indicator[which(indicator$KEY %in% datesWithSomeActivityForCat$KEY &
+                          indicator$COUNT == 0), ]
+loc = rbind(loc, extra[, colnames(loc)])
 
-datesWithSomeActivityForCat=
 # activitiesNotSeenOnDate
 # addIN
 # indicator=as.data.frame(table(loc$ACTIVITY,loc$NAME,loc$DATE))
 # indicator=aggregate(Freq~Var2+Var3,indicator,sum)
-f1 <- list(
-  family = "Arial, sans-serif",
-  size = 8,
-  color = "black"
-)
-x <- list(
-  # title = "Cats",
+f1 <- list(family = "Arial, sans-serif",
+           size = 8,
+           color = "black")
+x <- list(# title = "Cats",
   showticklabels = TRUE,
   tickangle = 25,
-  tickfont = f1
-
-)
+  tickfont = f1)
 
 getP <- function(loc, type) {
-  tmp = loc[which(loc$ACTIVITY == type), ]
+  tmp = loc[which(loc$ACTIVITY == type),]
   tmp$NAME = as.factor(tmp$NAME)
   
   y <- list(title = paste0(type, " COUNT (per day)"))
   
   p <- plot_ly(tmp,
-  y = ~ COUNT,
-  color = ~ NAME,
-  type = "box") %>%
-  layout(yaxis = y,xaxis=x)
+               y = ~ COUNT,
+               color = ~ NAME,
+               type = "box") %>%
+    layout(yaxis = y, xaxis = x)
 }
 
 type="Walking"
