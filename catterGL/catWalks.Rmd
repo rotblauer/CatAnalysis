@@ -1,5 +1,5 @@
 ---
-title: "CatWalk stat cats"
+title: "CatWalk stat cats (not quite accurate but close)"
 author: "Rotblauer"
 output: 
   flexdashboard::flex_dashboard:
@@ -29,8 +29,16 @@ loc$NAME=gsub("-.*","",loc$VARIABLE)
 loc$DATE=as.Date(gsub(".*-2018","2018",loc$VARIABLE))
 loc$ACTIVITY=gsub("-2.*","",loc$VARIABLE)
 loc$ACTIVITY=gsub(".*-","",loc$ACTIVITY)
-
+loc=loc[which(loc$ACTIVITY!="NA"),]
 loc= aggregate(COUNT~ACTIVITY+NAME+DATE,loc,sum)
+
+indicator=as.data.frame(table(loc$ACTIVITY,loc$NAME,loc$DATE))
+
+datesWithSomeActivityForCat=
+# activitiesNotSeenOnDate
+# addIN
+# indicator=as.data.frame(table(loc$ACTIVITY,loc$NAME,loc$DATE))
+# indicator=aggregate(Freq~Var2+Var3,indicator,sum)
 f1 <- list(
   family = "Arial, sans-serif",
   size = 8,
@@ -60,7 +68,7 @@ getP <- function(loc, type) {
 type="Walking"
 ```
 
-### Cat `r type`s per day (`r min(loc$DATE)` to `r max(loc$DATE)` )
+### Cat `r type`s per day (`r min(loc$DATE)` to `r max(loc$DATE)` ) - `r max(loc$DATE)-min(loc$DATE)` days
 
 ```{r echo=FALSE,message=FALSE}
 p=getP(loc=loc,type=type)
