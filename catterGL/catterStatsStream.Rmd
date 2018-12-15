@@ -72,6 +72,7 @@ perCat =agg(loc, "name")
 
 
 ### Cats by World - `r sum(perCat$COUNT)` total tracks total
+- last updated `r date()`
 
 ```{r}
 
@@ -104,6 +105,7 @@ p <- plot_geo(perWorld) %>%
      colorbar(title = 'Log10 counts of cats by Country') %>%
      layout(title = '', geo = g)
 p
+
 
 # tmpFile <- tempfile(fileext = ".png")
 # export(p, file = tmpFile)

@@ -1,0 +1,84 @@
+---
+title: "CatWalk stat cats"
+author: "Rotblauer"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: scroll
+    social: menu
+    source_code: embed
+    includes:
+       in_header: metaCatWalk.html
+---
+
+
+
+
+Column {data-width=800}
+-----------------------------------------------------------------------
+
+```{r setup, echo=FALSE,message=FALSE,include=FALSE}
+
+library(jsonlite)
+library(plotly)
+library(htmltools)
+
+loc <- stream_in(file("./parsed/collapsed.txt"), pagesize = 2000000)
+loc=loc[which(loc$TYPE=="name-activity--day"),]
+loc$NAME=gsub("-.*","",loc$VARIABLE)
+loc$DATE=as.Date(gsub(".*-2","2",loc$VARIABLE))
+loc$ACTIVITY=gsub("-2.*","",loc$VARIABLE)
+loc$ACTIVITY=gsub(".*-","",loc$ACTIVITY)
+
+loc= aggregate(COUNT~ACTIVITY+NAME+DATE,loc,sum)
+getP <- function(loc, type) {
+  tmp = loc[which(loc$ACTIVITY == type), ]
+  tmp$NAME = as.factor(tmp$NAME)
+  
+  y <- list(title = paste0(type, " COUNT (per day)"))
+  
+  p <- plot_ly(tmp,
+  y = ~ COUNT,
+  color = ~ NAME,
+  type = "box") %>%
+  layout(yaxis = y)
+}
+
+type="Walking"
+```
+
+### Cat `r type`s per day (`r min(loc$DATE)` -`r max(loc$DATE)` )
+```{r echo=FALSE,message=FALSE}
+p=getP(loc=loc,type=type)
+tagList( p)
+
+export(p, file = "./walks.png")
+type="Running"
+
+```
+
+### Cat `r type`s per day
+```{r echo=FALSE,message=FALSE}
+p=getP(loc=loc,type=type)
+tagList( p)
+
+type="Biking"
+
+```
+
+### Cat `r type`s per day
+```{r echo=FALSE,message=FALSE}
+p=getP(loc=loc,type=type)
+tagList( p)
+
+type="Automotive"
+
+```
+
+
+### Cat `r type`s per day
+```{r echo=FALSE,message=FALSE}
+p=getP(loc=loc,type=type)
+tagList( p)
+
+```

@@ -110,7 +110,10 @@ stream_in(
       
       countedActivitiesCat = summarizeCount("name-activity", apply(loc[, c("name", "activity")] , 1 , paste , collapse = "-"))
       countedIds = rbind(countedIds, countedActivitiesCat)
-      print(countedIds)
+      # print(countedIds)
+      loc$DateDay = cut(as.Date(df$properties$Time), "day")
+      countedActivitiesCatDate = summarizeCount("name-activity--day", apply(loc[, c("name", "activity", "DateDay")] , 1 , paste , collapse = "-"))
+      countedIds = rbind(countedIds, countedActivitiesCatDate)
     }
     
     namesToCount = loc[which(nchar(loc$name) > 0), "name"]
