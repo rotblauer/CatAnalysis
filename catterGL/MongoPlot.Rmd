@@ -1,0 +1,78 @@
+---
+title: "MongoPlot"
+author: "JL"
+date: "12/15/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE,echo=FALSE}
+library(ggplot2)
+library(dplyr)
+library(maps)
+library(ggmap)
+library(mongolite)
+library(lubridate)
+library(gridExtra)
+my_collection = mongo(collection = "cats", db = "Cats") # create connection, database and collection
+
+
+```
+
+
+`r my_collection$count()` Total cats 
+
+
+
+### Test
+
+```{r message=FALSE,warning=FALSE,echo=FALSE }
+# df= my_collection$find('{"name" : "Rye8", "activity" : "Running" ,"lat": "{ $lt: 38.64781 }""}')
+df <-
+  my_collection$find(query = '{"name" : "Rye8", "lon" : { "$lt" : -90.26455 }, "lat" : { "$lt" : 38.64781 },"lat" : { "$gt" : 38.63027 }, "activity" : "Bike" }')
+
+
+# , 
+
+
+#   fields = '{"cut" : true, "clarity" : true}',
+#   limit = 5
+# qty: { $gt: 4 }
+# my_collection$mapreduce()
+
+# qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "density2d", color = I("red"))
+# qmplot(lon, lat, data = df, maptype = "toner-lite", geom =  "blank", color = I("red"))
+# myColor <- rev(RColorBrewer::brewer.pal(11, "Spectral"))
+# myColor_scale_fill <- scale_fill_gradientn(colours = myColor)
+# bin = 100
+# qmplot(lon,
+#        lat,
+#        data = df,
+#        maptype = "toner-lite",
+#        geom =  "blank") + stat_density_2d(
+#        aes(fill = ..level..),
+#        geom = "polygon",
+#        alpha = .3,
+#        color = NA
+#        ) + scale_fill_gradient2()
+
+# https://github.com/dkahle/ggmap
+qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "density2d", color = I("red"))
+# qmplot(lon, lat, data = df, maptype = "toner-lite")+scale_fill_gradient2()
+
+
+# coord_cartesian() +stat_binhex()
+# 
+#     geom_hex(bins = bin, aes(fill = log10(..count..))) + myColor_scale_fill 
+
+# +
+
+
+
+ # mp = ggplot(loc_gc,
+ #              aes(x = lon,
+ #                  y = lat)) +
+ #    xlab(paste0("longitude")) +
+ #    ylab(paste0("latitude")) + t2 +
+ #    geom_hex(bins = bin, aes(fill = log10(..count..))) + myColor_scale_fill +
+ #    xlim(lonMin, lonMax) + ylim(latMin, latMax)
+ #  print(mp)
