@@ -28,10 +28,16 @@ my_collection = mongo(collection = "cats", db = "Cats") # create connection, dat
 ```{r message=FALSE,warning=FALSE,echo=FALSE }
 # df= my_collection$find('{"name" : "Rye8", "activity" : "Running" ,"lat": "{ $lt: 38.64781 }""}')
 df <-
-  my_collection$find(query = '{"name" : "Rye8", "lon" : { "$lt" : -90.26455 }, "lat" : { "$lt" : 38.64781 },"lat" : { "$gt" : 38.63027 }, "activity" : "Bike" }')
+  my_collection$find(query = '{"name" : "Rye8", "lon" : { "$lt" : -90.26455 }, "lon" : { "$gt" : -90.30376 }, "lat" : { "$lt" : 38.64781 },"lat" : { "$gt" : 38.63027 },  "$or": [ { "activity": "Running" }, { "activity": "Bike" } ]}')
 
-
-# , 
+# 
+# 
+# df <-
+#   my_collection$find(query = '{"name" : "Rye8", "lon" : { "$lt" : -90.26455 }, "lat" : { "$lt" : 38.64781 },"lat" : { "$gt" : 38.63027 }, { "$or": [ { "activity":  "Bike" }, { "activity":  "Bike" } ]}}')
+# 
+# 
+# my_collection$find(query = '{ "$or": [ { "activity": "Running" }, { "activity": "Bike" } ] }')
+# # , 
 
 
 #   fields = '{"cut" : true, "clarity" : true}',
@@ -57,6 +63,9 @@ df <-
 
 # https://github.com/dkahle/ggmap
 qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "density2d", color = I("red"))
+
+qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "point", color = I("red"))
+
 # qmplot(lon, lat, data = df, maptype = "toner-lite")+scale_fill_gradient2()
 
 
