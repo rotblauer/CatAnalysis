@@ -137,7 +137,7 @@ stream_in(
     # save(loc_gc, file = paste0(tmp, "_", format(Sys.time(), "%Y%m%d_%H%M%S"), "col.Rdata"))
     
   },
-  pagesize = 500000
+  pagesize = 1000000
 )
 close(con_out)
 

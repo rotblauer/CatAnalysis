@@ -26,11 +26,11 @@ my_collection = mongo(collection = "cats", db = "Cats") # create connection, dat
 ### Test
 
 ```{r message=FALSE,warning=FALSE,echo=FALSE }
-# df= my_collection$find('{"name" : "Rye8", "activity" : "Running" ,"lat": "{ $lt: 38.64781 }""}')
 df <-
   my_collection$find(query = '{"name" : "Rye8", "lon" : { "$lt" : -90.26455 }, "lon" : { "$gt" : -90.30376 }, "lat" : { "$lt" : 38.64781 },"lat" : { "$gt" : 38.63027 },  "$or": [ { "activity": "Running" }, { "activity": "Bike" }, { "activity": "Walking" } ]}')
 
-qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "density2d", color = I("red"))
+qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "density2d", color = I("red"))+ stat_density2d(data = df, aes(x = lon, y = lat, fill = ..level.., alpha = ..level..),
+                 size = 0.01, bins = 16, geom = 'polygon')
 
 qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "point", color = I("red"))
 
