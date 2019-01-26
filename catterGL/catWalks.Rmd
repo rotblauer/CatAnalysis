@@ -24,11 +24,11 @@ library(jsonlite)
 library(plotly)
 library(htmltools)
 
-loc <- stream_in(file("./parsed/collapsed.txt"), pagesize = 2000000)
+loc <- stream_in(file("../parsed/collapsed.txt"), pagesize = 2000000)
 loc = loc[which(loc$TYPE == "name-activity--day" &
                   loc$VARIABLE != "jl-NA-1901-01-01"), ]
 loc$NAME = gsub("-.*", "", loc$VARIABLE)
-loc$DATE = as.Date(gsub(".*-2018", "2018", loc$VARIABLE))
+loc$DATE = as.Date(gsub(".*-2019","2019",gsub(".*-2018", "2018", loc$VARIABLE)))
 loc$ACTIVITY = gsub("-2.*", "", loc$VARIABLE)
 loc$ACTIVITY = gsub(".*-", "", loc$ACTIVITY)
 loc = loc[which(loc$ACTIVITY != "NA" & loc$ACTIVITY != ""&loc$ACTIVITY!="Unknown"), ]

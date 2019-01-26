@@ -49,7 +49,7 @@ thm <-
   )
 
 
-loc <- stream_in(file("./parsed/collapsed.txt"), pagesize = 2000000)
+loc <- stream_in(file("../parsed/collapsed.txt"), pagesize = 2000000)
 
 ```
 
