@@ -100,17 +100,13 @@ stream_in(
       countedIdsType = summarizeCount(map, getOverlappingIDs(pointsSP = pointsSP , map = map))
       countedIds = rbind(countedIds, countedIdsType)
     }
-    # print(loc$activity)
-    
     activitiesToCount = loc[which(nchar(loc$activity) > 0), "activity"]
     if (length(activitiesToCount) > 0) {
-      # print(activitiesToCount)
       countedActivities = summarizeCount("activity", activitiesToCount)
       countedIds = rbind(countedIds, countedActivities)
       
       countedActivitiesCat = summarizeCount("name-activity", apply(loc[, c("name", "activity")] , 1 , paste , collapse = "-"))
       countedIds = rbind(countedIds, countedActivitiesCat)
-      # print(countedIds)
       loc$DateDay = cut(as.Date(df$properties$Time), "day")
       countedActivitiesCatDate = summarizeCount("name-activity--day", apply(loc[, c("name", "activity", "DateDay")] , 1 , paste , collapse = "-"))
       countedIds = rbind(countedIds, countedActivitiesCatDate)
@@ -125,17 +121,6 @@ stream_in(
     
     stream_out(countedIds, con_out, pagesize = 100)
     
-    # loc$speed = df$properties$Speed
-    # loc$accuracy = df$properties$Accuracy
-    # loc$elevation = df$properties$Elevation
-    # loc$pressure = df$properties$Pressure
-    # loc$time = df$properties$Time
-    # loc_gc <-
-    #   filter(loc, lat < 38.793865 &
-    #            lat > 38.508583) %>% filter(lon > -90.533524 &
-    #                                          lon < -90.051498)
-    # save(loc_gc, file = paste0(tmp, "_", format(Sys.time(), "%Y%m%d_%H%M%S"), "col.Rdata"))
-    
   },
   pagesize = 750000
 )
@@ -144,6 +129,17 @@ close(con_out)
 
 # loc <- stream_in(file(tmp), pagesize = 2000000)
 
+
+# loc$speed = df$properties$Speed
+# loc$accuracy = df$properties$Accuracy
+# loc$elevation = df$properties$Elevation
+# loc$pressure = df$properties$Pressure
+# loc$time = df$properties$Time
+# loc_gc <-
+#   filter(loc, lat < 38.793865 &
+#            lat > 38.508583) %>% filter(lon > -90.533524 &
+#                                          lon < -90.051498)
+# save(loc_gc, file = paste0(tmp, "_", format(Sys.time(), "%Y%m%d_%H%M%S"), "col.Rdata"))
 
 
 # loc$elevation = df$properties$Elevation
