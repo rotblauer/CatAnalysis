@@ -1,0 +1,17 @@
+-rw-r--r--  1 root     root          81920 Feb  1 15:29 edge.out.mbtiles
+-rw-r-----  1 root     root     1399745353 Feb  1 14:22 master.json.gz
+-rw-r-----  1 root     root     1136244086 Dec  9 19:02 master.json.gz.bak
+-rw-r-----  1 root     root      442109050 Dec  4 19:30 master.snap.json.gz
+-rw-r--r--  1 root     root        3506176 Feb  1 15:27 out.wip.mbtiles
+-rw-r--r--  1 root     root          12824 Feb  1 15:27 out.wip.mbtiles-journal
+-rw-r--r--  1 root     root     2718044160 Feb  1 14:17 out.wip.mbtiles.bak
+-rw-r--r--  1 root     root        4194304 Feb  1 14:10 places-tiles.db
+-rw-r-----  1 root     root         627399 Feb  1 14:10 places.json.gz
+-rw-r--r--  1 root     root        1781760 Feb  1 14:10 places.out.mbtiles
+-rw-r--r--  1 root     root        4194304 Feb  1 14:18 tiles-devop.db
+-rw-r--r--  1 root     root         262144 Feb  1 15:29 tiles-edge.db
+-rw-r--r--  1 root     root     4395593728 Feb  1 14:22 tiles-master.db
+-rw-rw-r--  1 15702666 1644713 70013915136 Feb  1 15:29 tracks.db
+root@rottor:~/tdata# du -h tracks.db
+66G	tracks.db
+root@rottor:~/tdata# 
