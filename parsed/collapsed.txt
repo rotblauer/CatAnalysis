@@ -13650,25 +13650,716 @@
 {"VARIABLE":"iPhone","COUNT":286458,"TYPE":"name"}
 {"VARIABLE":"KK's Work Phone","COUNT":3447,"TYPE":"name"}
 {"VARIABLE":"Rye8","COUNT":353256,"TYPE":"name"}
-{"VARIABLE":"minnesota","COUNT":6600,"TYPE":"state"}
-{"VARIABLE":"missouri","COUNT":33505,"TYPE":"state"}
-{"VARIABLE":"minnesota,st louis","COUNT":6600,"TYPE":"county"}
-{"VARIABLE":"missouri,st louis city","COUNT":33505,"TYPE":"county"}
-{"VARIABLE":"USA","COUNT":40105,"TYPE":"world"}
-{"VARIABLE":"Stationary","COUNT":37603,"TYPE":"activity"}
-{"VARIABLE":"Unknown","COUNT":2303,"TYPE":"activity"}
-{"VARIABLE":"Walking","COUNT":199,"TYPE":"activity"}
-{"VARIABLE":"iPhone-Stationary","COUNT":4616,"TYPE":"name-activity"}
-{"VARIABLE":"iPhone-Unknown","COUNT":1915,"TYPE":"name-activity"}
-{"VARIABLE":"iPhone-Walking","COUNT":69,"TYPE":"name-activity"}
-{"VARIABLE":"Rye8-Stationary","COUNT":32987,"TYPE":"name-activity"}
-{"VARIABLE":"Rye8-Unknown","COUNT":388,"TYPE":"name-activity"}
-{"VARIABLE":"Rye8-Walking","COUNT":130,"TYPE":"name-activity"}
-{"VARIABLE":"iPhone-Stationary-2019-04-21","COUNT":4616,"TYPE":"name-activity--day"}
-{"VARIABLE":"iPhone-Unknown-2019-04-21","COUNT":1915,"TYPE":"name-activity--day"}
+{"VARIABLE":"minnesota","COUNT":257704,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":490670,"TYPE":"state"}
+{"VARIABLE":"south carolina","COUNT":318,"TYPE":"state"}
+{"VARIABLE":"minnesota,st louis","COUNT":257704,"TYPE":"county"}
+{"VARIABLE":"missouri,clark","COUNT":743,"TYPE":"county"}
+{"VARIABLE":"missouri,lewis","COUNT":1047,"TYPE":"county"}
+{"VARIABLE":"missouri,lincoln","COUNT":1326,"TYPE":"county"}
+{"VARIABLE":"missouri,marion","COUNT":3072,"TYPE":"county"}
+{"VARIABLE":"missouri,pike","COUNT":1464,"TYPE":"county"}
+{"VARIABLE":"missouri,ralls","COUNT":809,"TYPE":"county"}
+{"VARIABLE":"missouri,st charles","COUNT":1876,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":3409,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":476924,"TYPE":"county"}
+{"VARIABLE":"south carolina,charleston","COUNT":318,"TYPE":"county"}
+{"VARIABLE":"USA","COUNT":750000,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":26033,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":8678,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":2996,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":584133,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":79883,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":48277,"TYPE":"activity"}
+{"VARIABLE":"Big Papa-Automotive","COUNT":641,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Bike","COUNT":7745,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Stationary","COUNT":744,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Unknown","COUNT":2814,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Walking","COUNT":4375,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Automotive","COUNT":9444,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Bike","COUNT":50,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Stationary","COUNT":205556,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Unknown","COUNT":27331,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Walking","COUNT":16606,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Automotive","COUNT":36,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Stationary","COUNT":176,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Unknown","COUNT":78,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Walking","COUNT":53,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Automotive","COUNT":15912,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Bike","COUNT":883,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Running","COUNT":2996,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Stationary","COUNT":377657,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Unknown","COUNT":49660,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Walking","COUNT":27243,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-21","COUNT":281,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-22","COUNT":128,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-23","COUNT":93,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-24","COUNT":28,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-25","COUNT":88,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-26","COUNT":23,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-21","COUNT":2515,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-22","COUNT":1574,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-23","COUNT":1049,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-24","COUNT":180,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-25","COUNT":1874,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-26","COUNT":553,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-21","COUNT":151,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-22","COUNT":56,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-23","COUNT":112,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-24","COUNT":158,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-25","COUNT":100,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-26","COUNT":167,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-21","COUNT":634,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-22","COUNT":302,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-23","COUNT":417,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-24","COUNT":475,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-25","COUNT":454,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-26","COUNT":532,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-21","COUNT":949,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-22","COUNT":868,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-23","COUNT":586,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-24","COUNT":671,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-25","COUNT":697,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-26","COUNT":604,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-22","COUNT":1921,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-23","COUNT":2181,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-24","COUNT":2945,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-25","COUNT":628,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-26","COUNT":1769,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Bike-2019-04-23","COUNT":50,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-21","COUNT":36345,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-22","COUNT":67120,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-23","COUNT":16645,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-24","COUNT":27583,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-25","COUNT":36287,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-26","COUNT":21576,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-21","COUNT":1969,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-22","COUNT":7340,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-23","COUNT":5248,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-24","COUNT":6733,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-25","COUNT":5346,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-26","COUNT":695,"TYPE":"name-activity--day"}
 {"VARIABLE":"iPhone-Walking-2019-04-21","COUNT":69,"TYPE":"name-activity--day"}
-{"VARIABLE":"Rye8-Stationary-2019-04-21","COUNT":32987,"TYPE":"name-activity--day"}
-{"VARIABLE":"Rye8-Unknown-2019-04-21","COUNT":388,"TYPE":"name-activity--day"}
-{"VARIABLE":"Rye8-Walking-2019-04-21","COUNT":130,"TYPE":"name-activity--day"}
-{"VARIABLE":"iPhone","COUNT":6600,"TYPE":"name"}
-{"VARIABLE":"Rye8","COUNT":33505,"TYPE":"name"}
+{"VARIABLE":"iPhone-Walking-2019-04-22","COUNT":3624,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-23","COUNT":4409,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-24","COUNT":5533,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-25","COUNT":1714,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-26","COUNT":1257,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-19","COUNT":8,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-20","COUNT":1,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-21","COUNT":21,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-22","COUNT":6,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-19","COUNT":16,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-20","COUNT":17,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-21","COUNT":44,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-22","COUNT":50,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-23","COUNT":33,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-24","COUNT":16,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-19","COUNT":4,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-20","COUNT":5,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-21","COUNT":25,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-22","COUNT":23,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-23","COUNT":18,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-24","COUNT":3,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-20","COUNT":19,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-21","COUNT":2,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-22","COUNT":1,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-23","COUNT":22,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-24","COUNT":9,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-21","COUNT":1623,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-23","COUNT":1048,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-24","COUNT":1034,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-25","COUNT":658,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-26","COUNT":11549,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-04-21","COUNT":6,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-04-23","COUNT":865,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-04-25","COUNT":12,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-04-22","COUNT":2968,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-04-24","COUNT":2,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-04-26","COUNT":26,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-21","COUNT":49557,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-22","COUNT":70370,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-23","COUNT":66621,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-24","COUNT":59929,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-25","COUNT":75550,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-26","COUNT":55630,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-21","COUNT":7673,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-22","COUNT":7006,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-23","COUNT":10629,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-24","COUNT":13519,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-25","COUNT":6500,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-26","COUNT":4333,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-21","COUNT":9215,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-22","COUNT":2753,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-23","COUNT":5556,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-24","COUNT":4083,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-25","COUNT":2733,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-26","COUNT":2903,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa","COUNT":16319,"TYPE":"name"}
+{"VARIABLE":"iPhone","COUNT":258987,"TYPE":"name"}
+{"VARIABLE":"KK's Work Phone","COUNT":343,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":474351,"TYPE":"name"}
+{"VARIABLE":"illinois","COUNT":549,"TYPE":"state"}
+{"VARIABLE":"iowa","COUNT":29818,"TYPE":"state"}
+{"VARIABLE":"minnesota","COUNT":418111,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":272812,"TYPE":"state"}
+{"VARIABLE":"south carolina","COUNT":16614,"TYPE":"state"}
+{"VARIABLE":"illinois,madison","COUNT":322,"TYPE":"county"}
+{"VARIABLE":"illinois,st clair","COUNT":227,"TYPE":"county"}
+{"VARIABLE":"iowa,benton","COUNT":995,"TYPE":"county"}
+{"VARIABLE":"iowa,black hawk","COUNT":3749,"TYPE":"county"}
+{"VARIABLE":"iowa,bremer","COUNT":2029,"TYPE":"county"}
+{"VARIABLE":"iowa,buchanan","COUNT":611,"TYPE":"county"}
+{"VARIABLE":"iowa,cerro gordo","COUNT":2846,"TYPE":"county"}
+{"VARIABLE":"iowa,chickasaw","COUNT":275,"TYPE":"county"}
+{"VARIABLE":"iowa,floyd","COUNT":3208,"TYPE":"county"}
+{"VARIABLE":"iowa,henry","COUNT":2554,"TYPE":"county"}
+{"VARIABLE":"iowa,johnson","COUNT":3816,"TYPE":"county"}
+{"VARIABLE":"iowa,lee","COUNT":2183,"TYPE":"county"}
+{"VARIABLE":"iowa,linn","COUNT":3364,"TYPE":"county"}
+{"VARIABLE":"iowa,washington","COUNT":2532,"TYPE":"county"}
+{"VARIABLE":"iowa,worth","COUNT":1656,"TYPE":"county"}
+{"VARIABLE":"minnesota,dakota","COUNT":1255,"TYPE":"county"}
+{"VARIABLE":"minnesota,freeborn","COUNT":3252,"TYPE":"county"}
+{"VARIABLE":"minnesota,hennepin","COUNT":94293,"TYPE":"county"}
+{"VARIABLE":"minnesota,rice","COUNT":2412,"TYPE":"county"}
+{"VARIABLE":"minnesota,scott","COUNT":579,"TYPE":"county"}
+{"VARIABLE":"minnesota,st louis","COUNT":313974,"TYPE":"county"}
+{"VARIABLE":"minnesota,steele","COUNT":2346,"TYPE":"county"}
+{"VARIABLE":"missouri,clark","COUNT":977,"TYPE":"county"}
+{"VARIABLE":"missouri,lewis","COUNT":1058,"TYPE":"county"}
+{"VARIABLE":"missouri,lincoln","COUNT":1307,"TYPE":"county"}
+{"VARIABLE":"missouri,marion","COUNT":2044,"TYPE":"county"}
+{"VARIABLE":"missouri,pike","COUNT":1413,"TYPE":"county"}
+{"VARIABLE":"missouri,ralls","COUNT":740,"TYPE":"county"}
+{"VARIABLE":"missouri,st charles","COUNT":1116,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":4261,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":259896,"TYPE":"county"}
+{"VARIABLE":"south carolina,charleston","COUNT":686,"TYPE":"county"}
+{"VARIABLE":"south carolina,georgetown","COUNT":15928,"TYPE":"county"}
+{"VARIABLE":"USA","COUNT":749922,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":72009,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":11479,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":8081,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":545820,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":69456,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":43155,"TYPE":"activity"}
+{"VARIABLE":"Big Papa-Automotive","COUNT":4006,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Bike","COUNT":11287,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Running","COUNT":15,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Stationary","COUNT":485,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Unknown","COUNT":2933,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Walking","COUNT":4424,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Automotive","COUNT":10656,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Bike","COUNT":77,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Stationary","COUNT":266698,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Unknown","COUNT":27244,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Walking","COUNT":21241,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Automotive","COUNT":1875,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Stationary","COUNT":12638,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Unknown","COUNT":731,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Walking","COUNT":1524,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Automotive","COUNT":55472,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Bike","COUNT":115,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Running","COUNT":8066,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Stationary","COUNT":265999,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Unknown","COUNT":38548,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Walking","COUNT":15966,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-27","COUNT":311,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-28","COUNT":93,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-29","COUNT":335,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-04-30","COUNT":2835,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-05-01","COUNT":432,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-26","COUNT":729,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-27","COUNT":1763,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-28","COUNT":2162,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-29","COUNT":1824,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-04-30","COUNT":1933,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-01","COUNT":2336,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-02","COUNT":540,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Running-2019-04-26","COUNT":14,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Running-2019-04-27","COUNT":1,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-26","COUNT":57,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-27","COUNT":57,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-28","COUNT":98,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-29","COUNT":135,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-04-30","COUNT":56,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-01","COUNT":73,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-02","COUNT":9,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-26","COUNT":244,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-27","COUNT":507,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-28","COUNT":359,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-29","COUNT":552,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-04-30","COUNT":833,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-01","COUNT":378,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-02","COUNT":60,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-26","COUNT":647,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-27","COUNT":343,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-28","COUNT":481,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-29","COUNT":1030,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-04-30","COUNT":257,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-01","COUNT":1341,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-02","COUNT":325,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-26","COUNT":631,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-27","COUNT":3478,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-28","COUNT":734,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-29","COUNT":3421,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-04-30","COUNT":2288,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-05-01","COUNT":104,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Bike-2019-04-27","COUNT":38,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Bike-2019-04-28","COUNT":21,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Bike-2019-04-29","COUNT":18,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-26","COUNT":863,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-27","COUNT":16205,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-28","COUNT":75732,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-29","COUNT":62394,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-04-30","COUNT":62355,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-01","COUNT":47780,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-02","COUNT":1369,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-26","COUNT":1518,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-27","COUNT":11377,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-28","COUNT":1095,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-29","COUNT":4768,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-04-30","COUNT":5094,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-01","COUNT":3340,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-02","COUNT":52,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-26","COUNT":1862,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-27","COUNT":8369,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-28","COUNT":330,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-29","COUNT":4074,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-04-30","COUNT":4844,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-05-01","COUNT":1651,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-05-02","COUNT":111,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-26","COUNT":25,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-27","COUNT":75,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-28","COUNT":1742,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-29","COUNT":20,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-04-30","COUNT":13,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-24","COUNT":1,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-25","COUNT":1,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-26","COUNT":68,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-27","COUNT":100,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-28","COUNT":12339,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-29","COUNT":59,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-04-30","COUNT":45,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-01","COUNT":25,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-24","COUNT":2,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-25","COUNT":2,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-26","COUNT":19,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-27","COUNT":34,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-28","COUNT":646,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-29","COUNT":16,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-04-30","COUNT":11,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-01","COUNT":1,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-24","COUNT":11,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-25","COUNT":17,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-26","COUNT":21,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-27","COUNT":75,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-28","COUNT":1358,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-29","COUNT":14,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-04-30","COUNT":28,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-26","COUNT":6650,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-27","COUNT":16595,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-28","COUNT":29502,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-29","COUNT":59,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-04-30","COUNT":466,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-05-01","COUNT":2176,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-05-02","COUNT":24,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-04-27","COUNT":10,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-04-29","COUNT":55,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-05-01","COUNT":50,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-04-27","COUNT":28,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-04-30","COUNT":2932,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-05-01","COUNT":2832,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-05-02","COUNT":2274,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-26","COUNT":882,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-27","COUNT":38697,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-28","COUNT":37364,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-29","COUNT":59468,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-04-30","COUNT":65188,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-01","COUNT":25751,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-02","COUNT":38649,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-26","COUNT":336,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-27","COUNT":5436,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-28","COUNT":5084,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-29","COUNT":7908,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-04-30","COUNT":11827,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-01","COUNT":5437,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-02","COUNT":2520,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-26","COUNT":38,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-27","COUNT":4044,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-28","COUNT":3506,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-29","COUNT":2056,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-04-30","COUNT":2418,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-01","COUNT":3172,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-02","COUNT":732,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa","COUNT":23150,"TYPE":"name"}
+{"VARIABLE":"iPhone","COUNT":325916,"TYPE":"name"}
+{"VARIABLE":"KK's Work Phone","COUNT":16768,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":384166,"TYPE":"name"}
+{"VARIABLE":"iowa","COUNT":126824,"TYPE":"state"}
+{"VARIABLE":"minnesota","COUNT":105820,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":336827,"TYPE":"state"}
+{"VARIABLE":"montana","COUNT":97970,"TYPE":"state"}
+{"VARIABLE":"nebraska","COUNT":35605,"TYPE":"state"}
+{"VARIABLE":"south carolina","COUNT":1756,"TYPE":"state"}
+{"VARIABLE":"tennessee","COUNT":449,"TYPE":"state"}
+{"VARIABLE":"wisconsin","COUNT":27,"TYPE":"state"}
+{"VARIABLE":"wyoming","COUNT":42054,"TYPE":"state"}
+{"VARIABLE":"iowa,adair","COUNT":1556,"TYPE":"county"}
+{"VARIABLE":"iowa,benton","COUNT":1060,"TYPE":"county"}
+{"VARIABLE":"iowa,black hawk","COUNT":8375,"TYPE":"county"}
+{"VARIABLE":"iowa,bremer","COUNT":2270,"TYPE":"county"}
+{"VARIABLE":"iowa,buchanan","COUNT":632,"TYPE":"county"}
+{"VARIABLE":"iowa,cass","COUNT":1156,"TYPE":"county"}
+{"VARIABLE":"iowa,cerro gordo","COUNT":1459,"TYPE":"county"}
+{"VARIABLE":"iowa,chickasaw","COUNT":318,"TYPE":"county"}
+{"VARIABLE":"iowa,dallas","COUNT":1962,"TYPE":"county"}
+{"VARIABLE":"iowa,floyd","COUNT":2304,"TYPE":"county"}
+{"VARIABLE":"iowa,iowa","COUNT":6084,"TYPE":"county"}
+{"VARIABLE":"iowa,jasper","COUNT":3022,"TYPE":"county"}
+{"VARIABLE":"iowa,johnson","COUNT":2222,"TYPE":"county"}
+{"VARIABLE":"iowa,linn","COUNT":22589,"TYPE":"county"}
+{"VARIABLE":"iowa,madison","COUNT":112,"TYPE":"county"}
+{"VARIABLE":"iowa,polk","COUNT":66106,"TYPE":"county"}
+{"VARIABLE":"iowa,pottawattamie","COUNT":2363,"TYPE":"county"}
+{"VARIABLE":"iowa,poweshiek","COUNT":2382,"TYPE":"county"}
+{"VARIABLE":"iowa,worth","COUNT":852,"TYPE":"county"}
+{"VARIABLE":"minnesota,anoka","COUNT":519,"TYPE":"county"}
+{"VARIABLE":"minnesota,carlton","COUNT":1593,"TYPE":"county"}
+{"VARIABLE":"minnesota,chisago","COUNT":1302,"TYPE":"county"}
+{"VARIABLE":"minnesota,dakota","COUNT":42213,"TYPE":"county"}
+{"VARIABLE":"minnesota,freeborn","COUNT":2744,"TYPE":"county"}
+{"VARIABLE":"minnesota,pine","COUNT":2555,"TYPE":"county"}
+{"VARIABLE":"minnesota,ramsey","COUNT":1038,"TYPE":"county"}
+{"VARIABLE":"minnesota,rice","COUNT":1259,"TYPE":"county"}
+{"VARIABLE":"minnesota,scott","COUNT":296,"TYPE":"county"}
+{"VARIABLE":"minnesota,st louis","COUNT":50932,"TYPE":"county"}
+{"VARIABLE":"minnesota,steele","COUNT":1217,"TYPE":"county"}
+{"VARIABLE":"minnesota,washington","COUNT":152,"TYPE":"county"}
+{"VARIABLE":"missouri,st charles","COUNT":15450,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis","COUNT":2237,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":319140,"TYPE":"county"}
+{"VARIABLE":"montana,big horn","COUNT":8012,"TYPE":"county"}
+{"VARIABLE":"montana,broadwater","COUNT":580,"TYPE":"county"}
+{"VARIABLE":"montana,deer lodge","COUNT":1420,"TYPE":"county"}
+{"VARIABLE":"montana,gallatin","COUNT":10427,"TYPE":"county"}
+{"VARIABLE":"montana,granite","COUNT":2681,"TYPE":"county"}
+{"VARIABLE":"montana,jefferson","COUNT":3544,"TYPE":"county"}
+{"VARIABLE":"montana,mineral","COUNT":5877,"TYPE":"county"}
+{"VARIABLE":"montana,missoula","COUNT":14207,"TYPE":"county"}
+{"VARIABLE":"montana,park","COUNT":2929,"TYPE":"county"}
+{"VARIABLE":"montana,powell","COUNT":4684,"TYPE":"county"}
+{"VARIABLE":"montana,silver bow","COUNT":2289,"TYPE":"county"}
+{"VARIABLE":"montana,stillwater","COUNT":3895,"TYPE":"county"}
+{"VARIABLE":"montana,sweet grass","COUNT":3239,"TYPE":"county"}
+{"VARIABLE":"montana,yellowstone","COUNT":34186,"TYPE":"county"}
+{"VARIABLE":"nebraska,buffalo","COUNT":1769,"TYPE":"county"}
+{"VARIABLE":"nebraska,cass","COUNT":562,"TYPE":"county"}
+{"VARIABLE":"nebraska,cheyenne","COUNT":5046,"TYPE":"county"}
+{"VARIABLE":"nebraska,dawson","COUNT":2185,"TYPE":"county"}
+{"VARIABLE":"nebraska,deuel","COUNT":3003,"TYPE":"county"}
+{"VARIABLE":"nebraska,douglas","COUNT":704,"TYPE":"county"}
+{"VARIABLE":"nebraska,hall","COUNT":1199,"TYPE":"county"}
+{"VARIABLE":"nebraska,hamilton","COUNT":1145,"TYPE":"county"}
+{"VARIABLE":"nebraska,keith","COUNT":4085,"TYPE":"county"}
+{"VARIABLE":"nebraska,kimball","COUNT":3561,"TYPE":"county"}
+{"VARIABLE":"nebraska,lancaster","COUNT":2700,"TYPE":"county"}
+{"VARIABLE":"nebraska,lincoln","COUNT":6003,"TYPE":"county"}
+{"VARIABLE":"nebraska,sarpy","COUNT":749,"TYPE":"county"}
+{"VARIABLE":"nebraska,seward","COUNT":1227,"TYPE":"county"}
+{"VARIABLE":"nebraska,york","COUNT":1667,"TYPE":"county"}
+{"VARIABLE":"south carolina,charleston","COUNT":1756,"TYPE":"county"}
+{"VARIABLE":"tennessee,davidson","COUNT":449,"TYPE":"county"}
+{"VARIABLE":"wisconsin,douglas","COUNT":27,"TYPE":"county"}
+{"VARIABLE":"wyoming,converse","COUNT":4884,"TYPE":"county"}
+{"VARIABLE":"wyoming,johnson","COUNT":8040,"TYPE":"county"}
+{"VARIABLE":"wyoming,laramie","COUNT":9095,"TYPE":"county"}
+{"VARIABLE":"wyoming,natrona","COUNT":8320,"TYPE":"county"}
+{"VARIABLE":"wyoming,platte","COUNT":6564,"TYPE":"county"}
+{"VARIABLE":"wyoming,sheridan","COUNT":5151,"TYPE":"county"}
+{"VARIABLE":"Ecuador","COUNT":2,"TYPE":"world"}
+{"VARIABLE":"USA","COUNT":749998,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":180534,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":11837,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":6070,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":435928,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":67518,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":48113,"TYPE":"activity"}
+{"VARIABLE":"Big Papa-Automotive","COUNT":209,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Bike","COUNT":8314,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Running","COUNT":9,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Stationary","COUNT":932,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Unknown","COUNT":2160,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Walking","COUNT":3801,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Automotive","COUNT":65111,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Stationary","COUNT":40872,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Unknown","COUNT":7049,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Walking","COUNT":7634,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Automotive","COUNT":107920,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Bike","COUNT":117,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Stationary","COUNT":152928,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Unknown","COUNT":15849,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Walking","COUNT":13485,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Automotive","COUNT":121,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Bike","COUNT":481,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Stationary","COUNT":888,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Unknown","COUNT":389,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Walking","COUNT":329,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Automotive","COUNT":7173,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Bike","COUNT":2925,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Running","COUNT":6061,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Stationary","COUNT":240308,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Unknown","COUNT":42071,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Walking","COUNT":22864,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Automotive-2019-05-02","COUNT":51,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-05-03","COUNT":45,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-05-05","COUNT":33,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-05-06","COUNT":80,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-02","COUNT":2254,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-03","COUNT":1630,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-04","COUNT":484,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-05","COUNT":2765,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-06","COUNT":1181,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Running-2019-05-03","COUNT":8,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Running-2019-05-04","COUNT":1,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-02","COUNT":182,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-03","COUNT":215,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-04","COUNT":120,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-05","COUNT":393,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-06","COUNT":22,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-02","COUNT":715,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-03","COUNT":425,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-04","COUNT":150,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-05","COUNT":767,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-06","COUNT":103,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-02","COUNT":1068,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-03","COUNT":1012,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-04","COUNT":534,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-05","COUNT":970,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-06","COUNT":217,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Automotive-2019-05-04","COUNT":8789,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Automotive-2019-05-05","COUNT":23159,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Automotive-2019-05-06","COUNT":33163,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Stationary-2019-05-04","COUNT":4414,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Stationary-2019-05-05","COUNT":30848,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Stationary-2019-05-06","COUNT":5610,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Unknown-2019-05-04","COUNT":2419,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Unknown-2019-05-05","COUNT":1990,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Unknown-2019-05-06","COUNT":2640,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Walking-2019-04-21","COUNT":33,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Walking-2019-05-04","COUNT":2320,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Walking-2019-05-05","COUNT":1938,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Walking-2019-05-06","COUNT":3343,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-05-02","COUNT":2417,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-05-03","COUNT":5641,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-05-04","COUNT":22322,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-05-05","COUNT":44749,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-05-06","COUNT":32791,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Bike-2019-05-03","COUNT":9,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Bike-2019-05-04","COUNT":63,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Bike-2019-05-05","COUNT":45,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-02","COUNT":11787,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-03","COUNT":20654,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-04","COUNT":47741,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-05","COUNT":38286,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-06","COUNT":34460,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-02","COUNT":2011,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-03","COUNT":4025,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-04","COUNT":7737,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-05","COUNT":1134,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-06","COUNT":942,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-05-02","COUNT":4345,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-05-03","COUNT":5301,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-05-04","COUNT":2930,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-05-05","COUNT":609,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Walking-2019-05-06","COUNT":300,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-05-01","COUNT":36,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-05-02","COUNT":24,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-05-03","COUNT":37,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-05-04","COUNT":15,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-05-05","COUNT":9,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Bike-2019-05-04","COUNT":18,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Bike-2019-05-05","COUNT":15,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Bike-2019-05-06","COUNT":448,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-01","COUNT":41,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-02","COUNT":46,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-03","COUNT":2,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-04","COUNT":39,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-05","COUNT":34,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-06","COUNT":726,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-01","COUNT":2,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-02","COUNT":23,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-03","COUNT":27,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-04","COUNT":87,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-05","COUNT":92,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-06","COUNT":158,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-01","COUNT":10,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-02","COUNT":8,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-03","COUNT":12,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-04","COUNT":56,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-05","COUNT":119,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-06","COUNT":124,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-05-03","COUNT":548,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-05-05","COUNT":6625,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-05-03","COUNT":87,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-05-04","COUNT":1759,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-05-05","COUNT":1079,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-05-02","COUNT":569,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-05-03","COUNT":2769,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-05-06","COUNT":2723,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-02","COUNT":25694,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-03","COUNT":57132,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-04","COUNT":63384,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-05","COUNT":37187,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-06","COUNT":56911,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-02","COUNT":7235,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-03","COUNT":12891,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-04","COUNT":7537,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-05","COUNT":7745,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-06","COUNT":6663,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-02","COUNT":941,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-03","COUNT":2357,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-04","COUNT":11134,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-05","COUNT":6807,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-06","COUNT":1625,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa","COUNT":15425,"TYPE":"name"}
+{"VARIABLE":"Bob's iPhone 6","COUNT":120666,"TYPE":"name"}
+{"VARIABLE":"iPhone","COUNT":290299,"TYPE":"name"}
+{"VARIABLE":"KK's Work Phone","COUNT":2208,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":321402,"TYPE":"name"}
+{"VARIABLE":"idaho","COUNT":10131,"TYPE":"state"}
+{"VARIABLE":"illinois","COUNT":3800,"TYPE":"state"}
+{"VARIABLE":"missouri","COUNT":298330,"TYPE":"state"}
+{"VARIABLE":"montana","COUNT":4565,"TYPE":"state"}
+{"VARIABLE":"south carolina","COUNT":346,"TYPE":"state"}
+{"VARIABLE":"washington","COUNT":22117,"TYPE":"state"}
+{"VARIABLE":"idaho,kootenai","COUNT":7152,"TYPE":"county"}
+{"VARIABLE":"idaho,shoshone","COUNT":2979,"TYPE":"county"}
+{"VARIABLE":"illinois,madison","COUNT":3800,"TYPE":"county"}
+{"VARIABLE":"missouri,st louis city","COUNT":298330,"TYPE":"county"}
+{"VARIABLE":"montana,mineral","COUNT":4565,"TYPE":"county"}
+{"VARIABLE":"south carolina,charleston","COUNT":346,"TYPE":"county"}
+{"VARIABLE":"washington,lincoln","COUNT":2984,"TYPE":"county"}
+{"VARIABLE":"washington,spokane","COUNT":19133,"TYPE":"county"}
+{"VARIABLE":"USA","COUNT":339289,"TYPE":"world"}
+{"VARIABLE":"Automotive","COUNT":25876,"TYPE":"activity"}
+{"VARIABLE":"Bike","COUNT":12018,"TYPE":"activity"}
+{"VARIABLE":"Running","COUNT":4959,"TYPE":"activity"}
+{"VARIABLE":"Stationary","COUNT":237260,"TYPE":"activity"}
+{"VARIABLE":"Unknown","COUNT":38312,"TYPE":"activity"}
+{"VARIABLE":"Walking","COUNT":20864,"TYPE":"activity"}
+{"VARIABLE":"Big Papa-Automotive","COUNT":3651,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Bike","COUNT":10143,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Running","COUNT":1011,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Stationary","COUNT":539,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Unknown","COUNT":2971,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Walking","COUNT":4669,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Automotive","COUNT":10361,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Stationary","COUNT":1457,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Unknown","COUNT":1465,"TYPE":"name-activity"}
+{"VARIABLE":"Bob's iPhone 6-Walking","COUNT":4330,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Automotive","COUNT":10081,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Stationary","COUNT":8837,"TYPE":"name-activity"}
+{"VARIABLE":"iPhone-Unknown","COUNT":282,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Automotive","COUNT":23,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Stationary","COUNT":44,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Unknown","COUNT":157,"TYPE":"name-activity"}
+{"VARIABLE":"KK's Work Phone-Walking","COUNT":122,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Automotive","COUNT":1760,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Bike","COUNT":1875,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Running","COUNT":3948,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Stationary","COUNT":226383,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Unknown","COUNT":33437,"TYPE":"name-activity"}
+{"VARIABLE":"Rye8-Walking","COUNT":11743,"TYPE":"name-activity"}
+{"VARIABLE":"Big Papa-Automotive-2019-05-08","COUNT":100,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-05-09","COUNT":3540,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Automotive-2019-05-10","COUNT":11,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-06","COUNT":737,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-07","COUNT":627,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-08","COUNT":1674,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-09","COUNT":4858,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Bike-2019-05-10","COUNT":2247,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Running-2019-05-07","COUNT":1011,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-06","COUNT":27,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-07","COUNT":77,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-08","COUNT":179,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-09","COUNT":170,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-10","COUNT":82,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Stationary-2019-05-11","COUNT":4,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-06","COUNT":215,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-07","COUNT":217,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-08","COUNT":898,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-09","COUNT":1192,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-10","COUNT":442,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Unknown-2019-05-11","COUNT":7,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-06","COUNT":332,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-07","COUNT":400,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-08","COUNT":1786,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-09","COUNT":1523,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-10","COUNT":617,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa-Walking-2019-05-11","COUNT":11,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Automotive-2019-05-06","COUNT":8024,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Automotive-2019-05-07","COUNT":2337,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Stationary-2019-05-06","COUNT":857,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Stationary-2019-05-07","COUNT":600,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Unknown-2019-05-06","COUNT":718,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Unknown-2019-05-07","COUNT":747,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Walking-2019-05-06","COUNT":2216,"TYPE":"name-activity--day"}
+{"VARIABLE":"Bob's iPhone 6-Walking-2019-05-07","COUNT":2114,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-05-06","COUNT":7904,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Automotive-2019-05-07","COUNT":2177,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-06","COUNT":5381,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Stationary-2019-05-07","COUNT":3456,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-06","COUNT":220,"TYPE":"name-activity--day"}
+{"VARIABLE":"iPhone-Unknown-2019-05-07","COUNT":62,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-05-07","COUNT":7,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Automotive-2019-05-09","COUNT":16,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-06","COUNT":6,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-08","COUNT":20,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-09","COUNT":17,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Stationary-2019-05-10","COUNT":1,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-06","COUNT":77,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-07","COUNT":25,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-08","COUNT":17,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-09","COUNT":20,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-10","COUNT":15,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Unknown-2019-05-11","COUNT":3,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-06","COUNT":40,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-07","COUNT":25,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-08","COUNT":16,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-09","COUNT":22,"TYPE":"name-activity--day"}
+{"VARIABLE":"KK's Work Phone-Walking-2019-05-10","COUNT":19,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-05-06","COUNT":295,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-05-09","COUNT":522,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Automotive-2019-05-11","COUNT":943,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-05-06","COUNT":528,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-05-07","COUNT":1109,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-05-09","COUNT":77,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Bike-2019-05-11","COUNT":161,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-05-06","COUNT":3,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-05-07","COUNT":2879,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Running-2019-05-09","COUNT":1066,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-06","COUNT":6330,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-07","COUNT":48172,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-08","COUNT":29584,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-09","COUNT":58146,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-10","COUNT":33737,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Stationary-2019-05-11","COUNT":50414,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-06","COUNT":3297,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-07","COUNT":6949,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-08","COUNT":7369,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-09","COUNT":4874,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-10","COUNT":8658,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Unknown-2019-05-11","COUNT":2290,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-06","COUNT":962,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-07","COUNT":2121,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-08","COUNT":1313,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-09","COUNT":3474,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-10","COUNT":1348,"TYPE":"name-activity--day"}
+{"VARIABLE":"Rye8-Walking-2019-05-11","COUNT":2525,"TYPE":"name-activity--day"}
+{"VARIABLE":"Big Papa","COUNT":22984,"TYPE":"name"}
+{"VARIABLE":"Bob's iPhone 6","COUNT":17613,"TYPE":"name"}
+{"VARIABLE":"iPhone","COUNT":19200,"TYPE":"name"}
+{"VARIABLE":"KK's Work Phone","COUNT":346,"TYPE":"name"}
+{"VARIABLE":"Rye8","COUNT":279146,"TYPE":"name"}
