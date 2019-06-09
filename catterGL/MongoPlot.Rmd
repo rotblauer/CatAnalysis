@@ -31,8 +31,8 @@ df <-
 # qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "density2d", color = I("red"))+ stat_density2d(data = df, aes(x = lon, y = lat, fill = ..level.., alpha = ..level..),
 #                  size = 0.01, bins = 16, geom = 'polygon')
 
-qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "point", color = "activity")
-
+# qmplot(lon, lat, data = df, maptype = "toner-lite", geom = "point", color = "activity")
+hist(df$accuracy)
 qmplot(lon, lat, data = df, maptype = "toner-background", color = I("red"))
 # + 
   # facet_wrap(~ activity)

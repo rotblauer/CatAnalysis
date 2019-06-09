@@ -69,7 +69,7 @@ stream_in(
       loc$index = m2$count():m2$count() + nrow(loc)
       m2$insert(loc)
     } else{
-      print(scan)
+      print(paste0("skipping ", scan))
     }
   },
   pagesize = 500000
