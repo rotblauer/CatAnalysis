@@ -24,7 +24,6 @@ option_list = list(
 )
 
 # loc <- stream_in(file(opt$input), pagesize = 2000000)
-# > show collections
 # > use Cats
 # switched to db Cats
 # > show collections
@@ -35,39 +34,45 @@ option_list = list(
 
 # https://datascienceplus.com/using-mongodb-with-r/
 
-my_collection = mongo(collection = "cats", db = "Cats") # create connection, database and collection
-my_collection$count()
+m2 = mongo(collection = "cats", db = "Cats") # create connection, database and collection
+# m2$drop()
+
+
 opt_parser = OptionParser(option_list = option_list)
 opt = parse_args(opt_parser)
 print(opt)
 
 dir.create(opt$outputDir)
-# loc <- stream_in(file(opt$input), pagesize = 2000000)
+idx = m2$count()
+print(paste0(idx, " total cats"))
 
+scan = 0
 con_in <-
   file(opt$input)
 
 stream_in(
   con_in,
   handler = function(df) {
-    loc = do.call(rbind.data.frame, df$geometry$coordinates)
-    
-    colnames(loc) = c("lon", "lat")
-    loc$uuid = df$properties$UUID
-    loc$uuid = df$properties$UUID
-    loc$date = as.Date(df$properties$Time)
-    loc$name = df$properties$Name
-    loc$activity = df$properties$Activity
-    loc$speed = df$properties$Speed
-    loc$accuracy = df$properties$Accuracy
-    loc$elevation = df$properties$Elevation
-    loc$pressure = df$properties$Pressure
-    loc$time = df$properties$Time
-    
-    my_collection$insert(loc)
-    
+    scan <<- scan + nrow(df$properties)
+    if (scan >= idx) {
+      loc = do.call(rbind.data.frame, df$geometry$coordinates)
+      colnames(loc) = c("lon", "lat")
+      loc$uuid = df$properties$UUID
+      loc$date = as.Date(df$properties$Time)
+      loc$name = df$properties$Name
+      loc$activity = df$properties$Activity
+      loc$speed = df$properties$Speed
+      loc$accuracy = df$properties$Accuracy
+      loc$elevation = df$properties$Elevation
+      loc$pressure = df$properties$Pressure
+      loc$time = df$properties$Time
+      loc$index = m2$count():m2$count() + nrow(loc)
+      m2$insert(loc)
+    } else{
+      print(scan)
+    }
   },
-  pagesize = 1000000
+  pagesize = 500000
 )
 #
 # length(my_collection$distinct("name"))
