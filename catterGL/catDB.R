@@ -74,6 +74,9 @@ stream_in(
   },
   pagesize = 500000
 )
+
+m2$index(add = '{"name" : 1, "accuracy" : 1, "lon" : 1, "lat" : 1, "activity" : 1}')
+
 #
 # length(my_collection$distinct("name"))
 # length(my_collection$distinct("activity"))
